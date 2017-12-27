@@ -9,7 +9,7 @@ Hatalı yerlerin düzeltilmesi için pull request gönderebilirsiniz.
 <h4>Yapılacaklar</h4>
 
 - <a href="https://github.com/omergulcicek/reactjs/blob/master/merhaba-dunya.md">Merhaba Dünya</a>
-- JSX Nedir?
+- <a href="https://github.com/omergulcicek/reactjs/blob/master/jsx-nedir.md">JSX Nedir?</a>
 - Element Oluşturmak
 - Components ve Props
 - State ve Lifecycle
