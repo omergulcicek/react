@@ -8,7 +8,7 @@ Hatalı yerlerin düzeltilmesi için pull request gönderebilirsiniz.
 
 <h4>Yapılacaklar</h4>
 
-- <a href="">Merhaba Dünya</a>
+- <a href="https://github.com/omergulcicek/reactjs/blob/master/merhaba-dunya.md">Merhaba Dünya</a>
 - JSX Nedir?
 - Element Oluşturmak
 - Components ve Props
