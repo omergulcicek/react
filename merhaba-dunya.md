@@ -1,3 +1,5 @@
+<h1>Merhaba Dünya</h1>
+
 React'i kullanmanın en kolay yolu, <a href="https://codepen.io/omergulcicek/pen/ypMLXP">CodePen'deki bu Merhaba Dünya örnek kodu</a>nu kullanmaktır.
 
 Herhangi bir şey yüklemenize gerek yoktur (<i>React JS, React DOM ve Babel JS eklenmiştir</i>); dokümantasyonu farklı bir sekmede açıp codepen üzerinden kodları test edebilirsiniz.
