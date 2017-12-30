@@ -21,7 +21,6 @@ Bundan sonraki bölümlerde, React aşamalı olarak anlatılacaktır. React uygu
 
 Component konusuna hakim olduktan sonra, küçük ve yeniden kullanılabilir parçalardan karmaşık uygulamalar oluşturabilirsiniz.
 
-
 <h2>JavaScript ile ilgili bir not</h2>
 
 React bir JavaScript kütüphanesidir. Bu nedenle JavaScript dilini temel düzeyde bilmeniz gerekiyor.
@@ -29,8 +28,12 @@ React bir JavaScript kütüphanesidir. Bu nedenle JavaScript dilini temel düzey
 Kendinizi yeterli görmüyorsanız <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript">JavaScript bilgilerinizi yenilemenizi öneririz</a>,
 böylece konuları daha kolay anlayabilirsiniz.
 
-<i>
-Ek kaynaklar; <a href="https://www.w3schools.com/js/">w3schools</a>,
+
+<i>Ek kaynaklar;</i>
+<a href="https://www.w3schools.com/js/">w3schools</a>,
 <a href="https://www.codecademy.com/learn/introduction-to-javascript">codecademy</a>,
 <a href="https://www.youtube.com/results?search_query=javascript+dersleri">youtube</a>
-</i>
+
+
+<a href="https://github.com/omergulcicek/reactjs/blob/master/jsx-nedir.md">Sıradaki Eğitim: JXS Nedir?</a>
+
