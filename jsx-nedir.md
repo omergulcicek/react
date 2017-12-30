@@ -162,3 +162,5 @@ const element = {
 ```
 
 Bu nesneler React elementleri olarak adlandırılır. Bunları, ekranda görmek istediğiniz şeyin açıklaması olarak düşünebilirsiniz. React, bu nesneleri okur, onları DOM'u oluşturmak ve güncel tutmak için kullanır.
+
+<a href="https://github.com/omergulcicek/reactjs/blob/master/elementleri-render-etmek.md">Sıradaki Eğitim: Elementleri Render Etmek</a>
