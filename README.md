@@ -16,7 +16,7 @@ Hatalı yerlerin düzeltilmesi için pull request gönderebilirsiniz.
 - <a href="https://github.com/omergulcicek/reactjs/blob/master/jsx-nedir.md">JSX Nedir?</a>
 - <a href="https://github.com/omergulcicek/reactjs/blob/master/elementleri-render-etmek.md">Elementleri Render Etmek</a>
 - <a href="https://github.com/omergulcicek/reactjs/blob/master/component-ve-props.md">Component ve Props</a>
-- State ve Lifecycle
+- <a href="https://github.com/omergulcicek/reactjs/blob/master/state-ve-lifecycle.md">State ve Lifecycle</a>
 - Click ve Change Olayları
 - Şartlı Render
 - Dizi
