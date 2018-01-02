@@ -35,5 +35,5 @@ böylece konuları daha kolay anlayabilirsiniz.
 <a href="https://www.youtube.com/results?search_query=javascript+dersleri">youtube</a>
 
 
-<a href="https://github.com/omergulcicek/reactjs/blob/master/jsx-nedir.md">Sıradaki Eğitim: JXS Nedir?</a>
+<a href="https://omergulcicek.github.io/reactjs/jsx-nedir">Sıradaki Eğitim: JXS Nedir?</a>
 
