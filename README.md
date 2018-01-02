@@ -12,14 +12,14 @@ Hatalı yerlerin düzeltilmesi için pull request gönderebilirsiniz.
 
 <h4>Başlıklar</h4>
 
-- <a href="https://github.com/omergulcicek/reactjs/blob/master/merhaba-dunya.md">Merhaba Dünya</a>
-- <a href="https://github.com/omergulcicek/reactjs/blob/master/jsx-nedir.md">JSX Nedir?</a>
-- <a href="https://github.com/omergulcicek/reactjs/blob/master/elementleri-render-etmek.md">Elementleri Render Etmek</a>
-- <a href="https://github.com/omergulcicek/reactjs/blob/master/component-ve-props.md">Component ve Props</a>
-- <a href="https://github.com/omergulcicek/reactjs/blob/master/state-ve-lifecycle.md">State ve Lifecycle</a>
-- <a href="https://github.com/omergulcicek/reactjs/blob/master/click-ve-change-olaylari.md">Click ve Change Olayları</a>
+- <a href="https://omergulcicek.github.io/reactjs/merhaba-dunya">Merhaba Dünya</a>
+- <a href="https://omergulcicek.github.io/reactjs/jsx-nedir.md">JSX Nedir?</a>
+- <a href="https://omergulcicek.github.io/reactjs/elementleri-render-etmek.md">Elementleri Render Etmek</a>
+- <a href="https://omergulcicek.github.io/reactjs/component-ve-props.md">Component ve Props</a>
+- <a href="https://omergulcicek.github.io/reactjs/state-ve-lifecycle.md">State ve Lifecycle</a>
+- <a href="https://omergulcicek.github.io/reactjs/click-ve-change-olaylari.md">Click ve Change Olayları</a>
 - Şartlı Render
-- Dizi
+- Listeler ve Keyler
 - Formlar
 - State Güncellemek
 - Çocuk Componentler ve Inheritance
