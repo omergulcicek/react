@@ -439,3 +439,5 @@ Ayrıca bunları ayrı `setState()` çağrılarıyla bağımsız olarakta günce
 
 <i>`setState`i kullandığımızda tüm state'ler değiştirilmez. Yalnızca belirtilen state güncellenir.
 Yani `this.setState({yorumlar})` şeklinde kullanıldığında sadece `this.state.yorumlar` güncellenir, `this.state.mesajlar` güncellenmez.</i>
+
+<a href="https://github.com/omergulcicek/reactjs/blob/master/click-ve-change-olaylari.md">Sıradaki Eğitim: Click ve Change Olayları</a>
