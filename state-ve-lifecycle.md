@@ -392,7 +392,7 @@ this.setState((prevState, props) => ({
 }));
 ```
 
-<i>Yukarıdaki örnekte ES6 ile gelen ok fonksiyonu kullandık fakat normal fonksiyonlarla da yapabilirdik:
+<i>Yukarıdaki örnekte ES6 ile gelen ok fonksiyonu kullandık fakat normal fonksiyonlarla da yapabilirdik:</i>
 
 ```js
 // Doğru Kullanım
@@ -402,7 +402,6 @@ this.setState(function(prevState, props) {
   };
 });
 ```
-</i>
 
 <h5>State'leri Toplu Güncelleştirmek</h5>
 
@@ -440,4 +439,4 @@ Ayrıca bunları ayrı `setState()` çağrılarıyla bağımsız olarakta günce
 <i>`setState`i kullandığımızda tüm state'ler değiştirilmez. Yalnızca belirtilen state güncellenir.
 Yani `this.setState({yorumlar})` şeklinde kullanıldığında sadece `this.state.yorumlar` güncellenir, `this.state.mesajlar` güncellenmez.</i>
 
-<a href="https://github.com/omergulcicek/reactjs/blob/master/click-ve-change-olaylari.md">Sıradaki Eğitim: Click ve Change Olayları</a>
+<a href="https://omergulcicek.github.io/reactjs/click-ve-change-olaylari">Sıradaki Eğitim: Click ve Change Olayları</a>
