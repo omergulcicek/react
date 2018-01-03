@@ -174,3 +174,5 @@ Yukarıdaki iki satır eşittir, <a href="https://developer.mozilla.org/en-US/do
 
 Her iki durumda da, React olayını temsil eden `e` argümanı id'den sonra ikinci bir parametre olarak aktarılır.
 Bir ok fonskiyonu ile bunu açıkça belirtmeliyiz, ancak `bind` ile başka argümanlar otomatik olarak iletilir.
+
+<a href="https://omergulcicek.github.io/reactjs/sartli-render">Sıradaki Eğitim: Şartlı Render</a>
