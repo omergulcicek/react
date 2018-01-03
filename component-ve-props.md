@@ -302,4 +302,4 @@ diğer herhangi bir şeye bu kuralı ihlal etmeden değerlerin değiştirmesine 
 <i>Özet olarak, propsları asla değiştirmeye kalkmıyoruz. Propslar sadece okunabilir. Bir sonraki bölümde state kavramı işlenecektir.
 Propslar state'lerden değeri çekecek, değeri değiştirmek istediğimizde state'i değiştireceğiz. Haliyle propsta değişmiş olacak.</i>
 
-<a href="https://github.com/omergulcicek/reactjs/blob/master/state-ve-lifecycle.md">Sıradaki Eğitim: State ve Lifecyle</a>
+<a href="https://omergulcicek.github.io/reactjs/state-ve-lifecycle">Sıradaki Eğitim: State ve Lifecyle</a>
