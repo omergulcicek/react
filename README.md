@@ -25,7 +25,11 @@ Element, Component, Props, State, Class gibi yazılımsal kelimelerde daha kolay
 Hatalı yerlerin düzeltilmesi için pull request gönderebilirsiniz.
 </p>
 
-<h4>Başlıklar</h4>
+<h2>Kurulum</h2>
+
+- React JS Kurulumu
+
+<h2>Hızlı Başlangıç</h2>
 
 - <a href="https://omergulcicek.github.io/reactjs/merhaba-dunya">Merhaba Dünya</a>
 - <a href="https://omergulcicek.github.io/reactjs/jsx-nedir">JSX Nedir?</a>
@@ -37,6 +41,14 @@ Hatalı yerlerin düzeltilmesi için pull request gönderebilirsiniz.
 - <a href="https://omergulcicek.github.io/reactjs/listeler-ve-keyler">Listeler ve Keyler</a>
 - <a href="https://omergulcicek.github.io/reactjs/formlar">Formlar</a>
 - <a href="https://omergulcicek.github.io/reactjs/state-guncellemek">State Güncellemek</a>
-- <a href="https://omergulcicek.github.io/reactjs/composition-ve-inheritance">Composition ve Inheritance.md</a>
+- <a href="https://omergulcicek.github.io/reactjs/composition-ve-inheritance">Composition ve Inheritance</a>
+
+<h2>Gelişmiş Kılavuzlar</h2>
+
+- Derinlemesine JSX
+- ES6 Olmadan React
+- JSX Olmadan React
+- Lifecycle Fonksiyonları
+- React Terimler Sözlüğü
 
 <i>Eklemeler yapılacaktır.</i>
