@@ -11,7 +11,7 @@ En küçük Reakt örneği şuna benzer:
 ```js
 ReactDOM.render(
   <h1>Merhaba Dünya!</h1>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 ```
 
@@ -36,4 +36,3 @@ böylece konuları daha kolay anlayabilirsiniz.
 
 
 <a href="https://omergulcicek.github.io/reactjs/jsx-nedir">Sıradaki Eğitim: JXS Nedir?</a>
-

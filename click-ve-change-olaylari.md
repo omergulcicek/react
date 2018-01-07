@@ -19,7 +19,7 @@ React'te `class` yerine `className`, `tabindex` yerine `tabIndex`, `onclick` yer
 Örneğin, HTML'de:
 
 ```html
-<button onclick="linkiAktiflestir()">
+<button onclick="activateLasers()">
   Linki aktifleştir
 </button>
 ```
@@ -27,7 +27,7 @@ React'te `class` yerine `className`, `tabindex` yerine `tabIndex`, `onclick` yer
 React'te ise biraz farklıdır:
 
 ```html
-<button onClick={linkiAktiflestir}>
+<button onClick={activateLasers}>
   Linki aktifleştir
 </button>
 ```
@@ -45,14 +45,14 @@ Başka bir fark ise React'te varsayılan davranışı engellemek için `false` r
 React'te bunun yerine:
 
 ```js
-function linkiAktiflestir() {
-  function clickOlayi(e) {
+function ActionLink() {
+  function handleClick(e) {
     e.preventDefault();
     console.log('Bağlantıya tıklandı.');
   }
 
   return (
-    <a href="#" onClick={clickOlayi}>
+    <a href="#" onClick={handleClick}>
       Tıkla
     </a>
   );
@@ -69,64 +69,64 @@ Bunun yerine, element başlangıçta oluşturulduğunda bir click izleyicisi olu
 
 Bir componenti ES6 classı kullanarak tanımladığınızda, ortak bir desen,
 bir olay işleyicisinin classtaki bir fonksiyon olmasını sağlar.
-Örneğin, bu `AcikKapali` componenti, kullanıcının "Açık" ve "Kapalı" durumları arasında geçiş yapmasını sağlayan bir buton oluşturur:
+Örneğin, bu `Toggle` componenti, kullanıcının "Açık" ve "Kapalı" durumları arasında geçiş yapmasını sağlayan bir buton oluşturur:
 
 
 ```js
-class AcikKapali extends React.Component {
+class Toggle extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {acikMi: true};
+    this.state = {isToggleOn: true};
 
     // Click, change gibi olayların çalışabilmesi için aşağıdaki gibi bind etmek gerekir.
-    this.clickOlayi = this.clickOlayi.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   clickOlayi() {
     this.setState(prevState => ({
-      acikMi: !prevState.acikMi
+      isToggleOn: !prevState.isToggleOn
     }));
   }
 
   render() {
     return (
-      <button onClick={this.clickOlayi}>
-        {this.state.acikMi ? "Açık" : "Kapalı"}
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'Açık' : 'Kapalı'}
       </button>
     );
   }
 }
 
 ReactDOM.render(
-  <AcikKapali />,
-  document.getElementById("root")
+  <Toggle />,
+  document.getElementById('root')
 );
 ```
 
-CodePen'de Deneyin
+<a href="http://codepen.io/gaearon/pen/xEmzGg?editors=0010">CodePen'de Deneyin</a>
 
 <i>Bind etmek ile ilgili detaylı bilgi için kendi yazığım <a href="https://omergulcicek.com/blog/bind-fonksiyonu">bind fonksiyonu</a>
 adlı makaleyi okuyabilirsiniz.</i>
 
 JSX geriçağırımlarında bu konuda dikkatli olmalısınız. JavaScript'te, class fonskyionları varsayılan olarak bağlı değildir.
-`this.clickOlayi`'i `bind` etmeyi (bağlamayı) unutursanız ve `onClick`e iletirseniz, fonksiyon çağrıldığında bu `undefined` olur.
+`this.handleClick`'i `bind` etmeyi (bağlamayı) unutursanız ve `onClick`e iletirseniz, fonksiyon çağrıldığında bu `undefined` olur.
 
 Bu, React'e özgü davranış değildir; fonksiyonların JavaScript'te nasıl işlediğinin bir parçasıdır.
-Genellikle, onClick = {this.clickOlayi} gibi bir yöntemin arkasından `()` olmadan işaret ederseniz, bu yöntemi bind etmeniz gerekir.
+Genellikle, onClick = {this.handleClick} gibi bir yöntemin arkasından `()` olmadan işaret ederseniz, bu yöntemi bind etmeniz gerekir.
 
 Bu şekilde bind etmek istemiyorsanız, iki farklı yolu daha vardır.
 
 ```js
-class GirisButonu extends React.Component {
+class LoggingButton extends React.Component {
   // Bu syntax `this`'nin clickOlayi içinde bağlanmasını sağlar.
   // Uyarı: Bu *deneysel* bir syntaxtır.
-  clickOlayi = () => {
+  handleClick = () => {
     console.log(this);
   }
 
   render() {
     return (
-      <button onClick={this.clickOlayi}>
+      <button onClick={this.handleClick}>
         Tıkla
       </button>
     );
@@ -139,22 +139,22 @@ Bu syntax <a href="https://github.com/facebookincubator/create-react-app">Create
 Return işleminde bir ok fonksiyonu kullanabilirsiniz:
 
 ```js
-class GirisButonu extends React.Component {
-  clickOlayi() {
+class LoggingButton extends React.Component {
+  handleClick() {
     console.log(this);
   }
 
   render() {
     // Bu syntax `this`'in bind edilmesini sağlar.
     return (
-      <button onClick={(e) => this.clickOlayi(e)}>
+      <button onClick={(e) => this.handleClick(e)}>
         Tıkla
       </button>
     );
   }
 }
 ```
-Bu syntax ile ilgili sorun, `LoggingButton `un her işleyişinde farklı bir callback oluşturulmasıdır.
+Bu syntax ile ilgili sorun, `LoggingButton`un her işleyişinde farklı bir callback oluşturulmasıdır.
 Çoğu durumda, bu iyi.
 Bununla birlikte, bu callback, alt componentlere `props` olarak iletilirse, bu componentler ek bir yeniden oluşturma işleyebilir.
 Genellikle, constructorde bind etmenizi öneririz.
@@ -165,8 +165,8 @@ Bir döngü içinde, bir event olayına fazladan bir parametre göndermek isteye
 Örneğin, `id` satır kimliğiyse, aşağıdakilerden herhangi biri işe yarayabilir:
 
 ```js
-<button onClick={(e) => this.satiriSil(id, e)}>Satırı Sil</button>
-<button onClick={this.satiriSil.bind(this, id)}>Satırı Sil</button>
+<button onClick={(e) => this.deleteRow(id, e)}>Satırı Sil</button>
+<button onClick={this.deleteRow.bind(this, id)}>Satırı Sil</button>
 ```
 
 Yukarıdaki iki satır eşittir, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">ok fonksiyonları</a>nı ve

@@ -15,12 +15,11 @@ React ile önce teker teker puzzle parçalarını oluşturup ardından bunları 
 Bir componenti tanımlamanın en basit yolu, bir JavaScript fonksiyonu yazmaktır:
 
 ```js
-function Hosgeldin(props) {
-  return <h1>Merhaba {props.ad}</h1>;
+function Welcome(props) {
+  return <h1>Merhaba {props.name}</h1>;
 }
 ```
-Bu fonksiyon geçerli bir React componenti olduğundan, tek bir `props` parametresini obje olarak alır ve
-bir React componenti return eder.
+Bu fonksiyon geçerli bir React componenti olduğundan, tek bir `props` parametresini obje olarak alır ve bir React componenti return eder.
 
 Bu componenti "fonksiyonel" olarak adlandırırız çünkü tam anlamıyla JavaScript fonksiyonudur.
 
@@ -28,9 +27,9 @@ Bir componenti tanımlamak için bir ES6 sınıfı da kullanabilirsiniz:
 (<i>ES6 hakkında detaylar eklenecektir.</i>)
 
 ```js
-class Hosgeldin extends React.Component {
+class Welcome extends React.Component {
   render() {
-    return <h1>Merhaba {this.props.ad}</h1>;
+    return <h1>Merhaba {this.props.name}</h1>;
   }
 }
 ```
@@ -54,24 +53,24 @@ const element = <div />;
 Bununla birlikte, elementler componentleri de temsil edebilir:
 
 ```js
-const element = <Hosgeldin ad="Ömer" />;
+const element = <Welcome name="Ömer" />;
 ```
 
 React, kullanıcı tanımlı bir componenti temsil eden bir element görürse, JSX attributelerini tek bir obje olarak bu componente aktarır.
 Bu objeye `props` diyoruz.
 
-<i>Yani bir componente `<Hosgeldin ad="Ömer" soyad="Gülçiçek" meslek="Yazılım Mühendisi" />` gibi
+<i>Yani bir componente `<Welcome name="Ömer" surname="Gülçiçek" job="Yazılım Mühendisi" />` gibi
 birden çok attribute eklediğimiz zaman, React bunları aşağıdaki gibi tek bir objede toplar, buna `props` denir.
-Ardından bu props objesini `Hosgeldin` componentine parametre olarak gönderir.
+Ardından bu props objesini `Welcome` componentine parametre olarak gönderir.
 `Hosgeldin` componentinde `props.ad` kullanım şekli ile "Ömer" değerini çekebiliriz.
 
 ```html
-<Hosgeldin ad="Ömer" soyad="Gülçiçek" meslek="Yazılım Mühendisi" />
+<Welcome name="Ömer" surname="Gülçiçek" job="Yazılım Mühendisi" />
 
 props = {
-ad: "Ömer",
-soyad: "Gülçiçek",
-meslek: "Yazılım Mühendisi"
+name: "Ömer",
+surname: "Gülçiçek",
+job: "Yazılım Mühendisi"
 }
 ```
 </i>
@@ -79,26 +78,26 @@ meslek: "Yazılım Mühendisi"
 Örneğin, bu kod sayfaya "Merhaba Ömer" başlığını yazar:
 
 ```js
-function Hosgeldin(props) {
-  return <h1>Merhaba {props.ad}</h1>;
+function Welcome(props) {
+  return <h1>Merhaba {props.name}</h1>;
 }
 
-const element = <Hosgeldin ad="Ömer" />;
+const element = <Welcome name="Ömer" />;
 ReactDOM.render(
   element,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 ```
 
-CodePen'de Deneyin
+<a href="https://reactjs.org/redirect-to-codepen/components-and-props/rendering-a-component">CodePen'de Deneyin</a>
 
 Bu örnekteki olayları aşama aşama inceleyelim:
 
-1. `ReactDOM.render()` öğesini `<Hosgeldin ad="Ömer" />` elementiyle çağırırız.
+1. `ReactDOM.render()` öğesini `<Welcome name='Ömer' />` elementiyle çağırırız.
 
-2. React, `Hosgeldin` componentine parametre olarak `{ad: 'Ömer'}` objesini alır.
+2. React, `Welcome` componentine parametre olarak `{name: 'Ömer'}` objesini alır.
 
-3. `Hosgeldin` componenti `<h1>Merhaba Ömer</h1>` elementini return eder.
+3. `Welcome` componenti `<h1>Merhaba Ömer</h1>` elementini return eder.
 
 4. React DOM, DOM'u `<h1>Merhaba Ömer</h1>` olacak şekilde günceller.
 
@@ -106,7 +105,7 @@ Bu örnekteki olayları aşama aşama inceleyelim:
 >
 >Component adlarını daima büyük harfle başlatın.
 >
->Örneğin, `<div />` bir DOM etiketini temsil eder ama `<Hosgeldiniz />` bir componenti temsil eder.
+>Örneğin, `<div />` bir DOM etiketini temsil eder ama `<Welcome />` bir componenti temsil eder.
 
 <h2>Componentleri Oluşturmak</h2>
 
@@ -114,45 +113,45 @@ Component çıktılarında başka componentlere başvurabilir.
 Bu, herhangi bir componenti farklı şekillerde kullanmamızı sağlar.
 Bir buton, bir form, bir diyalog, bir ekran: React uygulamalarında, hepsi genel olarak component olarak ifade edilir.
 
-Örneğin, `Hosgeldin`'i birçok kez çağıran bir `Uygulama` componenti oluşturabiliriz:
+Örneğin, `Welcome`'i birçok kez çağıran bir `App` componenti oluşturabiliriz:
 
 ```js
-function Hosgeldin(props) {
-  return <h1>Merhaba {props.ad}</h1>;
+function Welcome(props) {
+  return <h1>Merhaba {props.name}</h1>;
 }
 
-function Uygulama() {
+function App() {
   return (
     <div>
-      <Hosgeldin ad="Ömer" />
-      <Hosgeldin ad="Muhammed" />
-      <Hosgeldin ad="Burak" />
+      <Welcome name="Ömer" />
+      <Welcome name="Muhammed" />
+      <Welcome name="Burak" />
     </div>
   );
 }
 
 ReactDOM.render(
-  <Uygulama />,
-  document.getElementById("root")
+  <App />,
+  document.getElementById('root')
 );
 ```
 
-CodePen'de Deneyin
+<a href="https://reactjs.org/redirect-to-codepen/components-and-props/composing-components">CodePen'de Deneyin</a>
 
-Genelde, React uygulamalarında tek bir `Uygulama` componenti çağrılır.
+Genelde, React uygulamalarında tek bir `App` componenti çağrılır.
 Bununla birlikte, React'ı varolan bir uygulamaya entegre ederseniz,
 `Buton` gibi küçük bir component ile iç componentten dışa doğru kodlamaya başlayabilir ve
 görünüm hiyerarşisinin en üst noktasına yavaş yavaş ilerleyebilirsiniz.
 
 Bu örnekteki olaylarıda aşama aşama inceleyelim:
 
-1. `ReactDOM.render()` ilk olarak `<Uygulama />` componentini çağırdı.
+1. `ReactDOM.render()` ilk olarak `<App />` componentini çağırdı.
 
-2. `<Uygulama />` componenti ise 3 tane `<Hosgeldin />` componenti return edecek.
-Fakat `<Hosgeldin />` componentine parametre olarak farklı objeler yollanmış.
+2. `<App />` componenti ise 3 tane `<Welcome />` componenti return edecek.
+Fakat `<Welcome />` componentine parametre olarak farklı objeler yollanmış.
 
-3. İlk `<Hosgeldin />` componenti ekrana `Merhaba Ömer` yazacak.
-Ardından tekrar `<Hosgeldin />` componenti çağrılacak fakat bu sefer objedeki ad Muhammed, son olarakta Burak olacak.
+3. İlk `<Welcome />` componenti ekrana `Merhaba Ömer` yazacak.
+Ardından tekrar `<Welcome />` componenti çağrılacak fakat bu sefer objedeki ad Muhammed, son olarakta Burak olacak.
 
 4. Sonuç olarak ekranda bir `div` içerisinde `Merhaba Ömer`, `Merhaba Muhammed` ve `Merhaba Burak` yazan başlıklar yazdırılacaktır.
 
@@ -164,106 +163,106 @@ Componentleri daha küçük componentleri bölmekten korkmayın.
 
 
 ```js
-function Yorum(props) {
+function Comment(props) {
   return (
-    <div className="Yorum">
-      <div className="KullaniciBilgisi">
-        <img className="Profil"
-          src={props.kullanici.profilURL}
-          alt={props.kullanici.ad}
+    <div className="Comment">
+      <div className="UserInfo">
+        <img className="Avatar"
+          src={props.author.avatarUrl}
+          alt={props.author.name}
         />
-        <div className="KullaniciBilgisi-ad">
-          {props.kullanici.ad}
+        <div className="UserInfo-name">
+          {props.author.name}
         </div>
       </div>
-      <div className="Yorum-yazi">
-        {props.yazi}
+      <div className="Comment-text">
+        {props.text}
       </div>
-      <div className="Yorum-tarih">
-        {tarihFormati(props.tarih)}
+      <div className="Comment-date">
+        {formatDate(props.date)}
       </div>
     </div>
   );
 }
 ```
 
-CodePen'de Deneyin
+<a href="https://reactjs.org/redirect-to-codepen/components-and-props/extracting-components">CodePen'de Deneyin</a>
 
-`kullanici` (obje), `yazi` (string) ve `tarih` (tarih) props olarak kabul eder ve bir yorum divi return eder.
+`author` (obje), `text` (string) ve `date` (tarih) props olarak kabul eder ve bir yorum divi return eder.
 
 Bu component, iç içe birçok componenti olduğu için değiştirilmesi zor olabilir,
 bu yüzden componenti parçalayarak küçük componentler oluşturalım.
 
-İlk olarak `Profil` componentini oluşturalım:
+İlk olarak `Avatar` componentini oluşturalım:
 
 ```js
-function Profil(props) {
+function Avatar(props) {
   return (
-    <img className="Profil"
-      src={props.kullanici.profilURL}
-      alt={props.kullanici.ad}
+    <img className="Avatar"
+      src={props.user.avatarUrl}
+      alt={props.user.name}
     />
   );
 }
 ```
 
-Ardından `Yorum` componentinin içerisinden, yeni oluşturduğumuz `Profil` componentini çağıralım.
+Ardından `Comment` componentinin içerisinden, yeni oluşturduğumuz `Avatar` componentini çağıralım.
 
 ```js
-function Yorum(props) {
+function Comment(props) {
   return (
-    <div className="Yorum">
-      <div className="KullaniciBilgisi">
-        <Profil kullanici={props.kullanici} />
-        <div className="KullaniciBilgisi-ad">
-          {props.kullanici.ad}
+    <div className="Comment">
+      <div className="UserInfo">
+        <Avatar user={props.author} />
+        <div className="UserInfo-name">
+          {props.author.name}
         </div>
       </div>
-      <div className="Yorum-yazi">
-        {props.yazi}
+      <div className="Comment-text">
+        {props.text}
       </div>
-      <div className="Yorum-tarih">
-        {tarihFormati(props.tarih)}
+      <div className="Comment-date">
+        {formatDate(props.date)}
       </div>
     </div>
   );
 }
 ```
 
-Ardından, `KullaniciBilgisi` componentini ayıklayacağız:
+Ardından, `UserInfo` componentini ayıklayacağız:
 
 ```js
-function KullaniciBilgisi(props) {
+function UserInfo(props) {
   return (
-    <div className="KullaniciBilgisi">
-      <Profil user={props.kullanici} />
-      <div className="KullaniciBilgisi-ad">
-        {props.kullanici.ad}
+    <div className="UserInfo">
+      <Avatar user={props.user} />
+      <div className="UserInfo-name">
+        {props.user.name}
       </div>
     </div>
   );
 }
 ```
 
-Şimdide `Yorum` componentinin nasıl görüldüğüne bakalım.
+Şimdide `Comment` componentinin nasıl görüldüğüne bakalım.
 
 ```js
-function Yorum(props) {
+function Comment(props) {
   return (
-    <div className="Yorum">
-      <KullaniciBilgisi user={props.kullanici} />
-      <div className="Yorum-yazi">
-        {props.yazi}
+    <div className="Comment">
+      <UserInfo user={props.author} />
+      <div className="Comment-text">
+        {props.text}
       </div>
-      <div className="Yorum-tarih">
-        {tarihFormati(props.tarih)}
+      <div className="Comment-date">
+        {formatDate(props.date)}
       </div>
     </div>
   );
 }
 ```
 
-CodePen'de Deneyin
+<a href="https://reactjs.org/redirect-to-codepen/components-and-props/extracting-components-continued">CodePen'de Deneyin</a>
 
 Componentleri küçük parçalara bölmek başlangıçta gereksiz bir iş yada zaman kaybı gibi gözükebilir,
 ancak daha büyük uygulamalarda tekrar kullanılabilir component paletine sahip olmak önemlidir.
@@ -271,10 +270,10 @@ ancak daha büyük uygulamalarda tekrar kullanılabilir component paletine sahip
 <h2>Propslar Yalnızca Okunabilir</h2>
 
 Bir component (fonksiyon veya class) oluşturduğunuzda, kendi propslarını hiçbir zaman değiştirmemelisiniz.
-Bir `topla` fonksiyonu düşünün:
+Bir `sum` fonksiyonu düşünün:
 
 ```js
-function topla(a, b) {
+function sum(a, b) {
   return a + b;
 }
 ```
@@ -285,8 +284,8 @@ aynı parametreler için aynı sonuca her zaman return edilir.
 Buna karşın, bu fonksiyon kendi parametresini değiştirdiği için saf değildir:
 
 ```js
-function hesapla(hesap, tutar) {
-  hesap.toplam -= tutar;
+function withdraw(account, amount) {
+  account.total -= amount;
 }
 ```
 

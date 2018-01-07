@@ -10,7 +10,8 @@ const element = <h1>Merhaba Dünya</h1>;
 Tarayıcı DOM öğelerinden farklı olarak, React elementleri düz nesnelerdir ve oluşturulması kolaydır.
 React DOM, React öğeleriyle eşleşecek şekilde DOM'u güncellemekle ilgilenir.
 
-<i>Bu konu hakkında detaylı Türkçe bilgi için <a href="https://fatihacet.com/react-ve-virtual-dom-mimarisi-uzerine"/>Fatih Acet'in makalesi</a>ne göz atabilirsiniz.</i>
+<i>Bu konu hakkında detaylı Türkçe bilgi için </i><a href="https://fatihacet.com/react-ve-virtual-dom-mimarisi-uzerine"/>Fatih Acet'in makalesi</a><i>ne göz atabilirsiniz.</i>
+
 >**Not:**
 >
 >Daha yaygın olarak bilinen component kavramıyla elementler karıştırılabilir.
@@ -40,7 +41,7 @@ React öğesini bir root DOM düğümüne dönüştürmek için, her ikisini de 
 const element = <h1>Merhaba Dünya!</h1>;
 ReactDOM.render(
   element,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 ```
 
@@ -52,14 +53,14 @@ Sayfanızda "Merhaba Dünya!" başlığı görüntülenecektir.
 
 React elementleri değişmez. Bir öğe oluşturduktan sonra, öğesinin alt öğelerini veya attributelerini değiştiremezsiniz.
 
-<i>Konu hakkında detaylı bilgi için <a href="https://medium.com/codefiction/i%CC%87pin-ucunu-ka%C3%A7%C4%B1rmamak-redux-8d822da0d19b">Onur Aykaç'ın yazdığı makale</a>de <b>Javascript’te immutable ve mutable kavramı</b> bölümünü okuyabilirsiniz.</i>
+<i>Konu hakkında detaylı bilgi için </i><a href="https://medium.com/codefiction/i%CC%87pin-ucunu-ka%C3%A7%C4%B1rmamak-redux-8d822da0d19b">Onur Aykaç'ın yazdığı makale</a><i>de <b>Javascript’te immutable ve mutable kavramı</b> bölümünü okuyabilirsiniz.</i>
 
 Bildiğimiz kadarıyla UI'ı güncellemenin tek yolu yeni bir element oluşturmak ve `ReactDOM.render()` işlevine geçirmektir.
 
 Aşağıdaki saat örneğini inceleyelim.
 
 ```js
-function saniye() {
+function tick() {
   const element = (
     <div>
       <h1>Merhaba Dünya!</h1>
@@ -68,11 +69,11 @@ function saniye() {
   );
   ReactDOM.render(
     element,
-    document.getElementById("root")
+    document.getElementById('root')
   );
 }
 
-setInterval(saniye, 1000);
+setInterval(tick, 1000);
 ```
 
 CodePen'de Deneyin
@@ -98,4 +99,3 @@ Tarayıcı üzerinden bu örneği inceleyerek doğrulayabilirsiniz.
 <img src="https://reactjs.org/granular-dom-updates-c158617ed7cc0eac8f58330e49e48224.gif" alt="react dom örneği">
 
 <a href="https://omergulcicek.github.io/reactjs/component-ve-props">Sıradaki Eğitim: Component ve Props</a>
-

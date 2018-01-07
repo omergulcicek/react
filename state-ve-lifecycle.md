@@ -8,7 +8,7 @@ saat örneğini düşünün.
 Görüntülenen çıktıyı değiştirmek için `ReactDOM.render()` öğesini her saniye çağırıyorduk:
 
 ```js
-function tiktak() {
+function tick() {
   const element = (
     <div>
       <h1>Merhaba Dünya!</h1>
@@ -17,59 +17,59 @@ function tiktak() {
   );
   ReactDOM.render(
     element,
-    document.getElementById("root")
+    document.getElementById('root')
   );
 }
 
-setInterval(tiktak, 1000);
+setInterval(tick, 1000);
 ```
 
 CodePen'de Deneyin
 
-Bu bölümde, `Saat` componentini yeniden kullanımının doğru yöntemini öğreneceğiz.
+Bu bölümde, `Clock` componentini yeniden kullanımının doğru yöntemini öğreneceğiz.
 
 Zamanlayıcıyı kendisi ayarlayacak ve her saniyede bir güncelleme yapacaktır.
 
-`Saat` componentinin nasıl göründüğünü yazmakla başlayabiliriz:
+`Clock` componentinin nasıl göründüğünü yazmakla başlayabiliriz:
 
 ```js
-function Saat(props) {
+function Clock(props) {
   return (
     <div>
       <h1>Merhaba Dünya!</h1>
-      <h2>Saat şu anda {props.tarih.toLocaleTimeString()}</h2>
+      <h2>Saat şu anda {props.date.toLocaleTimeString()}</h2>
     </div>
   );
 }
 
-function tiktak() {
+function tick() {
   ReactDOM.render(
-    <Saat tarih={new Date()} />,
-    document.getElementById("root")
+    <Clock date={new Date()} />,
+    document.getElementById('root')
   );
 }
 
-setInterval(tiktak, 1000);
+setInterval(tick, 1000);
 ```
 
 CodePen'de Deneyin
 
 <i>Daha önce anlatılmıştı fakat tekrar etmekte fayda var.
-`Saat` componenti çağrılırken attribute olarak `tarih={new Date()}` gönderiliyor.
-Bu attribute, `Saat` componentine parametre olarak gelir ve adı `props`tur.
-`Saat` componentine bu tarihi yazdırmak içinde `props.tarih` şeklinde kullanıyoruz.
+`Clock` componenti çağrılırken attribute olarak `date={new Date()}` gönderiliyor.
+Bu attribute, `Clock` componentine parametre olarak gelir ve adı `props`tur.
+`Clock` componentine bu tarihi yazdırmak içinde `props.date` şeklinde kullanıyoruz.
 </i>
 
-Bunu bir kez yazmak ve `Saat` component güncellemesini kendisi gerçekleştirsin isteriz:
+Bunu bir kez yazmak ve `Clock` component güncellemesini kendisi gerçekleştirsin isteriz:
 
 ```js
 ReactDOM.render(
-  <Saat />,
-  document.getElementById("root")
+  <Clock />,
+  document.getElementById('root')
 );
 ```
 
-Bunu uygulamak için `Saat` componentine `state` eklemeliyiz.
+Bunu uygulamak için `Clock` componentine `state` eklemeliyiz.
 Stateler proplara benzer, ancak tamamen component tarafından kontrol edilir.
 Daha önce belirttiğimiz gibi, class olarak tanımlanan componentlerin bazı ilave özellikler var.
 State yalnızca classlar için kullanılabilen bir özelliktir.
@@ -80,9 +80,9 @@ State yalnızca classlar için kullanılabilen bir özelliktir.
 Fakat React'ta class olarak oluşturmaya alışmak daha doğru olacaktır.
 Şimdi adım adım bir fonksiyonun class'a çevrilme işlemini inceleyelim.</i>
 
-`Saat` fonksiyon componentini aşağıdaki adımlarla class componentine dönüştürebiliriz.
+`Clock` fonksiyon componentini aşağıdaki adımlarla class componentine dönüştürebiliriz.
 
-1. `React.Component`ine extend eden aynı ada sahip bir ES6 classı oluşturalım. (<i>`class Saat extends React.Component`</i>)
+1. `React.Component`ine extend eden aynı ada sahip bir ES6 classı oluşturalım. (<i>`class Clock extends React.Component`</i>)
 
 2. Buna `render()` adı verilen boş bir fonksiyon ekleyin.
 
@@ -91,12 +91,12 @@ Fakat React'ta class olarak oluşturmaya alışmak daha doğru olacaktır.
 4. `props`un adını `this.props` olarak değiştirin.
 
 ```js
-class Saat extends React.Component {
+class Clock extends React.Component {
   render() {
     return (
       <div>
         <h1>Merhaba Dünya!</h1>
-        <h2>Saat şu anda {this.props.tarih.toLocaleTimeString()}/h2>
+        <h2>Saat şu anda {this.props.date.toLocaleTimeString()}/h2>
       </div>
     );
   }
@@ -108,7 +108,7 @@ CodePen'de Deneyin
 <i>Fonksiyon component yerine class component kullanımına alışın.
 Üst kısımdaki adımları anlamadıysanız tekrar tekrar okumanızda fayda var.</i>
 
-`Saat` componenti bir fonksiyon yerine bir class olarak tanımlanmış oldu.
+`Clock` componenti bir fonksiyon yerine bir class olarak tanımlanmış oldu.
 
 Bu, `state` ve `lifecycle` (yaşam döngüsü) gibi ek özellikleri kullanmamızı sağlar.
 
@@ -116,15 +116,15 @@ Bu, `state` ve `lifecycle` (yaşam döngüsü) gibi ek özellikleri kullanmamız
 
 Bir class'a state eklemek için aşağıdaki 3 adımı dikkatlice inceleyiniz.
 
-1. `this.props.tarih` satırını `this.state.tarih` olarak güncelleyin:
+1. `this.props.date` satırını `this.state.date` olarak güncelleyin:
 
 ```js
-class Saat extends React.Component {
+class Clock extends React.Component {
   render() {
     return (
       <div>
         <h1>Merhaba Dünya!</h1>
-        <h2>Saat şu anda {this.state.tarih.toLocaleTimeString()}</h2>
+        <h2>Saat şu anda {this.state.date.toLocaleTimeString()}</h2>
       </div>
     );
   }
@@ -138,17 +138,17 @@ Bir classta "constructor" ismiyle yalnızca bir tane özel fonskiyon olabilir.
 Class oluşturulduğu anda içerisindeki kodlar çalışır.</i>
 
 ```js
-class Saat extends React.Component {
+class Clock extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {tarih: new Date()};
+    this.state = {date: new Date()};
   }
 
   render() {
     return (
       <div>
         <h1>Merhaba Dünya!</h1>
-        <h2>Saat şu anda {this.state.tarih.toLocaleTimeString()}</h2>
+        <h2>Saat şu anda {this.state.date.toLocaleTimeString()}</h2>
       </div>
     );
   }
@@ -162,18 +162,18 @@ class Saat extends React.Component {
 ```js
   constructor(props) {
     super(props);
-    this.state = {tarih: new Date()};
+    this.state = {date: new Date()};
   }
 ```
 
 Class componenleri her zaman constructore `props` ile çağırmalıdır.
-`<Saat/>` componentinden `tarih` attribute'ünü kaldırın:
+`<Clock />` componentinden `date` attribute'ünü kaldırın:
 
 ```js
 ReactDOM.render(
-  //eski hali = <Saat tarih={new Date()} />
-  <Saat />,
-  document.getElementById("root")
+  //eski hali = <Clock date={new Date()} />
+  <Clock />,
+  document.getElementById('root')
 );
 ```
 
@@ -182,37 +182,37 @@ Zamanlayıcı kodunu daha sonra componentin kendisine geri ekleyeceğiz.
 Şu anda sonuç şöyle görünüyor:
 
 ```js
-class Saat extends React.Component {
+class Clock extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {tarih: new Date()};
+    this.state = {date: new Date()};
   }
 
   render() {
     return (
       <div>
         <h1>Merhaba Dünya!</h1>
-        <h2>Saat şu anda {this.state.tarih.toLocaleTimeString()}</h2>
+        <h2>Saat şu anda {this.state.date.toLocaleTimeString()}</h2>
       </div>
     );
   }
 }
 
 ReactDOM.render(
-  <Saat />,
-  document.getElementById("root")
+  <Clock />,
+  document.getElementById('root')
 );
 ```
 
 CodePen'de Deneyin
 
-Şimdi, `Saat`i kendi zamanlayıcısını oluşturup her saniyede bir güncelleyeceğiz.
+Şimdi, `Clock`i kendi zamanlayıcısını oluşturup her saniyede bir güncelleyeceğiz.
 
 <h2>Bir Classa Lifecycle Fonksiyonları Ekleme</h2>
 
 Birçok componente sahip uygulamalarda, componentler yok edildiğinde alınan kaynakları boşaltmak çok önemlidir.
 
-`Saat`, DOM'a ilk defa çağırıldığında bir zamanlayıcı ayarlamak istiyoruz. Buna React'te `mounting` denir.
+`Clock`, DOM'a ilk defa çağırıldığında bir zamanlayıcı ayarlamak istiyoruz. Buna React'te `mounting` denir.
 
 Ayrıca, Saat componentinden üretilen DOM kaldırıldığında,
 bu <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/clearInterval">zamanlayıcıyı temizlemek</a> istiyoruz.
@@ -221,10 +221,10 @@ Buna ise React'te `unmounting` denir.
 Bir component DOM'a yazdırılıp kaldırıldığında bazı kod satırlarını çalıştırmak için class componente özel yöntemler ekleyebiliriz:
 
 ```js
-class Saat extends React.Component {
+class Clock extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {tarih: new Date()};
+    this.state = {date: new Date()};
   }
 
   componentDidMount() {
@@ -239,7 +239,7 @@ class Saat extends React.Component {
     return (
       <div>
         <h1>Merhaba Dünya!</h1>
-        <h2>Saat şu anda {this.state.tarih.toLocaleTimeString()}</h2>
+        <h2>Saat şu anda {this.state.date.toLocaleTimeString()}</h2>
       </div>
     );
   }
@@ -252,16 +252,16 @@ Bu, zamanlayıcı ayarlamak için iyi bir yerdir:
 
 ```js
   componentDidMount() {
-    this.zamanlayici = setInterval(
-      () => this.tiktak(),
+    this.timerID = setInterval(
+      () => this.tick(),
       1000
     );
   }
 ```
 
-<i>`() => this.tiktak()` kullanımı `ES6` ile gelen kısa fonksiyon kullanımıdır.
+<i>`() => this.tick()` kullanımı `ES6` ile gelen kısa fonksiyon kullanımıdır.
 Bu kullanımlara daha hakim olmak için ilerleyen zamanda gerekli linkler eklenecektir.
-`ES5`'teki kullanımı `function() { return this.tiktak();` }</i>
+`ES5`'teki kullanımı `function() { return this.tick();` }</i>
 
 Zamanlayıcı `this`in üzerine nasıl kaydettiğimizi unutmayın.
 
@@ -270,11 +270,11 @@ Zamanlayıcıyı `componentWillUnmount()` fonksiyonunda temizleyeceğiz:
 
 ```js
   componentWillUnmount() {
-    clearInterval(this.zamanlayici);
+    clearInterval(this.timerID);
   }
 ```
 
-Son olarak, `Saat` componentini her saniyede bir çalışacağı tiktak() adında bir fonksiyon oluşturacağız.
+Son olarak, `Clock` componentini her saniyede bir çalışacağı tick() adında bir fonksiyon oluşturacağız.
 
 Bu fonksiyon state'eki tarihi `this.setState()` kullanarak güncelleyecektir.
 
@@ -282,28 +282,28 @@ Bu fonksiyon state'eki tarihi `this.setState()` kullanarak güncelleyecektir.
 Bizler (`this.setState()` ile) `state`'i değiştireceğiz, React ise o state'i kullanan yerleri (`props`ları) kendisi güncelleyecek.</i>
 
 ```js
-class Saat extends React.Component {
+class Clock extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {tarih: new Date()};
+    this.state = {date: new Date()};
   }
 
   componentDidMount() {
-    this.zamanlayici = setInterval(
-      () => this.tiktak(),
+    this.timerID = setInterval(
+      () => this.tick(),
       1000
     );
   }
 
   componentWillUnmount() {
-    clearInterval(this.zamanlayici);
+    clearInterval(this.timerID);
   }
-  
+
   //Fonksiyon tanımlarken başına "function" yazmadığımıza dikkat edin.
   //React componentleri içerisinde fonksiyon tanımlamak istediğimizde direkt isim vererek yazıyoruz.
-  tiktak() {
+  tick() {
     this.setState({
-      tarih: new Date()
+      date: new Date()
     });
   }
 
@@ -311,15 +311,15 @@ class Saat extends React.Component {
     return (
       <div>
         <h1>Merhaba Dünya!</h1>
-        <h2>Saat şu anda {this.state.tarih.toLocaleTimeString()}</h2>
+        <h2>Saat şu anda {this.state.date.toLocaleTimeString()}</h2>
       </div>
     );
   }
 }
 
 ReactDOM.render(
-  <Saat />,
-  document.getElementById("root")
+  <Clock />,
+  document.getElementById('root')
 );
 ```
 
@@ -327,24 +327,24 @@ CodePen'de Deneyin
 
 Neler olup bittiğini hızla özetleyelim:
 
-1) `ReactDOM.render()` içerisinde `<Saat />` componenti çağırıldığında, React `Saat` componentinin constructorünü çağırır.
-`Saat` componentinin geçerli saati göstermesi gerektiği için `this.state`'i geçerli saat ile başlatır.
+1) `ReactDOM.render()` içerisinde `<Clock />` componenti çağırıldığında, React `Clock` componentinin constructorünü çağırır.
+`Clock` componentinin geçerli saati göstermesi gerektiği için `this.state`'i geçerli saat ile başlatır.
 Daha sonra bu state güncellenecek.
 
-2) React sonra `Saat` componentinin `render()` fonksiyonunu çağırır.
+2) React sonra `Clock` componentinin `render()` fonksiyonunu çağırır.
 React, ekranda neyin görüntülenmesi gerektiğini öğrenir.
-Daha sonra, `Saat` componentinin çıktısı ile eşleşecek şekilde DOM'u güncelleştirir.
+Daha sonra, `Clock` componentinin çıktısı ile eşleşecek şekilde DOM'u güncelleştirir.
 
-3) `Saat` componentinin çıktısı DOM'a eklendiğinde, React, `componentDidMount()` fonksiyonunu çağırır.
-Her saniye çalışacak olan `tiktak()` fonksiyonunu `zamanlayici`da tutar.
+3) `Clock` componentinin çıktısı DOM'a eklendiğinde, React, `componentDidMount()` fonksiyonunu çağırır.
+Her saniye çalışacak olan `tick()` fonksiyonunu `timerID`de tutar.
 
-4) Her saniye tarayıcı `tiktak()` fonksiyonunu çağırır.
-`Saat` componentinin içinde, geçerli saati içeren bir nesneyle `setState()`i çağırarak
+4) Her saniye tarayıcı `tick()` fonksiyonunu çağırır.
+`Clock` componentinin içinde, geçerli saati içeren bir nesneyle `setState()`i çağırarak
 bir UI güncellemesi için`setInterval()` fonksiyonunu hazırlar.
 `setState()` çağrısı sayesinde React, statin değiştiğini bilir ve ekranda ne olması gerektiğini öğrenmek için tekrar `render()` eder.
-Bu sefer `render()` yöntemindeki `this.state.tarih` güncellenmiş olacaktır. React DOM'u buna göre günceller.
+Bu sefer `render()` yöntemindeki `this.state.date` güncellenmiş olacaktır. React DOM'u buna göre günceller.
 
-5) `Saat` componenti DOM'dan kaldırıldıysa, React, `zamanlayici` durduğu anda `componentWillUnmount()` fonksiyonunu çağırır.
+5) `Clock` componenti DOM'dan kaldırıldıysa, React, `timerID` durduğu anda `componentWillUnmount()` fonksiyonunu çağırır.
 
 <h2>State'i Doğru Kullanmak</h2>
 
@@ -356,14 +356,14 @@ Bu sefer `render()` yöntemindeki `this.state.tarih` güncellenmiş olacaktır. 
 
 ```js
 // Yanlış Kullanım
-this.state.yorum = 'Merhaba';
+this.state.comment = 'Merhaba';
 ```
 
 `setState()`i şu şekilde kullanın:
 
 ```js
 // Doğru Kullanım
-this.setState({yorum: 'Merhaba'});
+this.setState({comment: 'Merhaba'});
 ```
 
 `this.state`i atayabileceğiniz tek yer `constructor`dür.
@@ -379,7 +379,7 @@ React, birden fazla `setState()` çağrısını performans için tek bir güncel
 ```js
 // Yanlış Kullanım
 this.setState({
-  counter: this.state.sayac + this.props.artis,
+  counter: this.state.counter + this.props.increment,
 });
 ```
 Bunu düzeltmek için, bir objeden ziyade bir fonksiyonu kabul eden ikinci bir `setState()` formunu kullanın.
@@ -388,7 +388,7 @@ Bu işlev önceki durumu ilk argüman olarak, güncelleme ikinci argüman olarak
 ```js
 // Doğru Kullanım
 this.setState((prevState, props) => ({
-  counter: prevState.sayac + props.artis
+  counter: prevState.counter + props.increment
 }));
 ```
 
@@ -398,7 +398,7 @@ this.setState((prevState, props) => ({
 // Doğru Kullanım
 this.setState(function(prevState, props) {
   return {
-    counter: prevState.sayac + props.artis
+    counter: prevState.counter + props.increment
   };
 });
 ```
@@ -409,34 +409,34 @@ this.setState(function(prevState, props) {
 
 
 ```js
-  constructor(props) {
-    super(props);
-    this.state = {
-      mesajlar: [],
-      yorumlar: []
-    };
-  }
+constructor(props) {
+  super(props);
+  this.state = {
+    posts: [],
+    comments: []
+  };
+}
 ```
 
 Ayrıca bunları ayrı `setState()` çağrılarıyla bağımsız olarakta güncelleyebilirsiniz:
 
 ```js
-  componentDidMount() {
-    fetchPosts().then(yanit => {
-      this.setState({
-        posts: yanit.mesajlar
-      });
+componentDidMount() {
+  fetchPosts().then(response => {
+    this.setState({
+      posts: response.posts
     });
+  });
 
-    fetchComments().then(yanit => {
-      this.setState({
-        comments: yanit.yorumlar
-      });
+  fetchComments().then(response => {
+    this.setState({
+      comments: response.comments
     });
-  }
+  });
+}
 ```
 
 <i>`setState`i kullandığımızda tüm state'ler değiştirilmez. Yalnızca belirtilen state güncellenir.
-Yani `this.setState({yorumlar})` şeklinde kullanıldığında sadece `this.state.yorumlar` güncellenir, `this.state.mesajlar` güncellenmez.</i>
+Yani `this.setState({comments})` şeklinde kullanıldığında sadece `this.state.comments` güncellenir, `this.state.posts` güncellenmez.</i>
 
 <a href="https://omergulcicek.github.io/reactjs/click-ve-change-olaylari">Sıradaki Eğitim: Click ve Change Olayları</a>

@@ -28,27 +28,27 @@ O halde JSX yazmaya başlayalım!
 
 Herhangi bir JavaScript ifadesini JSX'de süslü parantez içine sarmalayarak yerleştirebilirsiniz.
 
-<i>Örneğin; { 2 + 2 }, { kullanici.ad } ve { adSoyad(kullanici) } gibi sayısal işlem, obje, değişken, fonksiyon vb kullanabilirsiniz.</i>
+<i>Örneğin; { 2 + 2 }, { user.firstName } ve { formatName(user) } gibi sayısal işlem, obje, değişken, fonksiyon vb kullanabilirsiniz.</i>
 
 ```js
-function adSoyad(kullanici) {
-  return kullanici.ad + ' ' + kullanici.soyad;
+function formatName(user) {
+  return user.firstName + ' ' + user.lastName;
 }
 
-const kullanici = {
-  ad: "Ömer",
-  soyad: "Gülçiçek"
+const user = {
+  firstName: 'Ömer',
+  lastName: 'Gülçiçek'
 };
 
 const element = (
   <h1>
-    Merhaba, {adSoyad(kullanici)}!
+    Merhaba, {formatName(user)}!
   </h1>
 );
 
 ReactDOM.render(
   element,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 ```
 
@@ -61,11 +61,11 @@ Derleme sonrasında, JSX ifadeleri JavaScript işlevi haline gelir.
 Yani, if deyimleri ve döngüler içinde JSX'i kullanabilir ayrıca bir fonksiyondan JSX return edebiliriz.
 
 ```js
-function karsila(kullanici) {
-  if (kullanici) {
-    return <h1>Merhaba {adSoyad(kullanici)}!</h1>;
+function getGreeting(user) {
+  if (user) {
+    return <h1>Merhaba {formatName(user)}!</h1>;
   }
-  return <h1>Merhaba yabancı!</h1>;
+  return <h1>Merhaba yabancı.</h1>;
 }
 ```
 
@@ -79,7 +79,7 @@ const element = <div tabIndex="0"></div>;
 Bir attribute'e JavaScript ifadesi yerleştirmek için süslü parantezleri de kullanabilirsiniz:
 
 ```js
-const element = <img src={kullacini.profilURL}></img>;
+const element = <img src={user.avatarUrl}></img>;
 ```
 Bir attribute'e JavaScript ifadesi yerleştirirken süslü parantezler arasına tırnak işareti koymayın. Tırnak işaretleri string değerler için ve süslü parantezler ise JavaScript ifadeleri için kullanmanız gerekir. Her ikisi birden aynı attribute'te kullanılamaz.
 
@@ -94,7 +94,7 @@ Bir attribute'e JavaScript ifadesi yerleştirirken süslü parantezler arasına 
 Bir etiket boşsa (<i>çocuk içermiyorsa manasında</i>), XML gibi hemen `/>` ile kapatabilirsiniz:
 
 ```js
-const element = <img src={kullanici.profilURL} />;
+const element = <img src={user.avatarUrl} />;
 ```
 
 JSX etiketleri çocuk içerebilir:
@@ -108,16 +108,16 @@ const element = (
 );
 ```
 
-<i>JSX elementindeki ana kapsayıcının içindeki ifadeler `çocuk` olarak adlandırılır. Örneğin, üstteki ifadede `<div>` ana kapsayıcısının içerisinde bulunan `<h1>` ve `<h2>` etiketleri çocuk olarak adlandırılır.</i>
+<i>JSX elementindeki ana kapsayıcının içindeki ifadeler `çocuk` (child) olarak adlandırılır. Örneğin, üstteki ifadede `<div>` ana kapsayıcısının içerisinde bulunan `<h1>` ve `<h2>` etiketleri çocuk olarak adlandırılır.</i>
 
 <h2>JSX, Enjeksiyon Saldırılarını Önler</h2>
 
 Input'tan gelen içeriği JSX'e yerleştirmek güvenlidir:
 
 ```js
-const baslik = yanit.inputtanGelenKotuNiyetliGiris;
+const title = response.inputtanGelenKotuNiyetliGiris;
 // bu güvenlidir:
-const element = <h1>{baslik}</h1>;
+const element = <h1>{title}</h1>;
 ```
 
 Varsayılan olarak React DOM, JSX'in içindeki herhangi bir değeri değişkene atmadan önce ifadeyi unicode'a çevirir. Böylece, uygulamanızda açıkça yazılmamış bir şeyi hiçbir zaman enjekte edememenizi sağlar. İşlenmeden önce her şey bir string'e dönüştürülür. Bu, XSS saldırılarını önlemeye yardımcı olur.
@@ -134,7 +134,7 @@ Bu iki örnek aynıdır:
 
 ```js
 const element = (
-  <h1 className="selamlama">
+  <h1 className='greeting'>
     Merhaba Dünya!
   </h1>
 );
@@ -143,7 +143,7 @@ const element = (
 ```js
 const element = React.createElement(
   'h1',
-  {className: 'selamlama'},
+  {className: 'greeting'},
   'Merhaba Dünya!'
 );
 ```
@@ -155,7 +155,7 @@ const element = React.createElement(
 const element = {
   type: 'h1',
   props: {
-    className: 'selamlama',
+    className: 'greeting',
     children: 'Merhaba Dünya!'
   }
 };

@@ -37,6 +37,6 @@ Hatalı yerlerin düzeltilmesi için pull request gönderebilirsiniz.
 - <a href="https://omergulcicek.github.io/reactjs/listeler-ve-keyler">Listeler ve Keyler</a>
 - <a href="https://omergulcicek.github.io/reactjs/formlar">Formlar</a>
 - <a href="https://omergulcicek.github.io/reactjs/state-guncellemek">State Güncellemek</a>
-- <a href="https://omergulcicek.github.io/reactjs/cocuk-componentler-ve-inheritance">Çocuk Componentler ve Inheritance</a>
+- <a href="https://omergulcicek.github.io/reactjs/composition-ve-inheritance">Composition ve Inheritance.md</a>
 
 <i>Eklemeler yapılacaktır.</i>

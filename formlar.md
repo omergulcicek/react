@@ -1,13 +1,13 @@
 <h1>Formlar</h1>
 
 HTML form elemanları, React'te diğer DOM elemanlarından biraz farklı çalışır, çünkü form elemanlarının kendilerine has iç stateleri vardır.
-Örneğin, bu kod HTML'de bir form içerisinde `ad` girişi ister:
+Örneğin, bu kod HTML'de bir form içerisinde `name` girişi ister:
 
 ```html
 <form>
   <label>
     Adınız:
-    <input type="text" name="ad" />
+    <input type="text" name="name" />
   </label>
   <input type="submit" value="Gönder" />
 </form>
@@ -22,34 +22,34 @@ React state'te tek kaynak olarak ikisini birleştirebiliriz.
 Ardından form oluşturan React componenti, sonraki kullanıcı girişi üzerinde bu formda olanı da kontrol eder.
 Değeri React tarafından bu şekilde kontrol edilen bir giriş form elemanına `kontrollü component` denir.
 
-Örneğin, bir önceki örnekte, `ad` değerinin yazılıp submit edildiğinde `ad`ı alert ile yazdırmak istiyorsak,
+Örneğin, bir önceki örnekte, `name` değerinin yazılıp submit edildiğinde `name`ı alert ile yazdırmak istiyorsak,
 formu kontrollü bir component olarak oluşturabiliriz:
 
 ```javascript
-class Form extends React.Component {
+class NameForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {deger: ''};
+    this.state = {value: ''};
 
-    this.degisiklikOldu = this.degisiklikOldu.bind(this);
-    this.submitEdildi = this.submitEdildi.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  degisiklikOldu(event) {
-    this.setState({deger: event.target.value});
+  handleChange(event) {
+    this.setState({value: event.target.value});
   }
 
-  submitEdildi(event) {
-    alert("Submit'lenen değer: " + this.state.deger);
+  handleSubmit(event) {
+    alert('Gönderilen değer: ' + this.state.value);
     event.preventDefault();
   }
 
   render() {
     return (
-      <form onSubmit={this.submitEdildi}>
+      <form onSubmit={this.handleSubmit}>
         <label>
-          Adınız:
-          <input type="text" value={this.state.deger} onChange={this.degisiklikOldu} />
+          Name:
+          <input type="text" value={this.state.value} onChange={this.handleChange} />
         </label>
         <input type="submit" value="Gönder" />
       </form>
@@ -64,13 +64,13 @@ class Form extends React.Component {
 Öyleyse bu değeri almak için yeni bir React state'i oluşturmaya gerek yok.
 Bu inputta `value` olarak state'i yazdıracağız ve input'ta her değişiklik olduğunda bu state'i güncelleyeceğiz.</i>
 
-Kontrollü bir componentte her state değişimi, `degisiklikOldu` fonksiyonunu çalıştıracaktır.
-Örneğin, adın büyük harflerle yazılmasını isteseydik, `degisiklikOldu` fonksiyonunu şu şekilde yazabilirdik:
+Kontrollü bir componentte her state değişimi, `handleChange` fonksiyonunu çalıştıracaktır.
+Örneğin, adın büyük harflerle yazılmasını isteseydik, `handleChange` fonksiyonunu şu şekilde yazabilirdik:
 
 
 ```javascript
-degisiklikOldu(event) {
-  this.setState({deger: event.target.value.toUpperCase()});
+handleChange(event) {
+  this.setState({value: event.target.value.toUpperCase()});
 }
 ```
 
@@ -96,31 +96,32 @@ Bunun yerine React, `<textarea>`  için bir `value` attribute'ü kullanır.
 Bu şekilde `<textarea>` kullanan bir form, tek satırlı bir girdi kullanan bir forma çok benzer şekilde yazılabilir:
 
 ```javascript
-class Form extends React.Component {
+class EssayForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      deger: "Bu kısma bir şeyler yazın."
+      value: 'Bu kısma bir şeyler yazınız.'
     };
 
-    this.degisiklikOldu = this.degisiklikOldu.bind(this);
-    this.submitEdildi = this.submitEdildi.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  degisiklikOldu(event) {
-    this.setState({value: event.target.deger});
+  handleChange(event) {
+    this.setState({value: event.target.value});
   }
 
-  submitEdildi(event) {
-    alert("Submit'lenen değer: " + this.state.deger);
+  handleSubmit(event) {
+    alert('Gönderilen değer: ' + this.state.value);
     event.preventDefault();
   }
 
   render() {
     return (
-      <form onSubmit={this.submitEdildi}>
+      <form onSubmit={this.handleSubmit}>
         <label>
-          <textarea value={this.state.deger} onChange={this.degisiklikOldu} />
+          Essay:
+          <textarea value={this.state.value} onChange={this.handleChange} />
         </label>
         <input type="submit" value="Gönder" />
       </form>
@@ -129,7 +130,7 @@ class Form extends React.Component {
 }
 ```
 
-`this.state.deger`in constructor'te başlatıldığına dikkat edin, böylece `textarea` içerisinde varsayılan olarak bu yazı bulunacaktır.
+`this.state.value`in constructor'te başlatıldığına dikkat edin, böylece `textarea` içerisinde varsayılan olarak bu yazı bulunacaktır.
 
 <h2>Select Tagı</h2>
 
@@ -149,30 +150,30 @@ React, bu `selected` attribute'ünü kullanmak yerine,` select` etiketinde bir `
 Kontrollü bir componentte bu daha kullanışlıdır çünkü yalnızca bir yerde güncelleme yapmanızı sağlar. Örneğin:
 
 ```javascript
-class Form extends React.Component {
+class FlavorForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {deger: "Trabzon"};
+    this.state = {value: 'Trabzon'};
 
-    this.degisiklikOldu = this.degisiklikOldu.bind(this);
-    this.submitEdildi = this.submitEdildi.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  degisiklikOldu(event) {
+  handleChange(event) {
     this.setState({value: event.target.value});
   }
 
-  submitEdildi(event) {
-    alert('Your favorite flavor is: ' + this.state.value);
+  handleSubmit(event) {
+    alert('Hangi ilde yaşamak isterdiniz: ' + this.state.value);
     event.preventDefault();
   }
 
   render() {
     return (
-      <form onSubmit={this.submitEdildi}>
+      <form onSubmit={this.handleSubmit}>
         <label>
           En sevdiğiniz il:
-          <select value={this.state.deger} onChange={this.degisiklikOldu}>
+          <select value={this.state.value} onChange={this.handleChange}>
             <option value="istanbul">İstanbul</option>
             <option value="ankara">Ankara</option>
             <option value="trabzon">Trabzon</option>
@@ -216,25 +217,25 @@ her öğeye bir `name` özniteliği ekleyebilir ve işleyici işlevinin `event.t
 
 Örneğin:
 
-```javascript
-class Rezervasyon extends React.Component {
+```js
+class Reservation extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      gelmeDurumu: true,
-      misafirSayisi: 2
+      isGoing: true,
+      numberOfGuests: 2
     };
 
-    this.degisiklikOldu = this.degisiklikOldu.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  degisiklikOldu(event) {
-    const hedef = event.target;
-    const deger = hedef.type === 'checkbox' ? hedef.checked : hedef.value;
-    const ad = hedef.name;
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
 
     this.setState({
-      [ad]: deger
+      [name]: value
     });
   }
 
@@ -242,19 +243,21 @@ class Rezervasyon extends React.Component {
     return (
       <form>
         <label>
-          Yemeğe geliyor musunuz?
-          <input name="gelmeDurumu"
-                 type="checkbox"
-                 checked={this.state.gelmeDurumu}
-                 onChange={this.degisiklikOldu} />
+          Is going:
+          <input
+            name="isGoing"
+            type="checkbox"
+            checked={this.state.isGoing}
+            onChange={this.handleInputChange} />
         </label>
         <br />
         <label>
-          Sizinle gelecek olan misafir sayısı:
-          <input name="misafirSayisi"
-                 type="number"
-                 deger={this.state.misafirSayisi}
-                 onChange={this.degisiklikOldu} />
+          Number of guests:
+          <input
+            name="numberOfGuests"
+            type="number"
+            value={this.state.numberOfGuests}
+            onChange={this.handleInputChange} />
         </label>
       </form>
     );
@@ -269,31 +272,31 @@ Verilen girdi ismine karşılık gelen state keyini güncellemek için ES6 synta
 
 ```js
 this.setState({
-  [ad]: deger
+  [name]: value
 });
 ```
 
 Buda ES5'teki eşdeğer kodudur.
 
 ```js
-var kismiState = {};
-kismiState[ad] = deger;
-this.setState(kismiState);
+var partialState = {};
+partialState[name] = value;
+this.setState(partialState);
 ```
 
 <h2>Kontrollü Giriş Boş Değer</h2>
 
 Kontrollü bir component üzerindeki props'u belirlemek, kullanıcının isteği dışında girişi değiştirmesini önler.
-`deger` belirttiyseniz ancak girdi hala düzenlenebilir ise, yanlışlıkla `deger`i ` undefined` veya `null` olarak ayarlamış olabilirsiniz.
+`value` belirttiyseniz ancak girdi hala düzenlenebilir ise, yanlışlıkla `value`i ` undefined` veya `null` olarak ayarlamış olabilirsiniz.
 
 Aşağıdaki kod bunu göstermektedir.
 (Giriş ilk önce kilitlenir ancak kısa bir gecikme sonrasında düzenlenebilir hale gelir.)
 
 ```javascript
-ReactDOM.render(<input value="merhaba" />, document.getElementById("root"));
+ReactDOM.render(<input value="merhaba" />, mountNode);
 
 setTimeout(function() {
-  ReactDOM.render(<input value={null} />, document.getElementById("root"));
+  ReactDOM.render(<input value={null} />, mountNode);
 }, 1000);
 
 ```

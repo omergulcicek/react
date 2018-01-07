@@ -10,46 +10,45 @@ ve bunları eşleştirmek için  UI'ı güncelleştirmeye izin verin.
 Bu iki componenti düşünün:
 
 ```js
-function KullaniciGirisi(props) {
+function UserGreeting(props) {
   return <h1>Tekrardan hoşgeldin!</h1>;
 }
 
-function MisafirGirisi(props) {
+function GuestGreeting(props) {
   return <h1>Lütfen üye ol.</h1>;
 }
 ```
 
 Bir kullanıcının oturum açıp açmadığına bağlı olarak bu componentlerin herhangi birini görüntüleyen bir
-`GirisKontrol` componenti oluşturacağız:
+`Greeting` componenti oluşturacağız:
 
 ```javascript
-function GirisKontrol(props) {
-  const girisYaptiMi = props.girisYaptiMi;
-  if (girisYaptiMi) {
-    return <KullaniciGirisi />;
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return <UserGreeting />;
   }
-  return <MisafirGirisi />;
+  return <GuestGreeting />;
 }
 
 ReactDOM.render(
-  // girisYaptiMi={true} olarak değiştirip farkı test edebilirsiniz.
-  <GirisKontrol girisYaptiMi={false} />,
-  document.getElementById("root")
+  // isLoggedIn={true} olarak değiştirip farkı test edebilirsiniz.
+  <Greeting isLoggedIn={false} />,
+  document.getElementById('root')
 );
 ```
 
-CodePen'de Deneyin
+<a href="https://codepen.io/gaearon/pen/ZpVxNq?editors=0011">CodePen'de Deneyin</a>
 
 <i>Adım adım incelemekte fayda var.
 
-1. İlk olarak ReactDOM, `GirisKontrol` componentini render ediyor.
+1. İlk olarak ReactDOM, `Greeting` componentini render ediyor.
 
-2. Farkettiğiniz gibi componentin içerisinden props olacak bir `girisYaptiMi={false}` değerini yolluyor.
+2. Farkettiğiniz gibi componentin içerisinden props olacak bir `isLoggedIn={false}` değerini yolluyor.
 
-3. `GirisKontrol` componentinde, parametre olarak gönderilen `boolean` (true yada false) değeri bir değişkene atıyor.
+3. `Greeting` componentinde, parametre olarak gönderilen `boolean` (true yada false) değeri bir değişkene atıyor.
 
-4. Ardından bu değer true ise `KullaniciGirisi` componentini, false ise `MisafirGirisi` componentini return ediyor.</i>
-
+4. Ardından bu değer true ise `UserGreeting` componentini, false ise `GuestGreeting` componentini return ediyor.</i>
 
 <h2>Element Değişkenleri</h2>
 
@@ -57,11 +56,11 @@ Elementleri depolamak için değişkenleri kullanabilirsiniz.
 
 Bu, koşullu olarak componentin bir bölümünü oluşturmanıza yardımcı olabilir, ancak çıktının geri kalanı değişmez.
 
-`GirisButon` ve `CikisButon` düğmelerini temsil eden bu iki yeni componenti inceleyelim:
+`LoginButton` ve `LogoutButton` düğmelerini temsil eden bu iki yeni componenti inceleyelim:
 
 
 ```js
-function GirisButon(props) {
+function LoginButton(props) {
   return (
     <button onClick={props.onClick}>
       Giriş Yap
@@ -69,48 +68,48 @@ function GirisButon(props) {
   );
 }
 
-function CikisButon(props) {
+function LogoutButton(props) {
   return (
     <button onClick={props.onClick}>
-      Logout
+      Çıkış Yap
     </button>
   );
 }
 ```
 
-Aşağıdaki örnekte, `GirisKontrol` adı verilen state'i olan component oluşturacağız.
-Geçerli durumuna bağlı olarak `<GirisButon />` veya `<CikisButon />` işlevlerini oluşturacaktır:
+Aşağıdaki örnekte, `Greeting` adı verilen state'i olan component oluşturacağız.
+Geçerli durumuna bağlı olarak `<LoginButton />` veya `<LogoutButton />` işlevlerini oluşturacaktır:
 
 ```js
-class GirisKontrol extends React.Component {
+class Greeting extends React.Component {
   constructor(props) {
     super(props);
-    this.girisButonClick = this.girisButonClick.bind(this);
-    this.cikisButonClick = this.cikisButonClick.bind(this);
-    this.state = {girisYaptiMi: false};
+    this.handleLoginClick = this.handleLoginClick.bind(this);
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
+    this.state = {isLoggedIn: false};
   }
 
-  girisButonClick() {
-    this.setState({girisYaptiMi: true});
+  handleLoginClick() {
+    this.setState({isLoggedIn: true});
   }
 
-  cikisButonClick() {
-    this.setState({girisYaptiMi: false});
+  handleLogoutClick() {
+    this.setState({isLoggedIn: false});
   }
 
   render() {
-    const girisYaptiMi = this.state.girisYaptiMi;
+    const isLoggedIn = this.state.isLoggedIn;
 
     let button = null;
-    if (girisYaptiMi) {
-      button = <CikisButon onClick={this.cikisButonClick} />;
+    if (isLoggedIn) {
+      button = <LogoutButton onClick={this.handleLogoutClick} />;
     } else {
-      button = <GirisButon onClick={this.girisButonClick} />;
+      button = <LoginButton onClick={this.handleLoginClick} />;
     }
 
     return (
       <div>
-        <KullaniciGirisi girisYaptiMi={girisYaptiMi} />
+        <UserGreeting isLoggedIn={isLoggedIn} />
         {button}
       </div>
     );
@@ -118,12 +117,12 @@ class GirisKontrol extends React.Component {
 }
 
 ReactDOM.render(
-  <GirisKontrol />,
-  document.getElementById("root")
+  <Greeting />,
+  document.getElementById('root')
 );
 ```
 
-CodePen'de Deneyin
+<a href="https://codepen.io/gaearon/pen/QKzAgB?editors=0010">CodePen'de Deneyin</a>
 
 Bir değişkeni bildirmek ve  `if` ifadesi kullanmak koşullu olarak bir componenti oluşturmak için iyi bir yoldur,
 bazen daha kısa bir syntax kullanmak isteyebilirsiniz.
@@ -136,28 +135,28 @@ Buna JavaScript mantıksal `&&` operatörü dahildir.
 Koşullu olarak bir elementi dahil etmek için kullanışlı olabilir:
 
 ```js
-function PostaKutusu(props) {
-  const okunmamisMesajlar = props.okunmamisMesajlar;
+function Mailbox(props) {
+  const unreadMessages = props.unreadMessages;
   return (
     <div>
       <h1>Merhaba!</h1>
-      {okunmamisMesajlar.length > 0 &&
+      {unreadMessages.length > 0 &&
         <h2>
-          {okunmamisMesajlar.length} adet okunmamış mesajınız bulunmaktadır.
+          {unreadMessages.length} adet okunmamış mesajınız bulunmaktadır.
         </h2>
       }
     </div>
   );
 }
 
-const mesajlar = ['React', 'Re: React', 'Re:Re: React'];
+const messages = ['React', 'Re: React', 'Re:Re: React'];
 ReactDOM.render(
-  <PostaKutusu okunmamisMesajlar={mesajlar} />,
-  document.getElementById("root")
+  <Mailbox unreadMessages={messages} />,
+  document.getElementById('root')
 );
 ```
 
-CodePen'de Deneyin
+<a href="https://codepen.io/gaearon/pen/ozJddz?editors=0010">CodePen'de Deneyin</a>
 
 <i>JavaScript `true && ifade` olduğunda burada `ifade` kısmında yazacağımız kodu çalıştırır.
 Yani `&&`nin sol tarafı true ise, sağ tarafını çalıştırır.
@@ -182,12 +181,12 @@ aksi taktirde ise `yanlis` yazan yerdeki kod çalışır.</i>
 
 Aşağıdaki örnekte, if-else koşulunu küçük bir metin bloğu oluşturmak için kullanıyoruz.
 
-```javascript
+```js
 render() {
-  const girisYaptiMi = this.state.girisYaptiMi;
+  const isLoggedIn = this.state.isLoggedIn;
   return (
     <div>
-      Kullanıcı siteye giriş <b>{girisYaptiMi ? 'yaptı' : 'yapmadı'}</b>.
+      Kullanıcı siteye giriş <b>{isLoggedIn ? 'yaptı' : 'yapmadı'}</b>.
     </div>
   );
 }
@@ -197,13 +196,13 @@ Bununla birlikte, daha büyük ifadeler için de kullanılabilir, ancak kod karm
 
 ```js
 render() {
-  const girisYaptiMi = this.state.girisYaptiMi;
+  const isLoggedIn = this.state.isLoggedIn;
   return (
     <div>
-      {girisYaptiMi ? (
-        <CikisButon onClick={this.cikisButonClick} />
+      {isLoggedIn ? (
+        <LogoutButton onClick={this.handleLogoutClick} />
       ) : (
-        <GirisButon onClick={this.girisButonClick} />
+        <LoginButton onClick={this.handleLoginClick} />
       )}
     </div>
   );
@@ -217,18 +216,18 @@ Tıpkı JavaScript'te olduğu gibi, siz ve ekibiniz hangisinin daha okunabilir o
 Nadiren de olsa, bir component, başka bir component tarafından oluşturulmuş olsa bile gizlenmesini isteyebilir.
 Bunu yapmak için `null` return etmek gereklidir.
 
-Aşağıdaki örnekte, `<UyariAfisi />` componenti, `uyari` adlı props değerine bağlı olarak oluşturulmuştur.
+Aşağıdaki örnekte, `<WarningBanner />` componenti, `warn` adlı props değerine bağlı olarak oluşturulmuştur.
 Props değeri `false` ise, component oluşturmaz:
 
 ```js
-function UyariAfisi(props) {
-  if (!props.uyari) {
+function WarningBanner(props) {
+  if (!props.warn) {
     return null;
   }
 
   return (
     <div className="warning">
-      Warning!
+      Uyarı!
     </div>
   );
 }
@@ -236,22 +235,22 @@ function UyariAfisi(props) {
 class Page extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {uyariGoster: true}
-    this.uyariDurumunuDegistir = this.uyariDurumunuDegistir.bind(this);
+    this.state = {showWarning: true}
+    this.handleToggleClick = this.handleToggleClick.bind(this);
   }
 
-  uyariDurumunuDegistir() {
+  handleToggleClick() {
     this.setState(prevState => ({
-      uyariGoster: !prevState.uyariGoster
+      showWarning: !prevState.showWarning
     }));
   }
 
   render() {
     return (
       <div>
-        <UyariAfisi uyari={this.state.uyariGoster} />
-        <button onClick={this.uyariDurumunuDegistir}>
-          {this.state.uyariGoster ? 'Gizle' : 'Göster'}
+        <WarningBanner warn={this.state.showWarning} />
+        <button onClick={this.handleToggleClick}>
+          {this.state.showWarning ? 'Gizle' : 'Göster'}
         </button>
       </div>
     );
@@ -260,11 +259,11 @@ class Page extends React.Component {
 
 ReactDOM.render(
   <Page />,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 ```
 
-CodePen'de Deneyin
+<a href="https://codepen.io/gaearon/pen/Xjoqwm?editors=0010">CodePen'de Deneyin</a>
 
 Bir componenti `null` olarak `render` yöntemiyle return etmek, componentin lifecycle fonksiyonlarının başlatılmasını etkilemez.
 Örneğin, `componentWillUpdate` ve `componentDidUpdate` yine de çağrılacaktır.
