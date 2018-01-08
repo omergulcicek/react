@@ -6,7 +6,7 @@ Aşağıdaki kod göz önüne alındığında, bir dizi sayı almak ve değerler
 
 ```javascript
 const numbers = [1, 2, 3, 4, 5];
-const doubled = numbers.map((number) => sayi * 2);
+const doubled = numbers.map((number) => number * 2);
 console.log(doubled);
 ```
 
