@@ -7,10 +7,10 @@ Bir element, ekranda görmek istediğiniz şeyi tanımlar:
 ```js
 const element = <h1>Merhaba Dünya</h1>;
 ```
-Tarayıcı DOM öğelerinden farklı olarak, React elementleri düz nesnelerdir ve oluşturulması kolaydır.
-React DOM, React öğeleriyle eşleşecek şekilde DOM'u güncellemekle ilgilenir.
+Tarayıcı DOM elementlerinden farklı olarak, React elementleri düz nesnelerdir ve oluşturulması kolaydır.
+React DOM, React elementleriyle eşleşecek şekilde DOM'u güncellemekle ilgilenir.
 
-<i>Bu konu hakkında detaylı Türkçe bilgi için </i><a href="https://fatihacet.com/react-ve-virtual-dom-mimarisi-uzerine"/>Fatih Acet'in makalesi</a><i>ne göz atabilirsiniz.</i>
+<i>Bu konu hakkında detaylı Türkçe bilgi için <a href="https://fatihacet.com/react-ve-virtual-dom-mimarisi-uzerine">Fatih Acet'in makalesi</a>ne göz atabilirsiniz.</i>
 
 >**Not:**
 >
@@ -35,7 +35,7 @@ Sadece React ile oluşturulmuş uygulamalar genellikle tek bir root DOM düğüm
 
 React'i mevcut bir uygulamaya entegre ediyorsanız, istediğiniz kadar çok sayıda ayrı root DOM düğümü olabilir.
 
-React öğesini bir root DOM düğümüne dönüştürmek için, her ikisini de `ReactDOM.render()` işlevine yerleştirin.
+React elementini bir root DOM düğümüne dönüştürmek için, her ikisini de `ReactDOM.render()` işlevine yerleştirin.
 
 ```js
 const element = <h1>Merhaba Dünya!</h1>;
@@ -45,17 +45,17 @@ ReactDOM.render(
 );
 ```
 
-CodePen'de Deneyin
+<a href="http://codepen.io/gaearon/pen/rrpgNB?editors=1010">CodePen'de Deneyin</a>
 
 Sayfanızda "Merhaba Dünya!" başlığı görüntülenecektir.
 
 <h2>Oluşturulan Bir Elementi Güncellemek</h2>
 
-React elementleri değişmez. Bir öğe oluşturduktan sonra, öğesinin alt öğelerini veya attributelerini değiştiremezsiniz.
+React elementleri değişmez. Bir element oluşturduktan sonra, elementin alt elementlerini veya attributelerini değiştiremezsiniz.
 
 <i>Konu hakkında detaylı bilgi için </i><a href="https://medium.com/codefiction/i%CC%87pin-ucunu-ka%C3%A7%C4%B1rmamak-redux-8d822da0d19b">Onur Aykaç'ın yazdığı makale</a><i>de <b>Javascript’te immutable ve mutable kavramı</b> bölümünü okuyabilirsiniz.</i>
 
-Bildiğimiz kadarıyla UI'ı güncellemenin tek yolu yeni bir element oluşturmak ve `ReactDOM.render()` işlevine geçirmektir.
+Bildiğimiz kadarıyla UI'ı güncellemenin tek yolu yeni bir element oluşturmak ve `ReactDOM.render()` fonksiyonuna geçirmektir.
 
 Aşağıdaki saat örneğini inceleyelim.
 
@@ -76,13 +76,13 @@ function tick() {
 setInterval(tick, 1000);
 ```
 
-CodePen'de Deneyin
+<a hrf="http://codepen.io/gaearon/pen/gwoJZk?editors=0010">CodePen'de Deneyin</a>
 
-`ReactDOM.render()` işlevini her saniye bir setInterval() içerisinde çağırır.
+`ReactDOM.render()` fonksiyonunu her saniye setInterval() içerisinden çağırır.
 
 >**Not:**
 >
->Pratikte React uygulamalarının çoğu, bir kez `ReactDOM.render()` öğesini çağırır.
+>Pratikte React uygulamalarının çoğu, bir kez `ReactDOM.render()` elementini çağırır.
 >
 >Birbiriyle bağlantı kurduğu için konuları atlamadan okumaya devam edin.
 
@@ -90,7 +90,7 @@ CodePen'de Deneyin
 Fakat pratikte bu kodlar bu şekilde yazılmıyor. ReactDOM bir kez render edilir ve oluşturulan elementler `state`ler yardımıyla güncellenir.
 İlerleyen konularda bunlara değineceğiz.</i>
 
-React DOM, componenti ve çocuk componentleri önceki componentle karşılaştırır ve DOM'u istenen duruma getirmek için gereken yerlerde DOM güncellemelerini uygular.
+React DOM, componenti ve child (<i>çocuk</i>) componentleri önceki componentle karşılaştırır ve DOM'u istenen duruma getirmek için gereken yerlerde DOM güncellemelerini uygular.
 
 <i>Yani, React DOM tüm componentleri yeniden yüklemez. Değişiklik olan yeri algılar ve DOM üzerinde sadece o kısmı günceller, buda performansı olumlu yönde etkiler.</i>
 

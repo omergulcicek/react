@@ -3,7 +3,7 @@
 React ile ihtiyacınız olan davranışı kapsayan farklı componentler oluşturabilirsiniz.
 Daha sonra, uygulamanızın state'ine bağlı olarak yalnızca bir kısmını görüntüleyebilirsiniz.
 
-React'te şartlı render, JavaScript koşulları  ile aynı şekilde çalışır.
+React'te şartlı render, JavaScript koşulları ile aynı şekilde çalışır.
 Geçerli durumu temsil eden elemanlar oluşturmak için `if` veya koşullu operatör gibi JavaScript operatörlerini kullanın
 ve bunları eşleştirmek için  UI'ı güncelleştirmeye izin verin.
 
@@ -22,7 +22,7 @@ function GuestGreeting(props) {
 Bir kullanıcının oturum açıp açmadığına bağlı olarak bu componentlerin herhangi birini görüntüleyen bir
 `Greeting` componenti oluşturacağız:
 
-```javascript
+```js
 function Greeting(props) {
   const isLoggedIn = props.isLoggedIn;
   if (isLoggedIn) {
@@ -44,7 +44,7 @@ ReactDOM.render(
 
 1. İlk olarak ReactDOM, `Greeting` componentini render ediyor.
 
-2. Farkettiğiniz gibi componentin içerisinden props olacak bir `isLoggedIn={false}` değerini yolluyor.
+2. Farkettiğiniz gibi componentin içerisinden props olacak bir `isLoggedIn={false}` değerini gönderiyor.
 
 3. `Greeting` componentinde, parametre olarak gönderilen `boolean` (true yada false) değeri bir değişkene atıyor.
 
@@ -57,7 +57,6 @@ Elementleri depolamak için değişkenleri kullanabilirsiniz.
 Bu, koşullu olarak componentin bir bölümünü oluşturmanıza yardımcı olabilir, ancak çıktının geri kalanı değişmez.
 
 `LoginButton` ve `LogoutButton` düğmelerini temsil eden bu iki yeni componenti inceleyelim:
-
 
 ```js
 function LoginButton(props) {
@@ -192,7 +191,7 @@ render() {
 }
 ```
 
-Bununla birlikte, daha büyük ifadeler için de kullanılabilir, ancak kod karmaşıklaşır:
+Bununla birlikte daha büyük ifadeler için de kullanılabilir, ancak kod karmaşıklaşır:
 
 ```js
 render() {
@@ -209,7 +208,7 @@ render() {
 }
 ```
 
-Tıpkı JavaScript'te olduğu gibi, siz ve ekibiniz hangisinin daha okunabilir olduğunu düşünüyorsa, o yöntemi kullanabilir.
+Tıpkı JavaScript'te olduğu gibi, siz ve ekibiniz hangisinin daha okunabilir olduğunu düşünüyorsa o yöntemi kullanabilir.
 
 <h2>Componentin Render Edilmesini Önlemek</h2>
 

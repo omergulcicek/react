@@ -2,8 +2,7 @@
 
 Çoğu zaman, birden çok componentin aynı state'i yansıtması gerekir. Bu bölümde, suyun belirli bir sıcaklıkta kaynayıp kaynayamayacağını hesaplayan fonksiyonları oluşturacağız.
 
-`BoilingVerdict` adlı bir componentle başlayacağız.
-`Celsius` sıcaklığını bir props ile parametre olarak kabul eder ve suyu kaynatmaya yetecek kadar olup olmadığını return eder:
+`BoilingVerdict` adlı bir componentle başlayacağız. `Celsius` sıcaklığını bir props ile parametre olarak kabul eder ve suyu kaynatmaya yetecek kadar olup olmadığını return eder:
 
 ```js
 function BoilingVerdict(props) {
@@ -47,7 +46,7 @@ class Calculator extends React.Component {
 
 <h2>İkinci Inputu Eklemek</h2>
 
-Şimdi yapacağımız şey ise Celsius girdisine ek olarak, bir Fahrenheit girişi sağlamak.
+Şimdi yapacağımız şey ise Celsius inputuna ek olarak, bir Fahrenheit inputu sağlamak.
 
 `TemperatureInput` componentinden devam edebiliriz.
 Yeni bir `scale` propsu ekleyeceğiz ki bunlar `c` ya da `f` olabilirler:
@@ -83,7 +82,6 @@ class TemperatureInput extends React.Component {
 ```
 
 Artık iki ayrı sıcaklık girişi oluşturmak için `Calculator` componentini şu şekilde değiştirebiliriz:
-
 
 ```js
 class Calculator extends React.Component {
@@ -153,7 +151,7 @@ Bunun nasıl olduğunu adım adım işleyelim.
 
 ```js
   render() {
-    // Before: const temperature = this.state.temperature;
+    // Önceden: const temperature = this.state.temperature;
     const temperature = this.props.temperature;
     // ...
 ```
@@ -200,7 +198,7 @@ class TemperatureInput extends React.Component {
 ```
 
 Şimdi `Calculator` componentine geçelim.
-Mevcut input'un `temperature` ve `scale` değerlerini state'de tutarız.
+Mevcut inputun `temperature` ve `scale` değerlerini statede tutarız.
 
 Örneğin, Celsius'a 37 yazarsak, `Calculator` componentinin state'i şöyle olacaktır:
 

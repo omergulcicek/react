@@ -5,7 +5,7 @@ saat örneğini düşünün.
 
 Şu ana kadar UI'ı güncellemenin tek bir yolunu öğrendik.
 
-Görüntülenen çıktıyı değiştirmek için `ReactDOM.render()` öğesini her saniye çağırıyorduk:
+Görüntülenen çıktıyı değiştirmek için `ReactDOM.render()` fonksiyonunu her saniye çağırıyorduk:
 
 ```js
 function tick() {
@@ -24,7 +24,7 @@ function tick() {
 setInterval(tick, 1000);
 ```
 
-CodePen'de Deneyin
+<a href="http://codepen.io/gaearon/pen/gwoJZk?editors=0010">CodePen'de Deneyin</a>
 
 Bu bölümde, `Clock` componentini yeniden kullanımının doğru yöntemini öğreneceğiz.
 
@@ -52,13 +52,12 @@ function tick() {
 setInterval(tick, 1000);
 ```
 
-CodePen'de Deneyin
+<a href="http://codepen.io/gaearon/pen/dpdoYR?editors=0010">CodePen'de Deneyin</a>
 
 <i>Daha önce anlatılmıştı fakat tekrar etmekte fayda var.
 `Clock` componenti çağrılırken attribute olarak `date={new Date()}` gönderiliyor.
 Bu attribute, `Clock` componentine parametre olarak gelir ve adı `props`tur.
-`Clock` componentine bu tarihi yazdırmak içinde `props.date` şeklinde kullanıyoruz.
-</i>
+`Clock` componentine bu tarihi yazdırmak içinde `props.date` şeklinde kullanıyoruz.</i>
 
 Bunu bir kez yazmak ve `Clock` component güncellemesini kendisi gerçekleştirsin isteriz:
 
@@ -70,7 +69,7 @@ ReactDOM.render(
 ```
 
 Bunu uygulamak için `Clock` componentine `state` eklemeliyiz.
-Stateler proplara benzer, ancak tamamen component tarafından kontrol edilir.
+Stateler propslara benzer, ancak tamamen component tarafından kontrol edilir.
 Daha önce belirttiğimiz gibi, class olarak tanımlanan componentlerin bazı ilave özellikler var.
 State yalnızca classlar için kullanılabilen bir özelliktir.
 
@@ -103,7 +102,7 @@ class Clock extends React.Component {
 }
 ```
 
-CodePen'de Deneyin
+<a href="http://codepen.io/gaearon/pen/zKRGpo?editors=0010">CodePen'de Deneyin</a>
 
 <i>Fonksiyon component yerine class component kullanımına alışın.
 Üst kısımdaki adımları anlamadıysanız tekrar tekrar okumanızda fayda var.</i>
@@ -133,9 +132,7 @@ class Clock extends React.Component {
 
 2. Class componentimizin içerisine state'i ilk anda tanımlayan bir constructor oluşturalım.
 
-<i>Constructor fonksiyonu, bir classla beraber oluşturulan, nesnenin oluşturulması ve başlatılması için özel bir fonskiyondur.
-Bir classta "constructor" ismiyle yalnızca bir tane özel fonskiyon olabilir.
-Class oluşturulduğu anda içerisindeki kodlar çalışır.</i>
+<i>Constructor fonksiyonu, bir classla beraber oluşturulan, nesnenin oluşturulması ve başlatılması için özel bir fonskiyondur. Bir classta "constructor" ismiyle yalnızca bir tane özel fonskiyon olabilir. Class oluşturulduğu anda içerisindeki kodlar çalışır.</i>
 
 ```js
 class Clock extends React.Component {
@@ -204,7 +201,7 @@ ReactDOM.render(
 );
 ```
 
-CodePen'de Deneyin
+<a href="http://codepen.io/gaearon/pen/KgQpJd?editors=0010">CodePen'de Deneyin</a>
 
 Şimdi, `Clock`i kendi zamanlayıcısını oluşturup her saniyede bir güncelleyeceğiz.
 
@@ -245,6 +242,7 @@ class Clock extends React.Component {
   }
 }
 ```
+
 Bu fonksiyonlara `lifecycle hooks` (yaşam döngüsü kancaları) adı verilir.
 
 Component çıktısı DOM'a aktarıldıktan sonra `componentDidMount()` fonksiyonu çalışır.
@@ -274,7 +272,7 @@ Zamanlayıcıyı `componentWillUnmount()` fonksiyonunda temizleyeceğiz:
   }
 ```
 
-Son olarak, `Clock` componentini her saniyede bir çalışacağı tick() adında bir fonksiyon oluşturacağız.
+Son olarak, `Clock` componentini her saniyede bir çalışacağı `tick()` adında bir fonksiyon oluşturacağız.
 
 Bu fonksiyon state'eki tarihi `this.setState()` kullanarak güncelleyecektir.
 
@@ -323,7 +321,7 @@ ReactDOM.render(
 );
 ```
 
-CodePen'de Deneyin
+<a href="http://codepen.io/gaearon/pen/amqdNA?editors=0010">CodePen'de Deneyin</a>
 
 Neler olup bittiğini hızla özetleyelim:
 
@@ -339,8 +337,7 @@ Daha sonra, `Clock` componentinin çıktısı ile eşleşecek şekilde DOM'u gü
 Her saniye çalışacak olan `tick()` fonksiyonunu `timerID`de tutar.
 
 4) Her saniye tarayıcı `tick()` fonksiyonunu çağırır.
-`Clock` componentinin içinde, geçerli saati içeren bir nesneyle `setState()`i çağırarak
-bir UI güncellemesi için`setInterval()` fonksiyonunu hazırlar.
+`Clock` componentinin içinde, geçerli saati içeren bir nesneyle `setState()`i çağırarak bir UI güncellemesi için`setInterval()` fonksiyonunu hazırlar.
 `setState()` çağrısı sayesinde React, statin değiştiğini bilir ve ekranda ne olması gerektiğini öğrenmek için tekrar `render()` eder.
 Bu sefer `render()` yöntemindeki `this.state.date` güncellenmiş olacaktır. React DOM'u buna göre günceller.
 
@@ -382,6 +379,7 @@ this.setState({
   counter: this.state.counter + this.props.increment,
 });
 ```
+
 Bunu düzeltmek için, bir objeden ziyade bir fonksiyonu kabul eden ikinci bir `setState()` formunu kullanın.
 Bu işlev önceki durumu ilk argüman olarak, güncelleme ikinci argüman olarak uygulandığında sahne alacaktır:
 

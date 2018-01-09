@@ -3,7 +3,7 @@
 React'ın güçlü bir modeli var ve componentler arasında kodu tekrar kullanmak için
 `inheritance` (<i>miras</i>) yerine `composition` (<i>birleşim</i>) kullanılmasını öneriyoruz.
 
-Bu bölümde, React'e yeni gelen geliştiricilerin genellikle inheritance ile ilgili karşılaştığı birkaç sorunu ele alacağız 
+Bu bölümde, React'e yeni gelen geliştiricilerin genellikle inheritance ile ilgili karşılaştığı birkaç sorunu ele alacağız
 ve bunları compositionlarla nasıl çözebileceğimizi göstereceğiz.
 
 <h2>Containment (Kapsama)</h2>
@@ -90,8 +90,7 @@ Propslar ile bir yazı, rakam, değişken, component gibi her hangi bir şeyi g�
 
 Bazen componentleri, diğer componentlerin "özel durumları" olarak düşünürüz.
 
-React'te bu, daha "özel" bir componentin daha "jenerik" bir component oluşturduğu ve
-props ile yapılandırdığı composition ile elde edilir:
+React'te bu, daha "özel" bir componentin daha "jenerik" bir component oluşturduğu veprops ile yapılandırdığı composition ile elde edilir:
 
 ```js
 function Dialog(props) {
@@ -172,7 +171,7 @@ class SignUpDialog extends React.Component {
 
 Facebook binlerce componentte React kullanıyor ve component hiyerarşileri oluştururken önerdiğimiz herhangi bir kullanım durumu bulamadık.
 
-Props and compositionlar, componentin görünümünü ve davranışını açık ve güvenli bir şekilde özelleştirmeniziçin gereken tüm esnekliği verir.
+Props and compositionlar, componentin görünümünü ve davranışını açık ve güvenli bir şekilde özelleştirmeniz için gereken tüm esnekliği verir.
 
 Componentler arasında UI olmayan işlevselliği yeniden kullanmak istiyorsanız ayrı bir JavaScript modülü içine ayıklamanızı öneririz.
 Componentler içe aktarabilir ve bu fonksiyonu, nesneyi veya bir sınıfı uzatmadan kullanabilir.

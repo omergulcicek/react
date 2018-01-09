@@ -9,12 +9,13 @@ başlıktada `event olayları` yerine `click ve change olayları` başlığını
 
 Bazı syntax farklılıkları vardır:
 
-* React olayları, küçük harf yerine `camelCase` kullanılarak isimlendirilir.
+* React eventleri, küçük harf yerine `camelCase` kullanılarak isimlendirilir.
 
 <i>camelCase'den daha öncede bahsetmiştik.
 İlk kelime hariç diğer kelimelerin ilk harfleri büyük ve birleşik yazılır. Arada - (tire) kullanılmaz.
 React'te `class` yerine `className`, `tabindex` yerine `tabIndex`, `onclick` yerine `onClick`, `onchange` yerine `onChange` kullanılır.</i>)
-* JSX ile bir string yerine olay işleyicisi olarak bir fonskyion iletirsiniz.
+
+* JSX ile bir string yerine event işleyicisi olarak bir fonskyion iletirsiniz.
 
 Örneğin, HTML'de:
 
@@ -34,7 +35,7 @@ React'te ise biraz farklıdır:
 
 Başka bir fark ise React'te varsayılan davranışı engellemek için `false` return etmektir.
 `preventDefault`'u açıkça çağırmalısınız.
-Örneğin, düz HTML'de, yeni bir sayfayı açmanın varsayılan bağlantı davranışını önlemek için şunları yazabilirsiniz:
+Örneğin, düz HTML'de yeni bir sayfayı açmanın varsayılan bağlantı davranışını önlemek için şunları yazabilirsiniz:
 
 ```html
 <a href="#" onclick="console.log('Bağlantıya tıklandı.'); return false">
@@ -63,13 +64,11 @@ Burada, `e` sentetik bir olaydır.
 React, bu sentetik olayları <a href="https://www.w3.org/TR/DOM-Level-3-Events">W3C spesifikasyonu</a>na göre tanımlar;
 dolayısıyla tarayıcılar arası uyumluluk konusunda endişelenmenize gerek yoktur.
 
-React'i kullanırken genellikle bir DOM öğesine oluşturulduktan sonra, o elementin click olayını izlemek için
-`addEventListener` öğesini çağırmamamız gerekir.
+React'i kullanırken genellikle bir DOM elementi oluşturulduktan sonra, o elementin click eventini izlemek için
+`addEventListener`i çağırmamamız gerekir.
 Bunun yerine, element başlangıçta oluşturulduğunda bir click izleyicisi oluşturun.
 
-Bir componenti ES6 classı kullanarak tanımladığınızda, ortak bir desen,
-bir olay işleyicisinin classtaki bir fonksiyon olmasını sağlar.
-Örneğin, bu `Toggle` componenti, kullanıcının "Açık" ve "Kapalı" durumları arasında geçiş yapmasını sağlayan bir buton oluşturur:
+Bir componenti ES6 classı kullanarak tanımladığınızda, ortak bir desen, bir olay işleyicisinin classtaki bir fonksiyon olmasını sağlar. Örneğin, bu `Toggle` componenti, kullanıcının "Açık" ve "Kapalı" durumları arasında geçiş yapmasını sağlayan bir buton oluşturur:
 
 
 ```js
@@ -105,8 +104,7 @@ ReactDOM.render(
 
 <a href="http://codepen.io/gaearon/pen/xEmzGg?editors=0010">CodePen'de Deneyin</a>
 
-<i>Bind etmek ile ilgili detaylı bilgi için kendi yazığım <a href="https://omergulcicek.com/blog/bind-fonksiyonu">bind fonksiyonu</a>
-adlı makaleyi okuyabilirsiniz.</i>
+<i>Bind etmek ile ilgili detaylı bilgi için kendi yazığım <a href="https://omergulcicek.com/blog/bind-fonksiyonu">bind fonksiyonu</a> adlı makaleyi okuyabilirsiniz.</i>
 
 JSX geriçağırımlarında bu konuda dikkatli olmalısınız. JavaScript'te, class fonskyionları varsayılan olarak bağlı değildir.
 `this.handleClick`'i `bind` etmeyi (bağlamayı) unutursanız ve `onClick`e iletirseniz, fonksiyon çağrıldığında bu `undefined` olur.
@@ -154,12 +152,13 @@ class LoggingButton extends React.Component {
   }
 }
 ```
+
 Bu syntax ile ilgili sorun, `LoggingButton`un her işleyişinde farklı bir callback oluşturulmasıdır.
-Çoğu durumda, bu iyi.
-Bununla birlikte, bu callback, alt componentlere `props` olarak iletilirse, bu componentler ek bir yeniden oluşturma işleyebilir.
+Çoğu durumda, bu iyidir.
+Bununla birlikte bu callback, alt componentlere `props` olarak iletilirse, bu componentler ek bir yeniden oluşturma işleyebilir.
 Genellikle, constructorde bind etmenizi öneririz.
 
-<h2>Bağımsız değişkenleri Event Olaylarına Aktarma</h2>
+<h2>Bağımsız Değişkenleri Event Olaylarına Aktarma</h2>
 
 Bir döngü içinde, bir event olayına fazladan bir parametre göndermek isteyebilirsiniz.
 Örneğin, `id` satır kimliğiyse, aşağıdakilerden herhangi biri işe yarayabilir:

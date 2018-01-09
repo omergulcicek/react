@@ -2,11 +2,12 @@
 
 React'i kullanmanın en kolay yolu, <a href="https://codepen.io/omergulcicek/pen/ypMLXP">CodePen'deki bu Merhaba Dünya örnek kodu</a>nu kullanmaktır.
 
-Herhangi bir şey yüklemenize gerek yoktur (<i>React JS, React DOM ve Babel JS eklenmiştir</i>); dokümantasyonu farklı bir sekmede açıp codepen üzerinden kodları test edebilirsiniz.
+Herhangi bir şey yüklemenize gerek yoktur (<i>React JS, React DOM ve Babel eklenmiştir</i>).
+Dokümantasyonu farklı bir sekmede açıp codepen üzerinden kodları test edebilirsiniz.
 
-Yerel bir geliştirme ortamı kullanmayı tercih ediyorsanız <a href="#">yükleme sayfası</a>na bakın (<i>Kurulum aşaması anlatıldığında bu kısma link eklenecektir</i>).
+Yerel bir geliştirme ortamı kullanmayı tercih ediyorsanız <a href="https://omergulcicek.github.io/reactjs/reactjs-kurulumu">kurulum sayfası</a>nı inceleyin.
 
-En küçük Reakt örneği şuna benzer:
+En küçük React örneği şuna benzer:
 
 ```js
 ReactDOM.render(

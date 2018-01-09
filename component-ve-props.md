@@ -4,11 +4,9 @@ Componentler, uygulamanızı tekrar kullanılabilir parçalara ayırmanıza ve h
 
 Kavramsal olarak, componentler JavaScript fonksiyonlarına benzemektedir.
 
-Bunlar rasgele girdileri (`props` olarak adlandırılır) kabul eder ve
-ekranda neler görüneceğini açıklayan React elementleri return ederler.
+Bunlar rasgele girdileri (`props` olarak adlandırılır) kabul eder ve ekranda neler görüneceğini açıklayan React elementleri return ederler.
 
-<i>Sitenizi büyük bir puzzle olarak düşünün.
-React ile önce teker teker puzzle parçalarını oluşturup ardından bunları birleştirerek büyük resmi oluşturacaksınız.</i>
+<i>Sitenizi büyük bir puzzle olarak düşünün. React ile önce teker teker puzzle parçalarını oluşturup ardından bunları birleştirerek büyük resmi oluşturacaksınız.</i>
 
 <h2>Fonksiyonel ve Class Componentleri</h2>
 
@@ -44,7 +42,7 @@ Fakat konuyu dağıtmamak adına class'ları yukarıdaki en saf halleriyle kulla
 
 <h2>Componentleri Render Etmek</h2>
 
-Daha önce yalnızca DOM etiketleri temsil eden React elementleriyle karşılaştık:
+Daha önce yalnızca DOM etiketlerini temsil eden React elementleriyle karşılaştık:
 
 ```js
 const element = <div />;
@@ -56,13 +54,12 @@ Bununla birlikte, elementler componentleri de temsil edebilir:
 const element = <Welcome name="Ömer" />;
 ```
 
-React, kullanıcı tanımlı bir componenti temsil eden bir element görürse, JSX attributelerini tek bir obje olarak bu componente aktarır.
-Bu objeye `props` diyoruz.
+React, kullanıcı tanımlı bir componenti temsil eden bir element görürse, JSX attributelerini tek bir obje olarak bu componente aktarır. Bu objeye `props` diyoruz.
 
 <i>Yani bir componente `<Welcome name="Ömer" surname="Gülçiçek" job="Yazılım Mühendisi" />` gibi
 birden çok attribute eklediğimiz zaman, React bunları aşağıdaki gibi tek bir objede toplar, buna `props` denir.
 Ardından bu props objesini `Welcome` componentine parametre olarak gönderir.
-`Hosgeldin` componentinde `props.ad` kullanım şekli ile "Ömer" değerini çekebiliriz.
+`Hosgeldin` componentinde `props.name` kullanım şekli ile "Ömer" değerini çekebiliriz.
 
 ```html
 <Welcome name="Ömer" surname="Gülçiçek" job="Yazılım Mühendisi" />
@@ -93,7 +90,7 @@ ReactDOM.render(
 
 Bu örnekteki olayları aşama aşama inceleyelim:
 
-1. `ReactDOM.render()` öğesini `<Welcome name='Ömer' />` elementiyle çağırırız.
+1. `ReactDOM.render()` fonksiyonundan `<Welcome name='Ömer' />` elementini çağırırız.
 
 2. React, `Welcome` componentine parametre olarak `{name: 'Ömer'}` objesini alır.
 
@@ -140,18 +137,15 @@ ReactDOM.render(
 
 Genelde, React uygulamalarında tek bir `App` componenti çağrılır.
 Bununla birlikte, React'ı varolan bir uygulamaya entegre ederseniz,
-`Buton` gibi küçük bir component ile iç componentten dışa doğru kodlamaya başlayabilir ve
-görünüm hiyerarşisinin en üst noktasına yavaş yavaş ilerleyebilirsiniz.
+`Buton` gibi küçük bir component ile iç componentten dışa doğru kodlamaya başlayabilir ve görünüm hiyerarşisinin en üst noktasına yavaş yavaş ilerleyebilirsiniz.
 
 Bu örnekteki olaylarıda aşama aşama inceleyelim:
 
 1. `ReactDOM.render()` ilk olarak `<App />` componentini çağırdı.
 
-2. `<App />` componenti ise 3 tane `<Welcome />` componenti return edecek.
-Fakat `<Welcome />` componentine parametre olarak farklı objeler yollanmış.
+2. `<App />` componenti ise 3 tane `<Welcome />` componenti return edecek. Fakat `<Welcome />` componentine parametre olarak farklı objeler yollanmış.
 
-3. İlk `<Welcome />` componenti ekrana `Merhaba Ömer` yazacak.
-Ardından tekrar `<Welcome />` componenti çağrılacak fakat bu sefer objedeki ad Muhammed, son olarakta Burak olacak.
+3. İlk `<Welcome />` componenti ekrana `Merhaba Ömer` yazacak. Ardından tekrar `<Welcome />` componenti çağrılacak fakat bu sefer objedeki ad Muhammed, son olarakta Burak olacak.
 
 4. Sonuç olarak ekranda bir `div` içerisinde `Merhaba Ömer`, `Merhaba Muhammed` ve `Merhaba Burak` yazan başlıklar yazdırılacaktır.
 
@@ -159,8 +153,7 @@ Ardından tekrar `<Welcome />` componenti çağrılacak fakat bu sefer objedeki 
 
 Componentleri daha küçük componentleri bölmekten korkmayın.
 
-Örneğin, bu `Yorum` bileşenini düşünün:
-
+Örneğin, bu `Yorum` componentini düşünün:
 
 ```js
 function Comment(props) {
@@ -188,10 +181,9 @@ function Comment(props) {
 
 <a href="https://reactjs.org/redirect-to-codepen/components-and-props/extracting-components">CodePen'de Deneyin</a>
 
-`author` (obje), `text` (string) ve `date` (tarih) props olarak kabul eder ve bir yorum divi return eder.
+`author` (obje), `text` (string) ve `date` (date) props olarak kabul eder ve bir yorum divi return eder.
 
-Bu component, iç içe birçok componenti olduğu için değiştirilmesi zor olabilir,
-bu yüzden componenti parçalayarak küçük componentler oluşturalım.
+Bu component, iç içe birçok componenti olduğu için değiştirilmesi zor olabilir, bu yüzden componenti parçalayarak küçük componentler oluşturalım.
 
 İlk olarak `Avatar` componentini oluşturalım:
 
@@ -264,8 +256,7 @@ function Comment(props) {
 
 <a href="https://reactjs.org/redirect-to-codepen/components-and-props/extracting-components-continued">CodePen'de Deneyin</a>
 
-Componentleri küçük parçalara bölmek başlangıçta gereksiz bir iş yada zaman kaybı gibi gözükebilir,
-ancak daha büyük uygulamalarda tekrar kullanılabilir component paletine sahip olmak önemlidir.
+Componentleri küçük parçalara bölmek başlangıçta gereksiz bir iş yada zaman kaybı gibi gözükebilir, ancak daha büyük uygulamalarda tekrar kullanılabilir component paletine sahip olmak önemlidir.
 
 <h2>Propslar Yalnızca Okunabilir</h2>
 
@@ -278,8 +269,7 @@ function sum(a, b) {
 }
 ```
 
-Bu fonksiyonlara `pure` (saf) denir çünkü parametrelerini değiştirmeye çalışmazlar ve
-aynı parametreler için aynı sonuca her zaman return edilir.
+Bu fonksiyonlara `pure` (saf) denir çünkü parametrelerini değiştirmeye çalışmazlar ve aynı parametreler için aynı sonuca her zaman return edilir.
 
 Buna karşın, bu fonksiyon kendi parametresini değiştirdiği için saf değildir:
 
@@ -295,8 +285,7 @@ Tüm React componentleri, propslar ile ilgili olarak saf fonksiyonlar gibi harek
 
 Elbette uygulama arayüzü dinamiktir ve zaman içinde değişecektir.
 Bir sonraki bölümde `state` kavramı tanıtılacaktır.
-State, React componentlerine, kullanıcı eylemlerine ve
-diğer herhangi bir şeye bu kuralı ihlal etmeden değerlerin değiştirmesine izin verir.
+State, React componentlerine, kullanıcı eylemlerine ve diğer herhangi bir şeye bu kuralı ihlal etmeden değerlerin değiştirmesine izin verir.
 
 <i>Özet olarak, propsları asla değiştirmeye kalkmıyoruz. Propslar sadece okunabilir. Bir sonraki bölümde state kavramı işlenecektir.
 Propslar state'lerden değeri çekecek, değeri değiştirmek istediğimizde state'i değiştireceğiz. Haliyle propsta değişmiş olacak.</i>

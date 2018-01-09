@@ -52,11 +52,11 @@ ReactDOM.render(
 );
 ```
 
-<a>CodePen'de Deneyin</a>
+<a href="https://reactjs.org/redirect-to-codepen/introducing-jsx">CodePen'de Deneyin</a>
 
-<h2>İfadeleri JSX'e Yerleştirmek</h2>
+<h2>Fonksiyonları JSX'e Yerleştirmek</h2>
 
-Derleme sonrasında, JSX ifadeleri JavaScript işlevi haline gelir.
+Derleme sonrasında, JSX ifadeleri JavaScript fonksiyonları haline gelir.
 
 Yani, if deyimleri ve döngüler içinde JSX'i kullanabilir ayrıca bir fonksiyondan JSX return edebiliriz.
 
@@ -76,12 +76,12 @@ String ifadeleri attribute olarak belirtmek için tırnak işaretleri kullanabil
 const element = <div tabIndex="0"></div>;
 ```
 
-Bir attribute'e JavaScript ifadesi yerleştirmek için süslü parantezleri de kullanabilirsiniz:
+Bir attribute'e JavaScript fonksiyonu yerleştirmek için süslü parantezleri de kullanabilirsiniz:
 
 ```js
 const element = <img src={user.avatarUrl}></img>;
 ```
-Bir attribute'e JavaScript ifadesi yerleştirirken süslü parantezler arasına tırnak işareti koymayın. Tırnak işaretleri string değerler için ve süslü parantezler ise JavaScript ifadeleri için kullanmanız gerekir. Her ikisi birden aynı attribute'te kullanılamaz.
+Bir attribute'e JavaScript fonksiyonu yerleştirirken süslü parantezler arasına tırnak işareti koymayın. Tırnak işaretleri string değerler için ve süslü parantezler ise JavaScript fonksiyonları için kullanmanız gerekir. Her ikisi birden aynı attribute'te kullanılamaz.
 
 >**Uyarı:**
 >
@@ -161,6 +161,6 @@ const element = {
 };
 ```
 
-Bu nesneler React elementleri olarak adlandırılır. Bunları, ekranda görmek istediğiniz şeyin açıklaması olarak düşünebilirsiniz. React, bu nesneleri okur, onları DOM'u oluşturmak ve güncel tutmak için kullanır.
+Bu nesneler React elementleri olarak adlandırılır. Bunları, ekranda görmek istediğiniz şeyin açıklaması olarak düşünebilirsiniz. React bu nesneleri okur, onları DOM'u oluşturmak ve güncel tutmak için kullanır.
 
 <a href="https://omergulcicek.github.io/reactjs/elementleri-render-etmek">Sıradaki Eğitim: Elementleri Render Etmek</a>

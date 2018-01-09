@@ -35,7 +35,7 @@ React'te, dizi elemanlarını listelere dönüştürmek neredeyse aynıdır.
 
 Koleksiyonları oluşturabilir ve bunları JSX içine süslü parantez `{}` kullanarak ekleyebilirsiniz.
 
-Aşağıda, JavaScript `map()` fonksiyonu kullanarak sayilar dizisinde döngü oluşturuyoruz.
+Aşağıda, JavaScript `map()` fonksiyonu kullanarak numbers dizisinde döngü oluşturuyoruz.
 Her liste için bir `<li>` return ediyoruz. Son olarak, elde edilen sonuç dizisini `listItems`e atayacağız:
 
 ```javascript
@@ -152,8 +152,7 @@ const todoItems = todos.map((todo, index) =>
 Listelerin sırası değişebilirse keyler için index kullanmanızı önermiyoruz.
 Bu, performansı olumsuz etkileyebilir ve component state'i ile ilgili sorunlara neden olabilir.
 
-Ayrıntılı bilgi için <a href="https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318">Robin Pokorny</a>'nin
-makalesini inceleyebilirsiniz (<i>İngilizce</i>).
+Ayrıntılı bilgi için <a href="https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318">Robin Pokorny</a>'nin makalesini inceleyebilirsiniz (<i>İngilizce</i>).
 
 Listelere siz key atamazsanız React varsayılan olarak index'i atar.
 
