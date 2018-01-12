@@ -22,7 +22,7 @@ Yukarıdaki hafif çözümler, React'a yeni başladıysanız yada denemek için 
 
 <i>React JS'i bilgisayarınıza kurup, localinizde proje geliştirmeye başlamak istiyorsanız aşağıdaki adımları inceleyin.
 
-İlk olarak NodeJS kurulumu yapmamız gerekmektedir. </i>
+<i>İlk olarak NodeJS kurulumu yapmamız gerekmektedir. </i>
 
 >  Not:
 >
@@ -55,7 +55,7 @@ Yeni bir React projesine başlamak için en kolay yol, bir başlangıç kiti kul
 
 <a href="https://github.com/facebookincubator/create-react-app">Create React App</a>, yeni bir React single page application'a başlamanın en iyi yoludur. Geliştirme ortamınızı, en yeni JavaScript özelliklerini kullanabilmenizi, güzel bir geliştirici deneyimi yaşamanızı ve uygulamanızı üretim için optimize etmenizi sağlar. NodeJS 6 veya daha üst sürümünün bilgisayarınızda kurulu olması gerekir (<i>Sunucuda gerekli değildir</i>).
 
-<i>Create React App'i özetlemek gerekirse bu, React uygulamaları oluşturmanız için ihtiyacınız olan birçok şeyi içerisinde barındıran bir pakettir.
+<i>Create React App'i özetlemek gerekirse bu, React uygulamaları oluşturmanız için ihtiyacınız olan birçok şeyi içerisinde barındıran bir pakettir.</i>
 
 İçerisine neler dahil edilmiştir?
 * React, JSX, ES6, Flow syntax desteği
@@ -64,7 +64,7 @@ Yeni bir React projesine başlamak için en kolay yol, bir başlangıç kiti kul
 * Kod üzerinde yaptığımız değişiklikleri kaydettiğimiz anda arayüze yansıması için hot reloading
 * JavaScript kod standartlarına uygun yazmanız için ESLint vs
 
-İlk olarak nodejs kurup, ardından aşağıdaki adımları gerçekleştirerek ilk uygulamamızı oluşturmaya başlayalım.</i>
+<i>İlk olarak nodejs kurup, ardından aşağıdaki adımları gerçekleştirerek ilk uygulamamızı oluşturmaya başlayalım.</i>
 
 <h2>NodeJS Kurulumu</h2>
 
