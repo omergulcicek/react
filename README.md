@@ -27,7 +27,7 @@ Hatalı yerlerin düzeltilmesi için pull request gönderebilirsiniz.
 
 <h2>Kurulum</h2>
 
-- React JS Kurulumu
+- <a href="https://omergulcicek.github.io/reactjs/reactjs-kurulumu">React JS Kurulumu</a>
 
 <h2>Hızlı Başlangıç</h2>
 
