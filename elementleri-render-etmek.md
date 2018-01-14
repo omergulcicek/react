@@ -76,7 +76,7 @@ function tick() {
 setInterval(tick, 1000);
 ```
 
-<a hrf="http://codepen.io/gaearon/pen/gwoJZk?editors=0010">CodePen'de Deneyin</a>
+<a href="http://codepen.io/gaearon/pen/gwoJZk?editors=0010">CodePen'de Deneyin</a>
 
 `ReactDOM.render()` fonksiyonunu her saniye setInterval() içerisinden çağırır.
 
