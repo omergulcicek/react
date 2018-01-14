@@ -59,18 +59,17 @@ React, kullanıcı tanımlı bir componenti temsil eden bir element görürse, J
 <i>Yani bir componente `<Welcome name="Ömer" surname="Gülçiçek" job="Yazılım Mühendisi" />` gibi
 birden çok attribute eklediğimiz zaman, React bunları aşağıdaki gibi tek bir objede toplar, buna `props` denir.
 Ardından bu props objesini `Welcome` componentine parametre olarak gönderir.
-`Hosgeldin` componentinde `props.name` kullanım şekli ile "Ömer" değerini çekebiliriz.
+`Hosgeldin` componentinde `props.name` kullanım şekli ile "Ömer" değerini çekebiliriz.</i>
 
 ```html
 <Welcome name="Ömer" surname="Gülçiçek" job="Yazılım Mühendisi" />
 
 props = {
-name: "Ömer",
-surname: "Gülçiçek",
-job: "Yazılım Mühendisi"
+   name: "Ömer",
+   surname: "Gülçiçek",
+   job: "Yazılım Mühendisi"
 }
 ```
-</i>
 
 Örneğin, bu kod sayfaya "Merhaba Ömer" başlığını yazar:
 
