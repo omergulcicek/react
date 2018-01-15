@@ -28,9 +28,9 @@ function FancyBorder(props) {
 ```
 
 <i>Yukarıdaki `FancyBorder` componenti bir `div` return ediyor.
-Bu div ise props ile `color`ı parametre olarak alacak.
+Bu div ise props ile `color`ı parametre olarak alacak.</i>
 
-Alttaki `WelcomeDialog` componenti ise `FancyBorder` componentini return ediyor ve renk olarakta `blue` gönderilmiş.</i>
+<i>Alttaki `WelcomeDialog` componenti ise `FancyBorder` componentini return ediyor ve renk olarakta `blue` gönderilmiş.</i>
 
 ```js
 function WelcomeDialog() {
