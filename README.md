@@ -45,9 +45,9 @@ Hatalı yerlerin düzeltilmesi için pull request gönderebilirsiniz.
 
 <h2>Gelişmiş Kılavuzlar</h2>
 
-- Derinlemesine JSX
-- ES6 Olmadan React
-- JSX Olmadan React
+- <a href="https://omergulcicek.github.io/reactjs/derinlemesine-jsx">Derinlemesine JSX</a>
+- <a href="https://omergulcicek.github.io/reactjs/es6-olmadan-react">ES6 Olmadan React</a>
+- <a href="https://omergulcicek.github.io/reactjs/jsx-olmadan-react">JSX Olmadan React</a>
 - Lifecycle Fonksiyonları
 - React Terimler Sözlüğü
 
