@@ -48,7 +48,8 @@ Hatalı yerlerin düzeltilmesi için pull request gönderebilirsiniz.
 - <a href="https://omergulcicek.github.io/reactjs/derinlemesine-jsx">Derinlemesine JSX</a>
 - <a href="https://omergulcicek.github.io/reactjs/es6-olmadan-react">ES6 Olmadan React</a>
 - <a href="https://omergulcicek.github.io/reactjs/jsx-olmadan-react">JSX Olmadan React</a>
-- Lifecycle Fonksiyonları
-- React Terimler Sözlüğü
+- <a href="https://omergulcicek.github.io/reactjs/fragmentler">Fragmentler</a>
+- <a href="https://omergulcicek.github.io/reactjs/lifecycle-fonksiyonlari">Lifecycle Fonksiyonları</a>
+- <a href="https://omergulcicek.github.io/reactjs/react-terimler-sozlugu">React Terimler Sözlüğü</a>
 
 <i>Eklemeler yapılacaktır.</i>
