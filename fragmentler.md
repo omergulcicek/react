@@ -85,7 +85,7 @@ class Columns extends React.Component {
 ```
 
  `<></>` kullanabilirsiniz fakat keys yada attribute kullanımını desteklemez (<i>Sadece kapsayıcı olarak kullanılır</i>).
- 
+
 Birçok toolsun henüz kısa syntax kullanımını desteklemediğini unutmayın, bu nedenle destek gelene kadar açıkça `<React.Fragment>` yazın.
 
 <h3>Keyli Fragmentler</h3>
@@ -111,3 +111,5 @@ function Glossary(props) {
 `Fragment`e aktarılabilen tek attribute `key`dir. Gelecekte, click-change olayları gibi ek attributeler için destek ekleyebiliriz.
 
 <a href="https://codepen.io/reactjs/pen/VrEbjE?editors=1000">CodePen'de Deneyin</a>
+
+<a href="https://omergulcicek.github.io/reactjs/lifecycle-fonksiyonlari">Sıradaki Gelişmiş Kılavuz: Lifecycle Fonksiyonları</a>

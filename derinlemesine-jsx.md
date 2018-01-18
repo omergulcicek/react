@@ -450,3 +450,5 @@ Aksine, çıktıda `false`,` true`, `null` veya` undefined` gibi bir değerleri 
   JavaScript değişkenim {String(myVariable)}.
 </div>
 ```
+
+<a href="https://omergulcicek.github.io/reactjs/es6-olmadan-react">Sıradaki Gelişmiş Kılavuz: ES6 Olmadan React</a>

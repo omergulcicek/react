@@ -219,3 +219,5 @@ ReactDOM.render(
 ```
 
 Bir component çoklu mixin kullanıyorsa ve birkaç mixin aynı lifecycle fonksiyonu tanımlarsa (diğer bir deyişle, birkaç mixin, component yok edildiğinde bazı temizlemeler yapmak isterse), tüm lifecycle fonksiyonunun çağrılmasının garanti altına alınması sağlanır.
+
+<a href="https://omergulcicek.github.io/reactjs/jsx-olmadan-react">Sıradaki Gelişmiş Kılavuz: JSX Olmadan React</a>
