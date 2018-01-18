@@ -14,7 +14,7 @@ Daha fazla yazı
 Daha fazla yazı
 ```
 
-React versiyon 16'dan önce bunu gerçekleştirmenin tek yolu, childları `div`, `span` gibi bir tag ile aşağıdaki gibi sarmalamaktır:
+React versiyon 16.2.0'dan önce bunu gerçekleştirmenin tek yolu, childları `div`, `span` gibi bir tag ile aşağıdaki gibi sarmalamaktır:
 
 ```js
 render() {
@@ -47,6 +47,26 @@ class Columns extends React.Component {
   }
 }
 ```
+
+<i>`React.Fragment` yerine sadece `Fragment` ile kapsamak isterseniz aşağıdaki gibi bir yol izleyebilirsiniz.</i>
+
+```js
+const Fragment = React.Fragment;
+
+<Fragment>
+  <ChildA />
+  <ChildB />
+  <ChildC />
+</Fragment>
+
+// Her ikiside aynı şeydir
+<React.Fragment>
+  <ChildA />
+  <ChildB />
+  <ChildC />
+</React.Fragment>
+```
+
 <h3>Kısa Syntax</h3>
 
 Fragmentler için yeni bir kısa syntaxta var ancak henüz tüm popüler toollar (<i>araçlar</i>) tarafından desteklenmemektedir.
