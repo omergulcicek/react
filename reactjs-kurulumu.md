@@ -20,32 +20,19 @@ Bir örnek üzerinden eğitim için <a href="https://omergulcicek.github.io/reac
 
 Yukarıdaki hafif çözümler, React'a yeni başladıysanız yada denemek için en uygun yöntemlerdir.
 
-<i>React JS'i bilgisayarınıza kurup, localinizde proje geliştirmeye başlamak istiyorsanız aşağıdaki adımları inceleyin.
-
-<i>İlk olarak NodeJS kurulumu yapmamız gerekmektedir. </i>
+<i>React JS'i bilgisayarınıza kurup, localinizde proje geliştirmeye başlamak istiyorsanız aşağıdaki adımları inceleyin.</i>
 
 >  Not:
 >
 >  Olası uyumsuzluk sorunlarını önlemek için tüm React paketleri aynı sürümü kullanmalıdır. (`react`, `react-dom` vs.)
 
-<i>Komut sistemini açıp aşağıdaki komutu girelim: </i>
+<h2>NodeJS Kurulumu</h2>
 
-```sh
-npm install -g create-react
-```
+<i><a href="https://nodejs.org/en/">NodeJS</a> sitesine girip aşağıda görüldüğü gibi soldaki butona tıklayıp nodejs'i indiriyoruz.</i>
 
-<i>Ardından (örneğin) `my-app` adında bir proje oluşturalım: </i>
+<img src="https://i.hizliresim.com/1Jn00N.png">
 
-```sh
-create-react-app my-app
-```
-
-<i>`cd` komutu ile proje klasörümüzün içerisine girip, `npm start` ile projemizi başlatalım.</i>
-
-```sh
-cd mp-app
-npm start
-```
+<i>Ardından klasik kurulumu tamamladıktan sonra <b>Node.js command prompt</b> programını çalıştırıp, kurulumlarımızı bu konsol üzerinden yapacağız.</i>
 
 Yeni bir React projesine başlamak için en kolay yol, bir başlangıç kiti kullanmaktır.
 
@@ -65,14 +52,6 @@ Yeni bir React projesine başlamak için en kolay yol, bir başlangıç kiti kul
 * JavaScript kod standartlarına uygun yazmanız için ESLint vs
 
 <i>İlk olarak nodejs kurup, ardından aşağıdaki adımları gerçekleştirerek ilk uygulamamızı oluşturmaya başlayalım.</i>
-
-<h2>NodeJS Kurulumu</h2>
-
-<i><a href="https://nodejs.org/en/">NodeJS</a> sitesine girip aşağıda görüldüğü gibi soldaki butona tıklayıp nodejs'i indiriyoruz.</i>
-
-<img src="https://i.hizliresim.com/1Jn00N.png">
-
-<i>Ardından klasik kurulumu tamamladıktan sonra <b>Node.js command prompt</b> programını çalıştırıyoruz. Aşağıdaki komutu girerek create-react-app kurulumunu yapıyoruz.</i>
 
 ```sh
 npm install -g create-react-app
@@ -139,3 +118,5 @@ npm run build
 ```
 
 <i>Oluşturulan `build` klasörünün içerisindeki dosyaları sunucunuza atarak test edebilirsiniz.</i>
+
+<a href="https://omergulcicek.github.io/reactjs/merhaba-dunya">İlk Konu: React JS ile Merhaba Dünya</a>
