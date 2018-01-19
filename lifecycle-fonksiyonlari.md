@@ -78,6 +78,74 @@ Her component aşağıdaki API'leride içerisinde barındırır:
 
 * * *
 
+<h3>`render()`</h3>
+
+```js
+render()
+
+```
+ `render()` fonksiyounu zorunludur.
+
+Çağrıldığında, `this.props` ve `this.state`i incelemeli ve aşağıdaki türlerden birine return etmelidir:
+
+- <b>React Elementleri</b>. Genellikle JSX aracılığıyla oluşturulur. Bir element, yerel bir DOM componenti (`<div />`) veya kullanıcı tanımlı bir component (`<MyComponent />`) olabilir.
+- <b>String ve sayı</b>. Bunlar DOM'da metin düğümleri olarak render edilir.
+- <b>Portaller</b>. `ReactDOM.createPortal` ile oluşturuldu. <i><a href="https://reactjs.org/docs/portals.html">Detaylı bilgi</a></i>
+- <b>null</b>. Hiçbir şey yapmaz.
+- <b>Boolean</b>. Hiçbir şey yapmaz. (Çoğunlukla `test`in boolean olduğu durumda `return test && <Child />` desenini desteklemek için vardır.)
+
+`null` yada `false` return ederkem, `ReactDOM.findDOMNode(this)` `null` return eder.
+
+`render()` fonksiyonu, componentin state'ini değiştirmez, çağrıldığında her seferinde aynı sonucu return eder. Tarayıcıyla etkileşime girmeniz gerekiyorsa, bunun yerine ` componentDidMount()` ya da diğer lifecycle fonksiyonları ile çalışmalarınızı gerçekleştirin.
+
+> Not
+>
+> `shouldComponentUpdate()` fonksiyonu `false` return ederse `render()` çağrılmayacaktır.
+
+* * *
+
+<h3>`constructor()`</h3>
+
+```js
+constructor(props)
+```
+
+Bir React componentinin constructorü, oluşturulmadan önce çağrılır. Bir `React.Component` alt sınıfı için constructorü uygularken, herhangi bir koddan önce `super(props)`u çağırmalısınız. Aksi takdirde, `this.props` constructorde hatalara neden olur.
+
+Constructore herhangi bir abonelik sunmaktan kaçının. Bunun yerine, `componentDidMount()` kullanın.
+
+Constructor, state'i başlatmak için doğru yerdir. Bunu yapmak için sadece bir nesneyi `this.state`e atayın; Constructor'den `setState()` fonksiyonunu çağırmaya çalışmayın. Constructor ayrıca, click-change olaylarını bind etmek için sıklıkla kullanılır.
+
+<i>Bind fonksiyonu hakkında detaylı bilgiye kendi yazmış olduğum <a href="https://omergulcicek.com/blog/bind-fonksiyonu">Bind() fonksiyonu</a> adlı makaleden erişebilirsiniz.</i>
+
+State, click-change olaylarını kullanmayacaksanız, React componenti için bir constructor oluşturmak zorunda değilsiniz.
+
+* * *
+
+<h3>`componentWillMount()`</h3>
+
+```js
+componentWillMount()
+```
+
+`componentWillMount()`, component oluşturulmadan hemen önce çağrılır, dolayısıyla bu yöntemde eş zamanlı olarak `setState()` başlamayacaktır. Genellikle, bunun yerine `constructor()`ü kullanmanızı öneririz.
+
+* * *
+
+<h3>`componentDidMount()`</h3>
+
+```js
+componentDidMount()
+```
+
+`componentDidMount()`, bir component render edildikten hemen sonra çağrılır. Uzak bir uç noktadan veri yüklemeniz gerekiyorsa, bu ağ isteğini başlatmak için iyi bir yerdir.
+
+Bu fonksiyon, herhangi bir abonelik ayarlamak için iyi bir yerdir. Bunu yaparsanız, `componentWillUnmount ()` da aboneliğinizi iptal etmeyi unutmayın.
+
+Bu yöntemde `setState()` çağrısı ek bir render işlemine neden olur, ancak tarayıcı ekranını güncellemeden önce gerçekleşir. `render()` fonksiyonunun bu durumda iki kez çağrılmasına rağmen kullanıcının ara state'i göremez. Bu kalıp sıklıkla performans sorunlarına neden olduğundan dikkatli kullanın. 
+
+* * *
+
 <i>Bu kısım güncellenecek...</i>
 
 <a href="https://omergulcicek.github.io/reactjs/react-terimler-sozlugu">Sıradaki Gelişmiş Kılavuz: React Terimler Sözlüğü</a>
