@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://omergulcicek.com/img/reacttr.png" alt="React JS - Türkçe Dokümantasyon">
+<img src="https://omergulcicek.com/img/github/reactjs.png" alt="React JS - Türkçe Dokümantasyon" height="150">
 </p>
 
 <h1 align="center">React JS - Türkçe Dokümantasyon</h1>
