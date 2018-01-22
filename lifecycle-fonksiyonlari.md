@@ -78,7 +78,7 @@ Her component aşağıdaki API'leride içerisinde barındırır:
 
 * * *
 
-<h3>`render()`</h3>
+<h3>render()</h3>
 
 ```js
 render()
@@ -104,7 +104,7 @@ render()
 
 * * *
 
-<h3>`constructor()`</h3>
+<h3>constructor()</h3>
 
 ```js
 constructor(props)
@@ -122,7 +122,7 @@ State, click-change olaylarını kullanmayacaksanız, React componenti için bir
 
 * * *
 
-<h3>`componentWillMount()`</h3>
+<h3>componentWillMount()</h3>
 
 ```js
 componentWillMount()
@@ -132,7 +132,7 @@ componentWillMount()
 
 * * *
 
-<h3>`componentDidMount()`</h3>
+<h3>componentDidMount()</h3>
 
 ```js
 componentDidMount()
@@ -143,6 +143,40 @@ componentDidMount()
 Bu fonksiyon, herhangi bir abonelik ayarlamak için iyi bir yerdir. Bunu yaparsanız, `componentWillUnmount ()` da aboneliğinizi iptal etmeyi unutmayın.
 
 Bu yöntemde `setState()` çağrısı ek bir render işlemine neden olur, ancak tarayıcı ekranını güncellemeden önce gerçekleşir. `render()` fonksiyonunun bu durumda iki kez çağrılmasına rağmen kullanıcının ara state'i göremez. Bu kalıp sıklıkla performans sorunlarına neden olduğundan dikkatli kullanın. 
+
+* * *
+
+<h3>componentWillReceiveProps()</h3>
+
+```javascript
+componentWillReceiveProps(nextProps)
+```
+
+`componentWillReceiveProps()`, bir component yeni bir props almaya başlamadan önce çağrılır. Props değişikliklerine tepki olarak state güncellemeniz gerekiyorsa (örneğin sıfırlamak için), `this.props` ve `nextProps` metodlarını karşılaştırabilir ve bu metoddaki `this.setState()` fonksiyonunu kullanarak state geçişleri gerçekleştirebilirsiniz.
+
+React, propsta değişiklik yapılmamış olsa bile bu metodu çağırabilir, bu nedenle yalnızca değişiklikleri ele almak istiyorsanız geçerli ve sonraki değerleri karşılaştırdığınızdan emin olun. 
+
+React, mounting sırasında `componentWillReceiveProps()` fonksiyonunu ilk props grubu ile çağırmaz. Componentlerin propslarının bazıları güncellenmişse bu fonksiyonu çağırır. `this.setState()` fonksiyonunu çağrılması genellikle `componentWillReceiveProps()` fonksiyonunu tetiklemez.
+
+* * *
+
+<h3>shouldComponentUpdate()</h3>
+
+```javascript
+shouldComponentUpdate(nextProps, nextState)
+```
+
+Bir componentin çıktısı, state veya propstaki güncel değişiklikten etkilenmezse React'e bildirmek için `shouldComponentUpdate()` kullanın. Varsayılan davranış, her state değişiminde tekrar render edilmesidir ve çoğu durumda varsayılan davranışı kullanmalısınız.
+
+`shouldComponentUpdate()` yeni props veya state alındığında render edilmeden önce çağrılır. Varsayılan değer `true`dur. Bu fonksiyon, componentin ilk render edilişinde veya `forceUpdate()` kullanıldığında çağrılmaz.
+
+`false` değerininin return edilmesi, state değiştiğinde child componentlerin yeniden render edilmesini engellemez.
+
+`shouldComponentUpdate()` fonksiyonu `false` return ederse `componentWillUpdate()`, `render()` ve `componentDidUpdate()` çağrılmayacaktır. React'in gelecekte `shouldComponentUpdate()`i sıkı bir yönerge yerine bir ipucu olarak ele alabileceğini ve `false` değerini return etmenin componentin yeniden render edilmesine neden olabileceğini unutmayın.
+
+Belirli bir componentin görüntülenmesinden sonra yavaş olduğunu belirlerseniz, `shouldComponentUpdate()` fonksiyonunu sığ bir props ve state karşılaştırması ile uygulayan `React.PureComponent`ten devralmak için değiştirebilirsiniz. Elle yazmak istediğinizden eminseniz, `this.props` ile` nextProps` ve `this.state` ile `nextState`i karşılaştırabilir ve `false` return ederek React güncellemesini geçebilirsiniz.
+
+`ShouldComponentUpdate()`te eşitlik kontrolleri yapmanızı veya `JSON.stringify()` fonksiyonunu kullanmanızı önermiyoruz. Çok verimsizdir ve performansa zarar verir.
 
 * * *
 
