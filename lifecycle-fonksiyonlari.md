@@ -82,7 +82,6 @@ Her component aşağıdaki API'leride içerisinde barındırır:
 
 ```js
 render()
-
 ```
  `render()` fonksiyounu zorunludur.
 
