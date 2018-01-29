@@ -26,10 +26,10 @@ Her componentin, lifecycle  fonksiyonları vardır. İçerisinde `will` geçen f
 
 Bu fonksiyonlar, bir component örneği oluşturulurken ve DOM'a eklendiğinde çağrılır:
 
-- [`constructor()`](#constructor)
-- [`componentWillMount()`](#componentwillmount)
-- [`render()`](#render)
-- [`componentDidMount()`](#componentdidmount)
+- `constructor()`
+- `componentWillMount()`
+- `render()`
+- `componentDidMount()`
 
 <h4>Updating</h4>
 
@@ -37,11 +37,11 @@ Bu fonksiyonlar, bir component örneği oluşturulurken ve DOM'a eklendiğinde �
 
 Bir güncelleme, props ya da state değişikliklerinden kaynaklanabilir. Bu fonksiyonlar, bir componentin güncellenmesiyle çağrılır.
 
-- [`componentWillReceiveProps()`](#componentwillreceiveprops)
-- [`shouldComponentUpdate()`](#shouldcomponentupdate)
-- [`componentWillUpdate()`](#componentwillupdate)
-- [`render()`](#render)
-- [`componentDidUpdate()`](#componentdidupdate)
+- `componentWillReceiveProps()`
+- `shouldComponentUpdate()`
+- `componentWillUpdate()`
+- `render()`
+- `componentDidUpdate()`
 
 <h4>Unmounting</h4>
 
@@ -49,7 +49,7 @@ Bir güncelleme, props ya da state değişikliklerinden kaynaklanabilir. Bu fonk
 
 Bu fonksiyon, bir component DOM'dan kaldırıldığında çağrılır:
 
-- [`componentWillUnmount()`](#componentwillunmount)
+- `componentWillUnmount()`
 
 <h4>Error Handling</h4>
 
@@ -57,24 +57,18 @@ Bu fonksiyon, bir component DOM'dan kaldırıldığında çağrılır:
 
 Bu fonksiyon, render sırasında lifecycle fonksiyonlarında veya herhangi bir alt componentin constructoründe bir hata olduğunda çağrılır.
 
-- [`componentDidCatch()`](#componentdidcatch)
+- `componentDidCatch()`
 
 <h3>Diğer API'ler</h3>
 
 Her component aşağıdaki API'leride içerisinde barındırır:
 
-- [`setState()`](#setstate)
-- [`forceUpdate()`](#forceupdate)
+- `setState()`
+- `forceUpdate()`
 
-<h3>Class Propertyleri</h3>
+<h3>Class Property</h3>
 
-- [`defaultProps`](#defaultprops)
-- [`displayName`](#displayname)
-
-<h3>Instance Propertyleri</h3>
-
-- [`props`](#props)
-- [`state`](#state)
+- `defaultProps`
 
 * * *
 
@@ -199,7 +193,7 @@ Props değişikliklerine tepki olarak state'i güncellemek istiyorsanız, bunun 
 
 <h3>componentDidUpdate()</h3>
 
-```javascript
+```js
 componentDidUpdate(prevProps, prevState)
 ```
 
@@ -215,7 +209,7 @@ Bunu, component güncellendiğinde DOM üzerinde çalışmak için kullanın. Bu
 
 <h3>componentWillUnmount()</h3>
 
-```javascript
+```js
 componentWillUnmount()
 ```
 
@@ -225,7 +219,7 @@ componentWillUnmount()
 
 <h3>componentDidCatch()</h3>
 
-```javascript
+```js
 componentDidCatch(error, info)
 ```
 
@@ -241,7 +235,113 @@ Daha fazla ayrıntı için React 16'daki <a href="https://reactjs.org/blog/2017/
 
 * * *
 
+<h3>setState()</h3>
 
-<i>Bu kısım güncellenecek...</i>
+```js
+setState(updater[, callback])
+```
+
+`setState()`, component state'indeki değişiklikleri ekler ve bu componentin çocuklarının güncellenen state ile yeniden render edilmesini gerektiğini React'e bildirir. Bu, kullanıcı arabirimini güncellemek için kullandığınız birincil yöntemdir.
+
+Componenti güncellemek için hemen bir komut yerine `setState()` fonksiyonunu çağırın. Daha iyi bir performans için React onu geciktirebilir ve sonra birkaç componenti tek seferde güncelleştirebilir. 
+
+`setState()` her zaman componenti hemen güncellemez. Güncelleme işini daha sonraya bırakıp toplu olarak yapabilir. Bu, `setState()` fonksiyonunu potansiyel bir tuzağa düşürdükten sonra `this.state` dosyasını okumayı kolaylaştırır. Bunun yerine, `componentDidUpdate` veya `setState(updater, callback)` kullanın; ikisi de güncelleme uygulandıktan sonra tetiklenecektir. State'i bir önceki state'e göre ayarlamanız gerekiyorsa, aşağıdaki `updater` argümanını okuyun.
+
+```js
+(prevState, props) => stateChange
+```
+
+`prevState`, önceki state'e yapılan atıftır. Doğrudan değişime uğratılmamalıdır. Bunun yerine, değişiklikler `prevState` ve `props` parametrelerine dayanan yeni bir nesne oluşturarak temsil edilmelidir. Örneğin, stateteki bir değeri `props.step` ile artırmak istediğimizi varsayalım:
+
+```js
+this.setState((prevState, props) => {
+  return {counter: prevState.counter + props.step};
+});
+```
+
+Güncelleyici fonksiyonu tarafından alınan hem `prevState` hem de `props`un güncel olması garanti edilir. Güncelleyicinin çıktısı derhal `prevState` ile birleştirilir.
+
+`SetState()` fonksiyonunun ikinci parametresi, `setState` tamamlandıktan ve component yeniden render edildikten sonra yürütecek isteğe bağlı bir callback fonksiyonudur. Genellikle bunun yerine bu mantık için `componentDidUpdate()` kullanmanızı öneririz.
+
+İsteğe bağlı olarak, bir objeyi bir fonksiyon yerine `setState()`in ilk argümanı olarak geçirebilirsiniz:
+
+```js
+setState(stateChange[, callback])
+```
+
+Bu, yeni bir state'e, örneğin bir alışveriş sepeti öğe miktarını ayarlamak için `stateChange` öğesinin sığ bir birleştirme gerçekleştirir:
+
+```js
+this.setState({quantity: 2})
+```
+
+Bu `setState()` şekli aynı zamanda eşzamansızdır ve aynı döngüde birlikte kullanılabilir. Örneğin, aynı döngüde bir maddenin miktarını birden çok kez artırmayı denerseniz, eşdeğerlik şu şekilde sonuçlanacaktır:
+
+```js
+Object.assign(
+  previousState,
+  {quantity: state.quantity + 1},
+  {quantity: state.quantity + 1},
+  ...
+)
+```
+
+Sonraki çağrılar aynı döngüdeki önceki çağrıların değerlerini geçersiz kılacak, bu nedenle miktar yalnızca bir kez artırılacaktır. Bir sonraki state önceki state'e bağlıysa, bunun yerine updater işlev formunu kullanmanızı öneririz:
+
+```js
+this.setState((prevState) => {
+  return {quantity: prevState.quantity + 1};
+});
+```
+Detaylı bilgi için <a href="https://omergulcicek.github.io/reactjs/state-ve-lifecycle">state ve lifecycle</a> sayfasını inceleyenilirsiniz.
+
+* * *
+
+<h3>forceUpdate()</h3>
+
+```js
+component.forceUpdate(callback)
+```
+ 
+Varsayılan olarak, componentinde state yada props değiştiği zaman, component yeniden render edilir. `render()` fonksiyonu diğer bazı verilere bağlı ise, `forceUpdate()` fonksiyonunu çağırarak componentin yeniden oluşturulması gerektiğini React'e bildirebilirsiniz.
+
+`forceUpdate()` çağrısı, `shouldComponentUpdate()` atlanarak componentte `render()` çağırılmasına neden olur. Bu, her bir çocuğun `shouldComponentUpdate()` fonksiyonu da dahil olmak üzere, alt componentlerin  lifecycle fonksiyonlarını tetikleyecektir.
+
+`forceUpdate()` fonksiyonunun tüm kullanımlarından kaçınmaya çalışmalısınız ve sadece `render()`da `this.props` ve `this.state`ten okuma yapmalısınız.
+
+
+* * *
+
+<h2>Class Property</h2>
+
+<h3>defaultProps</h3>
+
+`defaultProps`, class için varsayılan props koymak için component clasının kendisinde bir özellik olarak tanımlanabilir. Bu, tanımlanmamış props için kullanılır, ancak boş props için kullanılamaz. Örneğin:
+
+```js
+class CustomButton extends React.Component {
+  // ...
+}
+
+CustomButton.defaultProps = {
+  color: 'blue'
+};
+```
+
+`props.color` parametre olarak gönderilmezse, varsayılan olarak `blue` değerini alır:
+
+```js
+  render() {
+    return <CustomButton />; // props.color, blue olacaktır
+  }
+```
+
+`props.color` null tanımlanırsa, null olacaktır:
+
+```js
+  render() {
+    return <CustomButton color={null} /> ; // props.color, null olacaktır
+  }
+```
 
 <a href="https://omergulcicek.github.io/reactjs/react-terimler-sozlugu">Sıradaki Gelişmiş Kılavuz: React Terimler Sözlüğü</a>
