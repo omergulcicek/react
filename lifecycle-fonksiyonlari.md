@@ -147,7 +147,7 @@ Bu yöntemde `setState()` çağrısı ek bir render işlemine neden olur, ancak 
 
 <h3>componentWillReceiveProps()</h3>
 
-```javascript
+```js
 componentWillReceiveProps(nextProps)
 ```
 
@@ -161,7 +161,7 @@ React, mounting sırasında `componentWillReceiveProps()` fonksiyonunu ilk props
 
 <h3>shouldComponentUpdate()</h3>
 
-```javascript
+```js
 shouldComponentUpdate(nextProps, nextState)
 ```
 
@@ -178,6 +178,69 @@ Belirli bir componentin görüntülenmesinden sonra yavaş olduğunu belirlersen
 `ShouldComponentUpdate()`te eşitlik kontrolleri yapmanızı veya `JSON.stringify()` fonksiyonunu kullanmanızı önermiyoruz. Çok verimsizdir ve performansa zarar verir.
 
 * * *
+
+<h3>componentWillUpdate()</h3>
+
+```js
+componentWillUpdate(nextProps, nextState)
+```
+
+`componentWillUpdate()` yeni props veya state alındığında render edilmeden hemen önce çağrılır. Bunu, güncelleme gerçekleşmeden önce hazırlık yapmak için bir fırsat olarak kullanın. Bu fonksiyon ilk render için çağrılmaz.
+
+Burada `this.setState()` fonksiyonunu çağıramayacağınızı unutmayın; `componentWillUpdate()` return etmeden önce bir React componentinin güncellemesini tetikleyecek başka bir şey yapmanız (örn. bir Redux eylemi göndermeniz) gerekir.
+
+Props değişikliklerine tepki olarak state'i güncellemek istiyorsanız, bunun yerine `componentWillReceiveProps()` kullanın.
+
+> Not
+>
+> `shouldComponentUpdate()` false return ederse, `componentWillUpdate()` çağrılmayacaktır.
+
+* * *
+
+<h3>componentDidUpdate()</h3>
+
+```javascript
+componentDidUpdate(prevProps, prevState)
+```
+
+`componentDidUpdate()`, güncelleme gerçekleştikten hemen sonra çağrılır. Bu fonksiyon ilk render için çağrılmaz.
+
+Bunu, component güncellendiğinde DOM üzerinde çalışmak için kullanın. Bu ayrıca, mevcut yeri önceki yerlerle kıyasladığınız sürece network istekleri yapmak için iyi bir yerdir (örneğin props değişmediğinde bir network isteği gerekmeyebilir).
+
+> Not
+>
+> `shouldComponentUpdate()` false return ederse, `componentDidUpdate()` çağrılmayacaktır.
+
+* * *
+
+<h3>componentWillUnmount()</h3>
+
+```javascript
+componentWillUnmount()
+```
+
+`componentWillUnmount()`, bir component unmounted ve destroyed edilmeden hemen önce çağrılır. Bu fonksiyonda, zamanlayıcıları geçersiz kılma, network isteklerini iptal etme veya `componentDidMount()` fonksiyonunda oluşturulan abonelikleri temizleme gibi gerekli temizliği yapın.
+
+* * *
+
+<h3>componentDidCatch()</h3>
+
+```javascript
+componentDidCatch(error, info)
+```
+
+Hata sınırları, alt component ağacının herhangi bir yerindeki JavaScript hatalarını yakalayan, bu hataları log'a yazan ve çöktüğü compoennt ağacı yerine bir yedek UI görüntüleyen React componentleridir. Hata sınırları, render, lifecycle fonksiyonlar ve altındaki ağacın constructorlerinde hataları yakalar.
+
+Beklenmedik istisnalardan kurtarmak için yalnızca hata sınırlarını kullanın; onları kontrol akışı için kullanmaya çalışmayın.
+
+Daha fazla ayrıntı için React 16'daki <a href="https://reactjs.org/blog/2017/07/26/error-handling-in-react-16.html">Error Handling</a> bölümüne bakın.
+
+> Not
+>
+> Hata sınırları yalnızca alt componentlerin içindeki hataları yakalar . Bir hata sınırı kendi içinde bir hata yakalayamaz.
+
+* * *
+
 
 <i>Bu kısım güncellenecek...</i>
 
