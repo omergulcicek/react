@@ -121,7 +121,7 @@ Bir Component, kendisiyle ilişkili bazı veriler zaman içinde değiştiğinde 
 
 Lifecycle fonksiyonları, bir componentin farklı aşamalarında yürütülen özel fonksiyonlardır. Component oluşturulduğunda ve DOM'a eklendiğinde (mounting), component güncellendiğinde ve component kaldırıldığında DOM'da çalıştırılan fonksiyonlar vardır.
 
-Lifecycle fonksiyonları hakkında daha fazla bilgi için <a href="https://omergulcicek.github.io/reactjs/lifecycle-fonksiyonlari">lifecyclefonksiyonları</a> dokümanına bakın.
+Lifecycle fonksiyonları hakkında daha fazla bilgi için <a href="https://omergulcicek.github.io/reactjs/lifecycle-fonksiyonlari">lifecycle fonksiyonları</a> dokümanına bakın.
 
 <h2>Keys</h2> 
 
