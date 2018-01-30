@@ -4,26 +4,18 @@
 
 <h1 align="center">React JS - Türkçe Dokümantasyon</h1>
 
-<h3 align="center"><a href="https://omergulcicek.github.io/reactjs/">omergulcicek.github.io/reactjs</a></h3>
+<h3><a href="https://omergulcicek.github.io/reactjs/">omergulcicek.github.io/reactjs</a></h3>
 
-<p align="center">
 <a href="https://reactjs.org/">React JS</a> dokümantasyonunun Türkçe'ye uyarlanmış halidir.
-</p>
 
-<p align="center">
 Birebir çeviri değildir; eklemeler, silmeler ve düzenlemeler olmuştur.
-</p>
 
-<p align="center">
 Element, Component, Props, State, Class gibi yazılımsal kelimelerde daha kolay anlaşılması için çeviri yapılmamıştır.
-</p>
-<p align="center">
-<i>Kendi eklediğim notları eğik yazılı şekilde aralara ekleyeceğim.</i>
-</p>
 
-<p align="center">
+<i>Kendi eklediğim notları eğik yazılı şekilde aralara ekleyeceğim.</i>
+
 Hatalı yerlerin düzeltilmesi için pull request gönderebilirsiniz.
-</p>
+
 
 <h2>Kurulum</h2>
 
@@ -51,5 +43,14 @@ Hatalı yerlerin düzeltilmesi için pull request gönderebilirsiniz.
 - <a href="https://omergulcicek.github.io/reactjs/fragmentler">Fragmentler</a>
 - <a href="https://omergulcicek.github.io/reactjs/lifecycle-fonksiyonlari">Lifecycle Fonksiyonları</a>
 - <a href="https://omergulcicek.github.io/reactjs/react-terimler-sozlugu">React Terimler Sözlüğü</a>
+
+
+<h2>Minik Projeler</h2>
+
+- <a href="https://github.com/ahfarmer/calculator?editors=0010">Calculator</a>: Hesap Makinesi
+- <a href="https://github.com/ahfarmer/emoji-search?editors=0010">Emoji Search</a>: Emoji Arama
+- <a href="https://codepen.io/yigitcukuren/pen/GyxxVm?editors=0010">Memory Game</a>: Hafıza Oyunu :tr:
+
+<i>Geliştirdiğiniz React uygulamalarını listeye ekleyebilirsiniz.</i>
 
 <i>Eklemeler yapılacaktır.</i>
