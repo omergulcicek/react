@@ -12,6 +12,8 @@ Buna JSX denir, JavaScript için bir syntax uzantısıdır.
 
 JSX, React elementleri üretir. Bir sonraki bölümde bunları DOM'a render etmeyi keşfedeceğiz.
 
+<i>DOM'a render etmek, yazdığınız React kodunun derlenip HTML'e yerleştirilme işlemine denir. Bir sonraki sayfada detaylıca anlatılacaktır.</i>
+
 Başlamanız için gerekli olan JSX'in temel bilgilerine aşağıdan erişebilirsiniz.
 
 <h2>Neden JSX?</h2>
@@ -28,7 +30,7 @@ O halde JSX yazmaya başlayalım!
 
 Herhangi bir JavaScript ifadesini JSX'de süslü parantez içine sarmalayarak yerleştirebilirsiniz.
 
-<i>Örneğin; { 2 + 2 }, { user.firstName } ve { formatName(user) } gibi sayısal işlem, obje, değişken, fonksiyon vb kullanabilirsiniz.</i>
+<i>Örneğin; `{ 2 + 2 }`, `{ user.firstName }` ve `{ formatName(user) }` gibi sayısal işlem, obje, değişken, fonksiyon vb kullanabilirsiniz.</i>
 
 ```js
 function formatName(user) {
