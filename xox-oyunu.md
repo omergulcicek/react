@@ -24,4 +24,4 @@ Başlangıç için <a href="https://codepen.io/gaearon/pen/oWWQNa?editors=0010">
 
 Kod uzun ve karmaşık gelebilir, fakat incelediğinizde basit şeyler ile oluşturulduğunu ve aslında karmaşık olmadığını anlayacaksınız. Yeterli düzeyde olduğunuzu düşünmüyorsanız <a href="https://omergulcicek.github.io/reactjs/merhaba-dunya">react dokümanının en başına</a> dönerek bilgilerinizi tazeleyebilirsiniz.
 
-<a href="">Sıradaki Eğitim: Verileri Props Üzerinden Geçirmek</a>
+<a href="https://omergulcicek.github.io/reactjs/verileri-props-uzerinden-gecirmek">Sıradaki Eğitim: Verileri Props Üzerinden Geçirmek</a>
