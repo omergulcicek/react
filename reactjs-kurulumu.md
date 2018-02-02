@@ -14,7 +14,7 @@ Kendi text editörünüzü kullanmayı tercih ederseniz, <a href="https://raw.gi
 
 React kavramlarına adım adım bir giriş için <a href="https://omergulcicek.github.io/reactjs/merhaba-dunya">hızlı başlangıç bölümü</a>ne gidin.
 
-Bir örnek üzerinden eğitim için <a href="https://omergulcicek.github.io/reactjs/uygulamali-egitim">uygulamalı eğitim bölümü</a>nü deneyin.
+Bir örnek üzerinden eğitim için <a href="https://omergulcicek.github.io/reactjs/xox-oyunu">uygulamalı eğitim bölümü</a>nü deneyin.
 
 <h2>Geliştirme Ortamı</h2>
 
