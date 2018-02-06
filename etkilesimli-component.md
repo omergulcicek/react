@@ -85,4 +85,4 @@ Herhangi bir kareyi tıklarsanız, içinde bir X görünmelidir.
 
 <a href="https://codepen.io/gaearon/pen/VbbVLg?editors=0010">Mevcut kodu görüntüleyin</a>
 
-<a href="https://omergulcicek.github.io/reactjs/siradaki-oyuncu">Sıradaki Eğitim: Sıradaki Oyuncu</a>
+<a href="https://omergulcicek.github.io/reactjs/veriyi-korumanin-onemi">Sıradaki Eğitim: Veriyi Korumanın Önemi</a>
