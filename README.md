@@ -49,6 +49,7 @@ Hatalı yerlerin düzeltilmesi için pull request gönderebilirsiniz.
 - <a href="https://omergulcicek.github.io/reactjs/xox-oyunu">XOX Oyunu</a>
 - <a href="https://omergulcicek.github.io/reactjs/verileri-props-uzerinden-gecirmek">Verileri Props Üzerinden Geçirmek</a>
 - <a href="https://omergulcicek.github.io/reactjs/etkilesimli-component">Etkileşimli Component</a>
+- <a href="https://omergulcicek.github.io/reactjs/veriyi-korumanin-onemi">Veriyi Korumanın Önemi</a>
 - <a href="https://omergulcicek.github.io/reactjs/siradaki-oyuncu">Sıradaki Oyuncu</a>
 - <a href="https://omergulcicek.github.io/reactjs/kazanani-bildirmek">Kazananı Bildirmek</a>
 
