@@ -53,12 +53,10 @@ Hatalı yerlerin düzeltilmesi için pull request gönderebilirsiniz.
 - <a href="https://omergulcicek.github.io/reactjs/siradaki-oyuncu">Sıradaki Oyuncu</a>
 - <a href="https://omergulcicek.github.io/reactjs/kazanani-bildirmek">Kazananı Bildirmek</a>
 
-<h2>Minik Projeler</h2>
+<h2>Örnek Projeler</h2>
 
 - <a href="https://github.com/ahfarmer/calculator?editors=0010">Calculator</a>: Hesap Makinesi
 - <a href="https://github.com/ahfarmer/emoji-search?editors=0010">Emoji Search</a>: Emoji Arama
-- <a href="https://codepen.io/yigitcukuren/pen/GyxxVm?editors=0010">Memory Game</a>: Hafıza Oyunu :tr:
+- <a href="https://codepen.io/yigitcukuren/pen/GyxxVm?editors=0010">Memory Game</a>: Hafıza Oyunu <img src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f1f9-1f1f7.png" height="20">
 
 <i>Geliştirdiğiniz React uygulamalarını listeye ekleyebilirsiniz.</i>
-
-<i>Eklemeler yapılacaktır.</i>
