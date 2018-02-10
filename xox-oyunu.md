@@ -1,6 +1,6 @@
 <h1>XOX Oyunu</h1>
 
-Uygulamalı olarak adım adım React ile XOX oyununu geliştireceğiz, projenin bitmiş hali şudur: <a href="https://codepen.io/gaearon/pen/gWWZgR?editors=0010">XOX Oyunu<a>
+Uygulamalı olarak adım adım XOX oyununu geliştireceğiz, projenin bitmiş hali şudur: <a href="https://codepen.io/gaearon/pen/LyyXgK?editors=0010">XOX Oyunu<a>
 
 CSS kodları hazır olarak verilmiş durumda, biz sadece JavaScript geliştirmesi yapacağız.
 
