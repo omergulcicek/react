@@ -135,4 +135,4 @@ Keyler hakkında daha fazla bilgi için <a href="https://omergulcicek.github.io/
 
 <i>Gelişmiş kılavuzlar sonlanmıştır. Bu aşamadan sonra <b>Uygulamalı Eğitim</b>e geçiş yapılacaktır.</i>
 
-<a href="https://omergulcicek.github.io/reactjs/uygulamali-egitim/derinlemesine-jsx">Sıradaki Gelişmiş Kılavuz: Derinlemesine JSX</a>
+<a href="https://omergulcicek.github.io/reactjs/uygulamali-egitim/xox-oyunu">Sıradaki Eğitim: XOX Oyunu</a>
