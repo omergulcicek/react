@@ -437,4 +437,4 @@ componentDidMount() {
 <i>`setState`i kullandığımızda tüm state'ler değiştirilmez. Yalnızca belirtilen state güncellenir.
 Yani `this.setState({comments})` şeklinde kullanıldığında sadece `this.state.comments` güncellenir, `this.state.posts` güncellenmez.</i>
 
-<a href="https://omergulcicek.github.io/reactjs/click-ve-change-olaylari">Sıradaki Eğitim: Click ve Change Olayları</a>
+<a href="https://omergulcicek.github.io/reactjs/hizli-baslangic/click-ve-change-olaylari">Sıradaki Eğitim: Click ve Change Olayları</a>

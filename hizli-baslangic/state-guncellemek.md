@@ -271,4 +271,4 @@ class Calculator extends React.Component {
 
 <img src="https://reactjs.org/react-devtools-state-ef94afc3447d75cdc245c77efb0d63be.gif" alt="Monitoring State in React DevTools">
 
-<a href="https://omergulcicek.github.io/reactjs/composition-ve-inheritance">Sıradaki Eğitim: Composition ve Inheritance</a>
+<a href="https://omergulcicek.github.io/reactjs/hizli-baslangic/composition-ve-inheritance">Sıradaki Eğitim: Composition ve Inheritance</a>

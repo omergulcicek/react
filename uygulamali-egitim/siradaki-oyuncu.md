@@ -97,4 +97,4 @@ class Board extends React.Component {
 
 <a href="https://codepen.io/gaearon/pen/KmmrBy?editors=0010">Mevcut kodu görüntüleyin</a>
 
-<a href="https://omergulcicek.github.io/reactjs/kazanani-bildirmek">Sıradaki Eğitim: Kazananı Bildirmek</a>
+<a href="https://omergulcicek.github.io/reactjs/uygulamali-egitim/kazanani-bildirmek">Sıradaki Eğitim: Kazananı Bildirmek</a>

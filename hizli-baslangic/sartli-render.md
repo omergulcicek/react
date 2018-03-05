@@ -267,4 +267,4 @@ ReactDOM.render(
 Bir componenti `null` olarak `render` yöntemiyle return etmek, componentin lifecycle fonksiyonlarının başlatılmasını etkilemez.
 Örneğin, `componentWillUpdate` ve `componentDidUpdate` yine de çağrılacaktır.
 
-<a href="https://omergulcicek.github.io/reactjs/listeler-ve-keyler">Sıradaki Eğitim: Listeler ve Keyler</a>
+<a href="https://omergulcicek.github.io/reactjs/hizli-baslangic/listeler-ve-keyler">Sıradaki Eğitim: Listeler ve Keyler</a>

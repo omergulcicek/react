@@ -289,4 +289,4 @@ State, React componentlerine, kullanıcı eylemlerine ve diğer herhangi bir şe
 <i>Özet olarak, propsları asla değiştirmeye kalkmıyoruz. Propslar sadece okunabilir. Bir sonraki bölümde state kavramı işlenecektir.
 Propslar state'lerden değeri çekecek, değeri değiştirmek istediğimizde state'i değiştireceğiz. Haliyle propsta değişmiş olacak.</i>
 
-<a href="https://omergulcicek.github.io/reactjs/state-ve-lifecycle">Sıradaki Eğitim: State ve Lifecyle</a>
+<a href="https://omergulcicek.github.io/reactjs/hizli-baslangic/state-ve-lifecycle">Sıradaki Eğitim: State ve Lifecyle</a>

@@ -178,4 +178,4 @@ Componentler içe aktarabilir ve bu fonksiyonu, nesneyi veya bir sınıfı uzatm
 
 <i>Konu anlatımları sonlanmıştır. Bu aşamadan sonra <b>Gelişmiş Kılavuzlar</b> konularına geçiş yapılacaktır.</i>
 
-<a href="https://omergulcicek.github.io/reactjs/derinlemesine-jsx">Sıradaki Gelişmiş Kılavuz: Derinlemesine JSX</a>
+<a href="https://omergulcicek.github.io/reactjs/gelismis-kilavuzlar/derinlemesine-jsx">Sıradaki Gelişmiş Kılavuz: Derinlemesine JSX</a>

@@ -451,4 +451,4 @@ Aksine, çıktıda `false`,` true`, `null` veya` undefined` gibi bir değerleri 
 </div>
 ```
 
-<a href="https://omergulcicek.github.io/reactjs/es6-olmadan-react">Sıradaki Gelişmiş Kılavuz: ES6 Olmadan React</a>
+<a href="https://omergulcicek.github.io/reactjs/gelismis-kilavuzlar/es6-olmadan-react">Sıradaki Gelişmiş Kılavuz: ES6 Olmadan React</a>

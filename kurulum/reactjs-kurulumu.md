@@ -119,4 +119,4 @@ npm run build
 
 <i>Oluşturulan `build` klasörünün içerisindeki dosyaları sunucunuza atarak test edebilirsiniz.</i>
 
-<a href="https://omergulcicek.github.io/reactjs/merhaba-dunya">İlk Konu: React JS ile Merhaba Dünya</a>
+<a href="https://omergulcicek.github.io/reactjs/hizli-baslangic/merhaba-dunya">İlk Konu: React JS ile Merhaba Dünya</a>

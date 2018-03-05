@@ -37,5 +37,4 @@ Sonra: Render edilmiş çıktıda her karede bir sayı görmeniz gerekiyor.
 
 <i>`Board` componentinin render fonksiyonundan `this.renderSquare()` fonksiyonu çağırılıyor. Parametre olarak ise 0'dan 8'e kadar parametreler gönderilmiş. `this.renderSquare` fonksiyonu ise `Square` componentini return ediyordu. Fakat içerisinde herhangi bir içerik yoktu. `value={i}` yaparak `Square` componentine `value` değerleri gönderdik. `Square` componentinde ise gelen bu valueyu `this.props.value` ile yazdırdık. Böylece oyun alanımızda karelerde 0'dan 8'e kadar rakamlar yazdırarak verileri props üzerinden componente geçirmiş olduk.</i>
 
-<a href="https://omergulcicek.github.io/reactjs/etkilesimli-component">Sıradaki Eğitim: Etkileşimli Component</a>
-
+<a href="https://omergulcicek.github.io/reactjs/uygulamali-egitim/etkilesimli-component">Sıradaki Eğitim: Etkileşimli Component</a>

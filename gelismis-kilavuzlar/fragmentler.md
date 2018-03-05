@@ -112,4 +112,4 @@ function Glossary(props) {
 
 <a href="https://codepen.io/reactjs/pen/VrEbjE?editors=1000">CodePen'de Deneyin</a>
 
-<a href="https://omergulcicek.github.io/reactjs/lifecycle-fonksiyonlari">Sıradaki Gelişmiş Kılavuz: Lifecycle Fonksiyonları</a>
+<a href="https://omergulcicek.github.io/reactjs/gelismis-kilavuzlar/lifecycle-fonksiyonlari">Sıradaki Gelişmiş Kılavuz: Lifecycle Fonksiyonları</a>

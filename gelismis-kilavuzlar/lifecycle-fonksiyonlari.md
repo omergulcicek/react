@@ -135,7 +135,7 @@ componentDidMount()
 
 Bu fonksiyon, herhangi bir abonelik ayarlamak için iyi bir yerdir. Bunu yaparsanız, `componentWillUnmount ()` da aboneliğinizi iptal etmeyi unutmayın.
 
-Bu yöntemde `setState()` çağrısı ek bir render işlemine neden olur, ancak tarayıcı ekranını güncellemeden önce gerçekleşir. `render()` fonksiyonunun bu durumda iki kez çağrılmasına rağmen kullanıcının ara state'i göremez. Bu kalıp sıklıkla performans sorunlarına neden olduğundan dikkatli kullanın. 
+Bu yöntemde `setState()` çağrısı ek bir render işlemine neden olur, ancak tarayıcı ekranını güncellemeden önce gerçekleşir. `render()` fonksiyonunun bu durumda iki kez çağrılmasına rağmen kullanıcının ara state'i göremez. Bu kalıp sıklıkla performans sorunlarına neden olduğundan dikkatli kullanın.
 
 * * *
 
@@ -147,7 +147,7 @@ componentWillReceiveProps(nextProps)
 
 `componentWillReceiveProps()`, bir component yeni bir props almaya başlamadan önce çağrılır. Props değişikliklerine tepki olarak state güncellemeniz gerekiyorsa (örneğin sıfırlamak için), `this.props` ve `nextProps` metodlarını karşılaştırabilir ve bu metoddaki `this.setState()` fonksiyonunu kullanarak state geçişleri gerçekleştirebilirsiniz.
 
-React, propsta değişiklik yapılmamış olsa bile bu metodu çağırabilir, bu nedenle yalnızca değişiklikleri ele almak istiyorsanız geçerli ve sonraki değerleri karşılaştırdığınızdan emin olun. 
+React, propsta değişiklik yapılmamış olsa bile bu metodu çağırabilir, bu nedenle yalnızca değişiklikleri ele almak istiyorsanız geçerli ve sonraki değerleri karşılaştırdığınızdan emin olun.
 
 React, mounting sırasında `componentWillReceiveProps()` fonksiyonunu ilk props grubu ile çağırmaz. Componentlerin propslarının bazıları güncellenmişse bu fonksiyonu çağırır. `this.setState()` fonksiyonunu çağrılması genellikle `componentWillReceiveProps()` fonksiyonunu tetiklemez.
 
@@ -243,7 +243,7 @@ setState(updater[, callback])
 
 `setState()`, component state'indeki değişiklikleri ekler ve bu componentin çocuklarının güncellenen state ile yeniden render edilmesini gerektiğini React'e bildirir. Bu, kullanıcı arabirimini güncellemek için kullandığınız birincil yöntemdir.
 
-Componenti güncellemek için hemen bir komut yerine `setState()` fonksiyonunu çağırın. Daha iyi bir performans için React onu geciktirebilir ve sonra birkaç componenti tek seferde güncelleştirebilir. 
+Componenti güncellemek için hemen bir komut yerine `setState()` fonksiyonunu çağırın. Daha iyi bir performans için React onu geciktirebilir ve sonra birkaç componenti tek seferde güncelleştirebilir.
 
 `setState()` her zaman componenti hemen güncellemez. Güncelleme işini daha sonraya bırakıp toplu olarak yapabilir. Bu, `setState()` fonksiyonunu potansiyel bir tuzağa düşürdükten sonra `this.state` dosyasını okumayı kolaylaştırır. Bunun yerine, `componentDidUpdate` veya `setState(updater, callback)` kullanın; ikisi de güncelleme uygulandıktan sonra tetiklenecektir. State'i bir önceki state'e göre ayarlamanız gerekiyorsa, aşağıdaki `updater` argümanını okuyun.
 
@@ -302,7 +302,7 @@ Detaylı bilgi için <a href="https://omergulcicek.github.io/reactjs/state-ve-li
 ```js
 component.forceUpdate(callback)
 ```
- 
+
 Varsayılan olarak, componentinde state yada props değiştiği zaman, component yeniden render edilir. `render()` fonksiyonu diğer bazı verilere bağlı ise, `forceUpdate()` fonksiyonunu çağırarak componentin yeniden oluşturulması gerektiğini React'e bildirebilirsiniz.
 
 `forceUpdate()` çağrısı, `shouldComponentUpdate()` atlanarak componentte `render()` çağırılmasına neden olur. Bu, her bir çocuğun `shouldComponentUpdate()` fonksiyonu da dahil olmak üzere, alt componentlerin  lifecycle fonksiyonlarını tetikleyecektir.
@@ -344,4 +344,4 @@ CustomButton.defaultProps = {
   }
 ```
 
-<a href="https://omergulcicek.github.io/reactjs/react-terimler-sozlugu">Sıradaki Gelişmiş Kılavuz: React Terimler Sözlüğü</a>
+<a href="https://omergulcicek.github.io/reactjs/gelismis-kilavuzlar/react-terimler-sozlugu">Sıradaki Gelişmiş Kılavuz: React Terimler Sözlüğü</a>

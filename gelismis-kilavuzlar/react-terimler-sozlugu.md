@@ -123,7 +123,7 @@ Lifecycle fonksiyonları, bir componentin farklı aşamalarında yürütülen ö
 
 Lifecycle fonksiyonları hakkında daha fazla bilgi için <a href="https://omergulcicek.github.io/reactjs/lifecycle-fonksiyonlari">lifecycle fonksiyonları</a> dokümanına bakın.
 
-<h2>Keys</h2> 
+<h2>Keys</h2>
 
 Bir `key` elementin dizileri oluşturulurken eklenmesi gereken özel bir string attributetüdür. Keyler yardımı ile hangi elementlerin değiştiğini, eklendiğini veya kaldırıldığını belirleyebilirsiniz. Elementlere istikrarlı bir kimlik kazandırmak için bir dizideki elemente key verilmelidir.
 
@@ -132,3 +132,7 @@ Keyler yalnızca aynı dizindeki kardeş elementler arasında benzersiz olmalıd
 Keylere `Math.random()` gibi bir şey kullanmayın. React keylerinin istikrarlı bir kimliği olması, böylece React'in element ekleme, kaldırma gibi işlemleri belirleyebilmesi için önemlidir. İdeal olarak, keyler verilerinizden gelen benzersiz ve kararlı tanımlayıcılara (örneğin `post.id`) karşılık gelmelidir.
 
 Keyler hakkında daha fazla bilgi için <a href="https://omergulcicek.github.io/reactjs/listeler-ve-keyler">listeler ve keyler</a> dokümanına bakın.
+
+<i>Gelişmiş kılavuzlar sonlanmıştır. Bu aşamadan sonra <b>Uygulamalı Eğitim</b>e geçiş yapılacaktır.</i>
+
+<a href="https://omergulcicek.github.io/reactjs/uygulamali-egitim/derinlemesine-jsx">Sıradaki Gelişmiş Kılavuz: Derinlemesine JSX</a>
