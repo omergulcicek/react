@@ -133,4 +133,4 @@ Keylere `Math.random()` gibi bir şey kullanmayın. React keylerinin istikrarlı
 
 Keyler hakkında daha fazla bilgi için <a href="https://omergulcicek.github.io/reactjs/listeler-ve-keyler">listeler ve keyler</a> dokümanına bakın.
 
-<a href="https://github.com/omergulcicek/reactjs/blob/master/gelismis-kilavuzlar/ajax-kullanimi.md">Sıradaki Gelişmiş Kılavuz: Ajax Kullanımı</a>
+<a href="https://omergulcicek.github.io/reactjs/gelismis-kilavuzlar/ajax-kullanimi">Sıradaki Gelişmiş Kılavuz: Ajax Kullanımı</a>
