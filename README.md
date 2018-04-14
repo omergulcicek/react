@@ -43,6 +43,7 @@ Hatalı yerlerin düzeltilmesi için pull request gönderebilirsiniz.
 - <a href="https://omergulcicek.github.io/reactjs/gelismis-kilavuzlar/fragmentler">Fragmentler</a>
 - <a href="https://omergulcicek.github.io/reactjs/gelismis-kilavuzlar/lifecycle-fonksiyonlari">Lifecycle Fonksiyonları</a>
 - <a href="https://omergulcicek.github.io/reactjs/gelismis-kilavuzlar/react-terimler-sozlugu">React Terimler Sözlüğü</a>
+- <a href="https://omergulcicek.github.io/reactjs/gelismis-kilavuzlar/ajax-kullanimi">AJAX Kullanımı</a>
 
 <h2>Uygulamalı Eğitim</h2>
 
