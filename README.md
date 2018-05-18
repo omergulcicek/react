@@ -2,7 +2,7 @@
 <img src="https://omergulcicek.com/img/react.png" alt="React JS - Türkçe Dokümantasyon" height="100">
 </p>
 
-<h1 align="center">React JS - Türkçe Dokümantasyon</h1>
+<h1 align="center">React JS - Türkçe Doküman</h1>
 
 <h3><a href="https://omergulcicek.github.io/reactjs/">omergulcicek.github.io/reactjs</a></h3>
 
