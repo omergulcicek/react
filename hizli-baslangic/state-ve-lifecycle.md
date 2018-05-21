@@ -258,7 +258,7 @@ Bu, zamanlayıcı ayarlamak için iyi bir yerdir:
 ```
 
 <i>`() => this.tick()` kullanımı `ES6` ile gelen kısa fonksiyon kullanımıdır.
-Bu kullanımlara daha hakim olmak için ilerleyen zamanda gerekli linkler eklenecektir.
+
 `ES5`'teki kullanımı `function() { return this.tick();` }</i>
 
 Zamanlayıcı `this`in üzerine nasıl kaydettiğimizi unutmayın.
