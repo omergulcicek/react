@@ -7,14 +7,14 @@ JSX bizlere sadece yazım kolaylıkları sağlar. JSX ile yapabileceğiniz herha
 Örneğin, bu kod JSX ile yazılmıştır:
 
 ```js
-class Merhaba extends React.Component {
+class Hello extends React.Component {
   render() {
     return <div>Merhaba {this.props.toWhat}</div>;
   }
 }
 
 ReactDOM.render(
-  <Merhaba toWhat="Dünya" />,
+  <Hello toWhat="Dünya" />,
   document.getElementById('root')
 );
 ```
@@ -22,14 +22,14 @@ ReactDOM.render(
 Yukarıdaki kod, JSX kullanmayan bu koda derlenebilir:
 
 ```js
-class Merhaba extends React.Component {
+class Hello extends React.Component {
   render() {
     return React.createElement('div', null, `Merhaba ${this.props.toWhat}`);
   }
 }
 
 ReactDOM.render(
-  React.createElement(Merhaba, {toWhat: 'Dünya'}, null),
+  React.createElement(Hello, {toWhat: 'Dünya'}, null),
   document.getElementById('root')
 );
 ```
