@@ -29,7 +29,7 @@ class Hello extends React.Component {
 }
 
 ReactDOM.render(
-  React.createElement(Merhaba, {toWhat: 'Dünya'}, null),
+  React.createElement(Hello, {toWhat: 'Dünya'}, null),
   document.getElementById('root')
 );
 ```
