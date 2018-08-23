@@ -26,7 +26,7 @@ Ayrıca React'in daha kullanışlı hata ve uyarı mesajları göstermesine izin
 
 O halde JSX yazmaya başlayalım!
 
-<h2>İfadeleri JSX'e Yerleştirmek</h2>
+<h2>Javascript ifadelerini JSX'e Yerleştirmek</h2>
 
 Herhangi bir JavaScript ifadesini JSX'de süslü parantez içine sarmalayarak yerleştirebilirsiniz.
 
@@ -78,12 +78,12 @@ String ifadeleri attribute olarak belirtmek için tırnak işaretleri kullanabil
 const element = <div tabIndex="0"></div>;
 ```
 
-Bir attribute'e JavaScript fonksiyonu yerleştirmek için süslü parantezleri de kullanabilirsiniz:
+Bir attribute'e JavaScript ifadesi yerleştirmek için süslü parantezleri de kullanabilirsiniz:
 
 ```js
 const element = <img src={user.avatarUrl}></img>;
 ```
-Bir attribute'e JavaScript fonksiyonu yerleştirirken süslü parantezler arasına tırnak işareti koymayın. Tırnak işaretleri string değerler için ve süslü parantezler ise JavaScript fonksiyonları için kullanmanız gerekir. Her ikisi birden aynı attribute'te kullanılamaz.
+Bir attribute'e JavaScript ifadesi yerleştirirken süslü parantezler arasına tırnak işareti koymayın. Tırnak işaretleri string değerler için ve süslü parantezler ise JavaScript ifadeleri için kullanmanız gerekir. Her ikisi birden aynı attribute'te kullanılamaz.
 
 >**Uyarı:**
 >
@@ -91,15 +91,15 @@ Bir attribute'e JavaScript fonksiyonu yerleştirirken süslü parantezler arası
 >
 >Örneğin JSX'te `class` yerine `className`, `tabindex` yerine `tabIndex` kullanılır.
 
-<h2>JSX ile Çocukların Belirtilmesi</h2>
+<h2>JSX ile Child Belirlemek</h2>
 
-Bir etiket boşsa (<i>çocuk içermiyorsa manasında</i>), XML gibi hemen `/>` ile kapatabilirsiniz:
+Bir etiket boşsa (<i>child içermiyorsa manasında</i>), XML gibi hemen `/>` ile kapatabilirsiniz:
 
 ```js
 const element = <img src={user.avatarUrl} />;
 ```
 
-JSX etiketleri çocuk içerebilir:
+JSX etiketleri child içerebilir:
 
 ```js
 const element = (
@@ -110,7 +110,7 @@ const element = (
 );
 ```
 
-<i>JSX elementindeki ana kapsayıcının içindeki ifadeler `çocuk` (child) olarak adlandırılır. Örneğin, üstteki ifadede `<div>` ana kapsayıcısının içerisinde bulunan `<h1>` ve `<h2>` etiketleri çocuk olarak adlandırılır.</i>
+<i>JSX elementindeki ana kapsayıcının içindeki ifadeler `child` (çocuk) olarak adlandırılır. Örneğin, üstteki ifadede `<div>` ana kapsayıcısının içerisinde bulunan `<h1>` ve `<h2>` etiketleri child olarak adlandırılır.</i>
 
 <h2>JSX, Enjeksiyon Saldırılarını Önler</h2>
 
