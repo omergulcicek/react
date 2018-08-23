@@ -81,7 +81,7 @@ class Toggle extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  clickOlayi() {
+  handleClick() {
     this.setState(prevState => ({
       isToggleOn: !prevState.isToggleOn
     }));
