@@ -90,7 +90,7 @@ Propslar ile bir yazı, rakam, değişken, component gibi her hangi bir şeyi g�
 
 Bazen componentleri, diğer componentlerin "özel durumları" olarak düşünürüz.
 
-React'te bu, daha "özel" bir componentin daha "jenerik" bir component oluşturduğu veprops ile yapılandırdığı composition ile elde edilir:
+React'te bu, daha "özel" bir componentin daha "jenerik" bir component oluşturduğu ve props ile yapılandırdığı composition ile elde edilir:
 
 ```js
 function Dialog(props) {
