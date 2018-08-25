@@ -15,7 +15,7 @@ Bazı syntax farklılıkları vardır:
 İlk kelime hariç diğer kelimelerin ilk harfleri büyük ve birleşik yazılır. Arada - (tire) kullanılmaz.
 React'te `class` yerine `className`, `tabindex` yerine `tabIndex`, `onclick` yerine `onClick`, `onchange` yerine `onChange` kullanılır.</i>)
 
-* JSX ile bir string yerine event işleyicisi olarak bir fonskyion iletirsiniz.
+* JSX ile bir string yerine event işleyicisi olarak bir fonksiyon iletirsiniz.
 
 Örneğin, HTML'de:
 
