@@ -84,7 +84,7 @@ class Columns extends React.Component {
 }
 ```
 
- `<></>` kullanabilirsiniz fakat keys yada attribute kullanımını desteklemez (<i>Sadece kapsayıcı olarak kullanılır</i>).
+`<></>` kullanabilirsiniz fakat keys yada attribute kullanımını desteklemez (<i>Sadece kapsayıcı olarak kullanılır</i>).
 
 Birçok toolsun henüz kısa syntax kullanımını desteklemediğini unutmayın, bu nedenle destek gelene kadar açıkça `<React.Fragment>` yazın.
 
@@ -112,4 +112,4 @@ function Glossary(props) {
 
 <a href="https://codepen.io/reactjs/pen/VrEbjE?editors=1000">CodePen'de Deneyin</a>
 
-<a href="https://omergulcicek.github.io/reactjs/gelismis-kilavuzlar/lifecycle-fonksiyonlari">Sıradaki Gelişmiş Kılavuz: Lifecycle Fonksiyonları</a>
+<a href="https://omergulcicek.github.io/react/gelismis-kilavuzlar/lifecycle-fonksiyonlari">Sıradaki Gelişmiş Kılavuz: Lifecycle Fonksiyonları</a>

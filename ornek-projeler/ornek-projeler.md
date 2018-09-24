@@ -1,6 +1,6 @@
 Tebrikler !
 
-<a href="https://omergulcicek.github.io/reactjs/merhaba-dunya">React dokümanı</a>nı tamamladınız ve <a href="https://omergulcicek.github.io/reactjs/xox-oyunu">uygulamalı eğitim</a> ile bilgilerinizi pekiştirdiniz. Sonraki aşama ise pratik yapmak ve uygulama geliştirmek. Buna küçük çaplı kaliteli projeleri inceleyerek başlayabilirsiniz.
+<a href="https://omergulcicek.github.io/react/merhaba-dunya">React dokümanı</a>nı tamamladınız ve <a href="https://omergulcicek.github.io/react/xox-oyunu">uygulamalı eğitim</a> ile bilgilerinizi pekiştirdiniz. Sonraki aşama ise pratik yapmak ve uygulama geliştirmek. Buna küçük çaplı kaliteli projeleri inceleyerek başlayabilirsiniz.
 
 Aşağıdaki listeye ekleme yapmak için <a href="https://github.com/omergulcicek/reactjs/blob/master/README.md#%C3%96rnek-projeler">readme sayfasında örnek projeler</a> listesine projenizi ekleyip <a href="https://medium.com/@noteCe/github-ile-fork-ve-pull-request-be6077342834">pull request</a> yapabilirsiniz.
 

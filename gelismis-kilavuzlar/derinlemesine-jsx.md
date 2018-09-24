@@ -186,7 +186,7 @@ function NumberDescriber(props) {
 }
 ```
 
-<a href="https://omergulcicek.github.io/reactjs/sartli-render">Şartlı render</a> ve <a href="https://omergulcicek.github.io/reactjs/listeler-ve-keyler">döngüler</a> hakkında ilgili bölümlerde daha fazla bilgi edinebilirsiniz.
+<a href="https://omergulcicek.github.io/react/sartli-render">Şartlı render</a> ve <a href="https://omergulcicek.github.io/react/listeler-ve-keyler">döngüler</a> hakkında ilgili bölümlerde daha fazla bilgi edinebilirsiniz.
 
 <h3>String Literaller</h3>
 
@@ -262,7 +262,7 @@ Spread attributeleri kullanışlı olabilir, ancak gereksiz componentleri kendil
 
 Hem bir açılış etiketi hem de bir kapanış etiketi içeren JSX ifadelerde, bu etiketler arasındaki içerik `props.children` olarak aktarılır. Childrenları geçmenin birkaç farklı yolu vardır:
 
-<i>Bu konu ile ilgili olan <a href="https://omergulcicek.github.io/reactjs/composition-ve-inheritance">composition ve inheritance</a> konusunuda okuyabilirsiniz.</i>
+<i>Bu konu ile ilgili olan <a href="https://omergulcicek.github.io/react/composition-ve-inheritance">composition ve inheritance</a> konusunuda okuyabilirsiniz.</i>
 
 <h3>String Literaller</h3>
 
@@ -319,7 +319,7 @@ render() {
 }
 ```
 
-<i>Keyler hakkında detaylı bilgi için <a href="https://omergulcicek.github.io/reactjs/listeler-ve-keyler">listeler ve keyler</a> konusundan <b>keyler</b> başlığına bakabilirsiniz.</i>
+<i>Keyler hakkında detaylı bilgi için <a href="https://omergulcicek.github.io/react/listeler-ve-keyler">listeler ve keyler</a> konusundan <b>keyler</b> başlığına bakabilirsiniz.</i>
 
 <h3>Children JavaScript İfadeleri</h3>
 
@@ -451,4 +451,4 @@ Aksine, çıktıda `false`,` true`, `null` veya` undefined` gibi bir değerleri 
 </div>
 ```
 
-<a href="https://omergulcicek.github.io/reactjs/gelismis-kilavuzlar/es6-olmadan-react">Sıradaki Gelişmiş Kılavuz: ES6 Olmadan React</a>
+<a href="https://omergulcicek.github.io/react/gelismis-kilavuzlar/es6-olmadan-react">Sıradaki Gelişmiş Kılavuz: ES6 Olmadan React</a>

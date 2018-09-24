@@ -62,4 +62,4 @@ Tebrik ederiz! Artık tic-tac-toe oyunu geliştirdiniz. Ve şimdi React'in temel
 
 <a href="https://codepen.io/gaearon/pen/LyyXgK?editors=0010">Mevcut kodu görüntüleyin</a>
 
-<a href="https://omergulcicek.github.io/reactjs/ornek-projeler/ornek-projeler">Örnek Projelere Göz Atın</a>
+<a href="https://omergulcicek.github.io/react/ornek-projeler/ornek-projeler">Örnek Projelere Göz Atın</a>

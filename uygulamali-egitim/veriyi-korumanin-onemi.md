@@ -65,4 +65,4 @@ Uygulamalarınızdaki birçok component fonksiyonel component olarak yazılabili
 
 <a href="https://codepen.io/gaearon/pen/QvvJOv?editors=0010">Mevcut kodu görüntüleyin</a>
 
-<a href="https://omergulcicek.github.io/reactjs/uygulamali-egitim/siradaki-oyuncu">Sıradaki Eğitim: Sıradaki Oyuncu</a>
+<a href="https://omergulcicek.github.io/react/uygulamali-egitim/siradaki-oyuncu">Sıradaki Eğitim: Sıradaki Oyuncu</a>

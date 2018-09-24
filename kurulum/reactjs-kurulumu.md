@@ -12,9 +12,9 @@ Kendi text editörünüzü kullanmayı tercih ederseniz, <a href="https://raw.gi
 
 <h2>Hızlı Başlangıç</h2>
 
-React kavramlarına adım adım bir giriş için <a href="https://omergulcicek.github.io/reactjs/merhaba-dunya">hızlı başlangıç bölümü</a>ne gidin.
+React kavramlarına adım adım bir giriş için <a href="https://omergulcicek.github.io/react/merhaba-dunya">hızlı başlangıç bölümü</a>ne gidin.
 
-Bir örnek üzerinden eğitim için <a href="https://omergulcicek.github.io/reactjs/xox-oyunu">uygulamalı eğitim bölümü</a>nü deneyin.
+Bir örnek üzerinden eğitim için <a href="https://omergulcicek.github.io/react/xox-oyunu">uygulamalı eğitim bölümü</a>nü deneyin.
 
 <h2>Geliştirme Ortamı</h2>
 
@@ -119,4 +119,4 @@ npm run build
 
 <i>Oluşturulan `build` klasörünün içerisindeki dosyaları sunucunuza atarak test edebilirsiniz.</i>
 
-<a href="https://omergulcicek.github.io/reactjs/hizli-baslangic/merhaba-dunya">İlk Konu: React JS ile Merhaba Dünya</a>
+<a href="https://omergulcicek.github.io/react/hizli-baslangic/merhaba-dunya">İlk Konu: React JS ile Merhaba Dünya</a>

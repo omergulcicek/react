@@ -256,4 +256,4 @@ Bazen bu daha temiz koda neden olur, ancak bu stil de istismar edilebilir.
 JavaScript'te olduğu gibi okunabilirlik açısından bir değişkenin çıkartılmaya değer olup olmadığına karar vermek size aittir.
 Kod çok iç içe geçmişse, bir componenti ayıklamak için doğru zamanın geldiğini aklınızda bulundurun.
 
-<a href="https://omergulcicek.github.io/reactjs/hizli-baslangic/formlar">Sıradaki Eğitim: Formlar</a>
+<a href="https://omergulcicek.github.io/react/hizli-baslangic/formlar">Sıradaki Eğitim: Formlar</a>

@@ -301,4 +301,4 @@ setTimeout(function() {
 
 ```
 
-<a href="https://omergulcicek.github.io/reactjs/hizli-baslangic/state-guncellemek">Sıradaki Eğitim: State Güncellemek</a>
+<a href="https://omergulcicek.github.io/react/hizli-baslangic/state-guncellemek">Sıradaki Eğitim: State Güncellemek</a>

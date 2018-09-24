@@ -19,7 +19,7 @@ Bir kareye tıklarsanız, tarayıcınızda alert (<i>uyarı</i>) almanız gereki
 
 Burada JavaScript ok fonksiyon syntaxı kullanılmıştır. Fonksiyonu `onClick` propsu olarak geçtiğimizi unutmayın.
 
-<i>Normalde click change gibi olaylarda bind etmek gerekiyor fakat ok fonksiyonu ve bazı diğer yöntemleri kullanarak constructorde bind etmedende click ve change'i kullanabiliyoruz. Detaylar için <a href="https://omergulcicek.github.io/reactjs/click-ve-change-olaylari">click ve change olayları</a> başlığına bakabilirsiniz.</i>
+<i>Normalde click change gibi olaylarda bind etmek gerekiyor fakat ok fonksiyonu ve bazı diğer yöntemleri kullanarak constructorde bind etmedende click ve change'i kullanabiliyoruz. Detaylar için <a href="https://omergulcicek.github.io/react/click-ve-change-olaylari">click ve change olayları</a> başlığına bakabilirsiniz.</i>
 
 `OnClick = {alert ('tıklandı')}` olarak yazsaydık, click yapmak yerine sadece uyarırdı.
 
@@ -85,4 +85,4 @@ Herhangi bir kareyi tıklarsanız, içinde bir X görünmelidir.
 
 <a href="https://codepen.io/gaearon/pen/VbbVLg?editors=0010">Mevcut kodu görüntüleyin</a>
 
-<a href="https://omergulcicek.github.io/reactjs/uygulamali-egitim/veriyi-korumanin-onemi">Sıradaki Eğitim: Veriyi Korumanın Önemi</a>
+<a href="https://omergulcicek.github.io/react/uygulamali-egitim/veriyi-korumanin-onemi">Sıradaki Eğitim: Veriyi Korumanın Önemi</a>

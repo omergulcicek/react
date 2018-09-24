@@ -12,9 +12,9 @@ class Greeting extends React.Component {
 }
 ```
 
-ES6'yı henüz kullanmıyorsanız, bunun yerine `create-react-class` modülünü kullanabilirsiniz. Daha fazla bilgi edinmek için <a href="https://omergulcicek.github.io/reactjs/es6-olmadan-react">ES6 olmadan React</a> konusuna bakın.
+ES6'yı henüz kullanmıyorsanız, bunun yerine `create-react-class` modülünü kullanabilirsiniz. Daha fazla bilgi edinmek için <a href="https://omergulcicek.github.io/react/es6-olmadan-react">ES6 olmadan React</a> konusuna bakın.
 
-Unutmayın, kendi temel component classlarınızı oluşturmanızı önermiyoruz. Kodun tekrar kullanımı React'te inheritancetan ziyade composition yoluyla elde edilir. Composition kullanma konusunda bir fikir edinmek için <a href="https://omergulcicek.github.io/reactjs/composition-ve-inheritance">composition ve inheritance</a> sayfasını inceleyin.
+Unutmayın, kendi temel component classlarınızı oluşturmanızı önermiyoruz. Kodun tekrar kullanımı React'te inheritancetan ziyade composition yoluyla elde edilir. Composition kullanma konusunda bir fikir edinmek için <a href="https://omergulcicek.github.io/react/composition-ve-inheritance">composition ve inheritance</a> sayfasını inceleyin.
 
 Her componentin, lifecycle  fonksiyonları vardır. İçerisinde `will` geçen fonksiyonlar component oluşturulmasından hemen önce çağrılırken, içerisinde `did` geçen fonksiyonlar component kaldırıldıktan sonra çağrılır.
 
@@ -293,7 +293,7 @@ this.setState((prevState) => {
   return {quantity: prevState.quantity + 1};
 });
 ```
-Detaylı bilgi için <a href="https://omergulcicek.github.io/reactjs/state-ve-lifecycle">state ve lifecycle</a> sayfasını inceleyenilirsiniz.
+Detaylı bilgi için <a href="https://omergulcicek.github.io/react/state-ve-lifecycle">state ve lifecycle</a> sayfasını inceleyenilirsiniz.
 
 * * *
 
@@ -344,4 +344,4 @@ CustomButton.defaultProps = {
   }
 ```
 
-<a href="https://omergulcicek.github.io/reactjs/gelismis-kilavuzlar/react-terimler-sozlugu">Sıradaki Gelişmiş Kılavuz: React Terimler Sözlüğü</a>
+<a href="https://omergulcicek.github.io/react/gelismis-kilavuzlar/react-terimler-sozlugu">Sıradaki Gelişmiş Kılavuz: React Terimler Sözlüğü</a>

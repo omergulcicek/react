@@ -26,7 +26,7 @@ CDN, Content Delivery Network (<i>İçerik Dağıtım Ağı</i>) kısaltmasıdı
 
 ## JSX
 
-JSX, JavaScript'in syntax uzantısıdır. Bir şablon diline benzer ancak JavaScript özellikleri vardır. JSX, JavaScript nesnelerini return eden `React.createElement()` çağrılarına derlenir. JSX'e temel bir giriş elde etmek için dokümanlara bakın ve <a href="https://omergulcicek.github.io/reactjs/jsx-nedir">burada JSX hakkında daha ayrıntılı bir bilgi</a> bulabilirsiniz.
+JSX, JavaScript'in syntax uzantısıdır. Bir şablon diline benzer ancak JavaScript özellikleri vardır. JSX, JavaScript nesnelerini return eden `React.createElement()` çağrılarına derlenir. JSX'e temel bir giriş elde etmek için dokümanlara bakın ve <a href="https://omergulcicek.github.io/react/jsx-nedir">burada JSX hakkında daha ayrıntılı bir bilgi</a> bulabilirsiniz.
 
 React DOM, HTML attribute adları yerine camelCase adlandırma kuralını kullanıyor. Örneğin, JSX'de `tabindex`,` tabIndex` olur. `Class` özelliği de JavaScript'de ayrılmış bir sözcük olduğu için` class` niteliği `className` olarak da yazılmıştır:
 
@@ -48,7 +48,7 @@ const element = <h1>Merhaba Dünya</h1>;
 
 Elementler doğrudan kullanılmaz, ancak componentler ile return edilir.
 
-Elementler hakkında detaylı bilgi için <a href="https://omergulcicek.github.io/reactjs/elementleri-render-etmek">elementleri render etmek</a> konusunu inceleyebilirsiniz.
+Elementler hakkında detaylı bilgi için <a href="https://omergulcicek.github.io/react/elementleri-render-etmek">elementleri render etmek</a> konusunu inceleyebilirsiniz.
 
 <h2>Componentler</h2>
 
@@ -72,7 +72,7 @@ class Welcome extends React.Component {
 
 Componentler, farklı parçalara bölünebilir ve başka component içinde kullanılabilir. Componentler, diğer componentleri, dizileri, stringleri ve sayıları return edebilir. UI'ızın bir bölümünü birkaç kez kullandıysa (Button, Panel, Avatar) veya kendi başına yeterince karmaşıksa (App, FeedStory, Comment), yeniden kullanılabilir bir component olması küçük parçalara ayırmak iyi bir yoldur. Component adları daima büyük harfle başlamalıdır (<wrapper /> değil, <Wrapper /> olmalı).
 
-Component oluşturma hakkında daha fazla bilgi için <a href="https://omergulcicek.github.io/reactjs/component-ve-props">component</a> dokümanına bakın.
+Component oluşturma hakkında daha fazla bilgi için <a href="https://omergulcicek.github.io/react/component-ve-props">component</a> dokümanına bakın.
 
 <h3>props</h3>
 
@@ -121,7 +121,7 @@ Bir Component, kendisiyle ilişkili bazı veriler zaman içinde değiştiğinde 
 
 Lifecycle fonksiyonları, bir componentin farklı aşamalarında yürütülen özel fonksiyonlardır. Component oluşturulduğunda ve DOM'a eklendiğinde (mounting), component güncellendiğinde ve component kaldırıldığında DOM'da çalıştırılan fonksiyonlar vardır.
 
-Lifecycle fonksiyonları hakkında daha fazla bilgi için <a href="https://omergulcicek.github.io/reactjs/lifecycle-fonksiyonlari">lifecycle fonksiyonları</a> dokümanına bakın.
+Lifecycle fonksiyonları hakkında daha fazla bilgi için <a href="https://omergulcicek.github.io/react/lifecycle-fonksiyonlari">lifecycle fonksiyonları</a> dokümanına bakın.
 
 <h2>Keys</h2>
 
@@ -131,6 +131,6 @@ Keyler yalnızca aynı dizindeki kardeş elementler arasında benzersiz olmalıd
 
 Keylere `Math.random()` gibi bir şey kullanmayın. React keylerinin istikrarlı bir kimliği olması, böylece React'in element ekleme, kaldırma gibi işlemleri belirleyebilmesi için önemlidir. İdeal olarak, keyler verilerinizden gelen benzersiz ve kararlı tanımlayıcılara (örneğin `post.id`) karşılık gelmelidir.
 
-Keyler hakkında daha fazla bilgi için <a href="https://omergulcicek.github.io/reactjs/listeler-ve-keyler">listeler ve keyler</a> dokümanına bakın.
+Keyler hakkında daha fazla bilgi için <a href="https://omergulcicek.github.io/react/listeler-ve-keyler">listeler ve keyler</a> dokümanına bakın.
 
-<a href="https://omergulcicek.github.io/reactjs/gelismis-kilavuzlar/ajax-kullanimi">Sıradaki Gelişmiş Kılavuz: Ajax Kullanımı</a>
+<a href="https://omergulcicek.github.io/react/gelismis-kilavuzlar/ajax-kullanimi">Sıradaki Gelişmiş Kılavuz: Ajax Kullanımı</a>

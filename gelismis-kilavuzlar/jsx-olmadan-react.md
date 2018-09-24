@@ -51,4 +51,4 @@ Bu kısa formu `React.createElement` için kullanırsanız, JSX olmadan React'i 
 
 Alternatif olarak, daha kısa bir syntax sunan <a href="https://github.com/mlmorg/react-hyperscript">react-hyperscript</a> ve <a href="https://github.com/ohanhi/hyperscript-helpers">hyperscript-helpers</a> gibi projelere başvurabilirsiniz.
 
-<a href="https://omergulcicek.github.io/reactjs/gelismis-kilavuzlar/fragmentler">Sıradaki Gelişmiş Kılavuz: Fragmentler</a>
+<a href="https://omergulcicek.github.io/react/gelismis-kilavuzlar/fragmentler">Sıradaki Gelişmiş Kılavuz: Fragmentler</a>

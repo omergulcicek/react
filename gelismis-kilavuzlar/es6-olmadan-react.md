@@ -175,7 +175,7 @@ Bazen çok farklı componentler bazı ortak fonksiyonları paylaşabilir. Bunlar
 
 Bir zaman aralığında kendisini güncellemek isteyen bir component, çok sık karşılaşılan bir kullanım durumudur. `SetInterval()` kullanmak kolaydır; ancak, `setInterval()` ile işiniz bittiğinde bunu iptal etmek önemlidir. React, bir component oluşturulmaya başlandığında veya yok edildiğinde sizi bilgilendiren lifecycle fonksiyonlarını kullanmanızı sağlar. Componenti yok edildiğinde otomatik olarak temizlenecek kolay bir `setInterval()` methodu sağlamak için bu yöntemleri kullanan basit bir mixin oluşturalım.
 
-<i>Lifecycle fonksiyonları ile ilgili detaylı bilgi için <a href="https://omergulcicek.github.io/reactjs/state-ve-lifecycle">State ve lifecycle</a> konusunda <b>"Bir Classa Lifecycle Fonksiyonları Ekleme"</b> başlığını inceleyebilirsiniz.</i>
+<i>Lifecycle fonksiyonları ile ilgili detaylı bilgi için <a href="https://omergulcicek.github.io/react/state-ve-lifecycle">State ve lifecycle</a> konusunda <b>"Bir Classa Lifecycle Fonksiyonları Ekleme"</b> başlığını inceleyebilirsiniz.</i>
 
 ```js
 var SetIntervalMixin = {
@@ -220,4 +220,4 @@ ReactDOM.render(
 
 Bir component çoklu mixin kullanıyorsa ve birkaç mixin aynı lifecycle fonksiyonu tanımlarsa (diğer bir deyişle, birkaç mixin, component yok edildiğinde bazı temizlemeler yapmak isterse), tüm lifecycle fonksiyonunun çağrılmasının garanti altına alınması sağlanır.
 
-<a href="https://omergulcicek.github.io/reactjs/gelismis-kilavuzlar/jsx-olmadan-react">Sıradaki Gelişmiş Kılavuz: JSX Olmadan React</a>
+<a href="https://omergulcicek.github.io/react/gelismis-kilavuzlar/jsx-olmadan-react">Sıradaki Gelişmiş Kılavuz: JSX Olmadan React</a>

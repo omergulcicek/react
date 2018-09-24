@@ -13,9 +13,9 @@ Aşağıdaki component, `state`i doldurmak için `componentDidMount`ta bir AJAX 
 ```js
 {
   items: [
-    { id: 1, name: 'Apples', price: '$2' },
-    { id: 2, name: 'Peaches', price: '$5' }
-  ] 
+    { id: 1, name: "Apples", price: "$2" },
+    { id: 2, name: "Peaches", price: "$5" }
+  ];
 }
 ```
 
@@ -31,24 +31,24 @@ class MyComponent extends React.Component {
   }
 
   componentDidMount() {
-  //AJAX isteğini burada başlatıyoruz.
+    //AJAX isteğini burada başlatıyoruz.
     fetch("https://api.example.com/items")
       .then(res => res.json())
       .then(
-        (result) => {
-        //AJAX'tan gelen veri ile state'imizi güncelliyoruz.
+        result => {
+          //AJAX'tan gelen veri ile state'imizi güncelliyoruz.
           this.setState({
             isLoaded: true,
             items: result.items
           });
         },
-        (error) => {
+        error => {
           this.setState({
             isLoaded: true,
             error
           });
         }
-      )
+      );
   }
 
   render() {
@@ -74,4 +74,4 @@ class MyComponent extends React.Component {
 
 <i>Gelişmiş kılavuzlar sonlanmıştır. Bu aşamadan sonra <b>Uygulamalı Eğitime</b> geçiş yapılacaktır.</i>
 
-<a href="https://omergulcicek.github.io/reactjs/uygulamali-egitim/xox-oyunu">Sıradaki Eğitim: XOX Oyunu</a>
+<a href="https://omergulcicek.github.io/react/uygulamali-egitim/xox-oyunu">Sıradaki Eğitim: XOX Oyunu</a>

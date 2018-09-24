@@ -98,4 +98,4 @@ Tarayıcı üzerinden bu örneği inceleyerek doğrulayabilirsiniz.
 
 <img src="https://reactjs.org/granular-dom-updates-c158617ed7cc0eac8f58330e49e48224.gif" alt="react dom örneği">
 
-<a href="https://omergulcicek.github.io/reactjs/hizli-baslangic/component-ve-props">Sıradaki Eğitim: Component ve Props</a>
+<a href="https://omergulcicek.github.io/react/hizli-baslangic/component-ve-props">Sıradaki Eğitim: Component ve Props</a>
