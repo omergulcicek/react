@@ -1,6 +1,6 @@
 <h1>State ve Lifecycle</h1>
 
-<a href="https://github.com/omergulcicek/reactjs/blob/master/elementleri-render-etmek.md">Önceki konularda</a> gördüğümüz
+<a href="https://github.com/omergulcicek/react/blob/master/hizli-baslangic/state-ve-lifecycle.md">Önceki konularda</a> gördüğümüz
 saat örneğini düşünün.
 
 Şu ana kadar UI'ı güncellemenin tek bir yolunu öğrendik.
