@@ -12,7 +12,7 @@ Kendi text editörünüzü kullanmayı tercih ederseniz, <a href="https://raw.gi
 
 <h2>Hızlı Başlangıç</h2>
 
-React kavramlarına adım adım bir giriş için <a href="https://omergulcicek.github.io/react/merhaba-dunya">hızlı başlangıç bölümü</a>ne gidin.
+React kavramlarına adım adım bir giriş için <a href="https://omergulcicek.github.io/react/hizli-baslangic/merhaba-dunya">hızlı başlangıç bölümü</a>ne gidin.
 
 Bir örnek üzerinden eğitim için <a href="https://omergulcicek.github.io/react/xox-oyunu">uygulamalı eğitim bölümü</a>nü deneyin.
 
