@@ -95,7 +95,7 @@ class Clock extends React.Component {
     return (
       <div>
         <h1>Merhaba Dünya!</h1>
-        <h2>Saat şu anda {this.props.date.toLocaleTimeString()}/h2>
+        <h2>Saat şu anda {this.props.date.toLocaleTimeString()}</h2>
       </div>
     );
   }
