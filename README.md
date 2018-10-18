@@ -59,5 +59,6 @@ Hatalı yerlerin düzeltilmesi için pull request gönderebilirsiniz.
 - <a href="https://github.com/ahfarmer/calculator?editors=0010">Calculator</a>: Hesap Makinesi
 - <a href="https://github.com/ahfarmer/emoji-search?editors=0010">Emoji Search</a>: Emoji Arama
 - <a href="https://codepen.io/yigitcukuren/pen/GyxxVm?editors=0010">Memory Game</a>: Hafıza Oyunu <img src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f1f9-1f1f7.png" height="20">
+- <a href="https://github.com/aykutkardas/react-leblebi">Leblebi</a>: Otomatik Tamamlama
 
 <i>Geliştirdiğiniz React uygulamalarını listeye ekleyebilirsiniz.</i>
