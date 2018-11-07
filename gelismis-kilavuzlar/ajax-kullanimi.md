@@ -72,6 +72,4 @@ class MyComponent extends React.Component {
 }
 ```
 
-<i>Gelişmiş kılavuzlar sonlanmıştır. Bu aşamadan sonra <b>Uygulamalı Eğitime</b> geçiş yapılacaktır.</i>
-
-<a href="https://omergulcicek.github.io/react/uygulamali-egitim/xox-oyunu">Sıradaki Eğitim: XOX Oyunu</a>
+<a href="https://omergulcicek.github.io/react/gelismis-kilavuzlar/react-hook">Sıradaki Eğitim: React Hook</a>
