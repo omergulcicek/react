@@ -25,7 +25,7 @@ function Example() {
 }
 ```
 
-Verilerin getirilmesi, bir abonelik oluşturulması ve React componentlerinde DOM'un manuel olarak değiştirilmesi, tüm side efektlere örnektir.
+Verilerin getirilmesi, bir abonelik oluşturulması ve React componentlerinde DOM'un manuel olarak değiştirilmesi, tüm yan efektlere örnektir.
 
 >İpucu
 >
@@ -35,17 +35,17 @@ Verilerin getirilmesi, bir abonelik oluşturulması ve React componentlerinde DO
 
 [Lifecyle Fonksiyonları hakkında detaylı bilgi için tıklayınız.](https://omergulcicek.github.io/react/gelismis-kilavuzlar/lifecycle-fonksiyonlari)
 
-## Effects Without Cleanup
+## Temizleme Yapmadan Efektler
 
-Sometimes, we want to **run some additional code after React has updated the DOM.** Network requests, manual DOM mutations, and logging are common examples of effects that don't require a cleanup. We say that because we can run them and immediately forget about them. Let's compare how classes and Hooks let us express such side effects.
+Bazen, React DOM'u güncelledikten sonra bazı kodlar çalıştırmak isteriz. Network istekleri, manuel DOM mutasyonları ve log kaydı, temizleme gerektirmeyen efektlere genel örneklerdir. Bunu söylüyoruz çünkü onları çalıştırabilir ve hemen onları unutabiliriz. Classların ve Hooks'un bu gibi yan efektleri nasıl ifade edeceğimizi karşılaştıralım.
 
-### Example Using Classes
+### Classları Kullanan Örnek
 
-In React class components, the `render` method itself shouldn't cause side effects. It would be too early -- we typically want to perform our effects *after* React has updated the DOM.
+React class componentlerinde, `render` fonksiyonunun kendisi yan efektlere neden olmamalıdır. Çok erken olurdu - genellikle efektleri React DOM'u güncelledikten sonra gerçekleşmesini istiyoruz.
 
-This is why in React classes, we put side effects into `componentDidMount` and `componentDidUpdate`. Coming back to our example, here is a React counter class component that updates the document title right after React makes changes to the DOM:
+Bu nedenle, React classlarında, `componentDidMount` ve `componentDidUpdate` componentlerine yan etkiler koyarız. Örneğimize geri dönersek, burada React, DOM'da değişiklikler yaptıktan hemen sonra belge başlığını güncelleyen bir sayaç class componentidir:
 
-```js{9-15}
+```js
 class Example extends React.Component {
   constructor(props) {
     super(props);
@@ -55,19 +55,19 @@ class Example extends React.Component {
   }
 
   componentDidMount() {
-    document.title = `You clicked ${this.state.count} times`;
+    document.title = `${this.state.count} kere tıkladınız`;
   }
 
   componentDidUpdate() {
-    document.title = `You clicked ${this.state.count} times`;
+    document.title = `${this.state.count} kere tıkladınız`;
   }
 
   render() {
     return (
       <div>
-        <p>You clicked {this.state.count} times</p>
+        <p>${this.state.count} kere tıkladınız.</p>
         <button onClick={() => this.setState({ count: this.state.count + 1 })}>
-          Click me
+          Tıkla
         </button>
       </div>
     );
@@ -75,31 +75,31 @@ class Example extends React.Component {
 }
 ```
 
-Note how **we have to duplicate the code between these two lifecycle methods in class.**
+Classlardaki bu iki lifecyle fonksiyonu arasında gördüğünüz gibi aynı kodu kopyaladık.
 
-This is because in many cases we want to perform the same side effect regardless of whether the component just mounted, or if it has been updated. Conceptually, we want it to happen after every render -- but React class components don't have a method like this. We could extract a separate method but we would still have to call it in two places.
+Bunun nedeni, birçok durumda componentlerin yeni render edilmiş olup olmadığına veya güncellenip güncellenmediğine bakılmaksızın, aynı yan efekti gerçekleştirmek istiyoruz. Kavramsal olarak, her renderdan sonra olmasını isteriz - ancak React class componentlerin böyle bir fonksiyonu yoktur. Ayrı bir fonksiyon yazabilirdik ama yine de iki lifecyle fonksiyonunda bu oluşturduğumuz fonksiyonu çağırmak zorundayız.
 
-Now let's see how we can do the same with the `useEffect` Hook.
+Şimdi `useEffect` hook ile aynın şeyi nasıl yapacağımıza bakalım.
 
-### Example Using Hooks
+### Hook Kullanımına Örnek
 
-We've already seen this example at the top of this page, but let's take a closer look at it:
+Bu örneği zaten üstte gördük fakat tekrar yakından bakalım:
 
-```js{1,6-8}
+```js
 import { useState, useEffect } from 'react';
 
 function Example() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    document.title = `You clicked ${count} times`;
+    document.title = `${count} kere tıkladınız`;
   });
 
   return (
     <div>
-      <p>You clicked {count} times</p>
+      <p>{count} kere tıkladınız.</p>
       <button onClick={() => setCount(count + 1)}>
-        Click me
+        Tıkla
       </button>
     </div>
   );
@@ -467,6 +467,6 @@ We're also starting to see how Hooks solve problems outlined in [Motivation](/do
 At this point you might be questioning how Hooks work. How can React know which `useState` call corresponds to which state variable between re-renders? How does React "match up" previous and next effects on every update? **On the next page we will learn about the [Rules of Hooks](/docs/hooks-rules.html) -- they're essential to making Hooks work.**
 
 
-```js
-```
+<i>Gelişmiş kılavuzlar sonlanmıştır. Bu aşamadan sonra <b>Uygulamalı Eğitime</b> geçiş yapılacaktır.</i>
+
 <a href="https://omergulcicek.github.io/react/uygulamali-egitim/xox-oyunu">Sıradaki Eğitim: XOX Oyunu</a>
