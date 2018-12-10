@@ -106,32 +106,32 @@ function Example() {
 }
 ```
 
-**What does `useEffect` do?** By using this Hook, you tell React that your component needs to do something after render. React will remember the function you passed (we'll refer to it as our "effect"), and call it later after performing the DOM updates. In this effect, we set the document title, but we could also perform data fetching or call some other imperative API.
+**`useEffect` ne yapar?** Bu hook'u kullanarak, componentin render edildikten sonra bir şeyler yapması gerektiğini React'a söylemiş olursunuz. React, bu fonksiyonu hatırlayacaktır (buna "effect" diyeceğiz) ve DOM güncellemelerini gerçekleştirdikten sonra bu effect'te sayfa title'ını belirledik, ancak veri getirmeyi veya başka bir API'ye çağrı yapabiliriz.
 
-**Why is `useEffect` called inside a component?** Placing `useEffect` inside the component lets us access the `count` state variable (or any props) right from the effect. We don't need a special API to read it -- it's already in the function scope. Hooks embrace JavaScript closures and avoid introducing React-specific APIs where JavaScript already provides a solution.
+**Neden `useEffect`  bir componentin içerisinde çağrılır?** Componentin içine `useEffect` yerleştirmek, effectten `count` state değişkenine (veya herhangi bir propsa) erişmemize izin verir. Okumak için özel bir API'ye ihtiyacımız yok (çünkü zaten fonksiyon scope kapsamında). Hooklar, JavaScript kapanışlarını benimserler ve JavaScript'in zaten çözüm sağladığı React-Specifis API'lerini tanıtmaktan kaçınırlar.
 
-**Does `useEffect` run after every render?** Yes! By default, it runs both after the first render *and* after every update. (We will later talk about [how to customize this](#tip-optimizing-performance-by-skipping-effects).) Instead of thinking in terms of "mounting" and "updating", you might find it easier to think that effects happen "after render". React guarantees the DOM has been updated by the time it runs the effects.
+**`useEffect` her renderdan sonra çalışır mı** Evet! Varsayılan olarak her güncellemeden sonra ilk render ve sonrasında da çalışır (daha sonradan bunu nasıl özelleştireceğimizi konuşacağız). Mounting ve updating terimleriyle düşünmek yerine, bunu düşünmek daha kolay olabilir. Effectler render edildikten sonra olur. React, DOM'un etkileri çalıştırdığı zaman güncellenediğini garanti eder.
 
-### Detailed Explanation
+### Detaylı Açıklama
 
-Now that we know more about effects, these lines should make sense:
+Artık effectler hakkında daha fazla bilgi sahibi olduğumuza göre, bu kodlar mantıklı olmalı:
 
 ```js
 function Example() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    document.title = `You clicked ${count} times`;
+    document.title = `${count} kere tıkladınız.`;
   });
 ```
 
-We declare the `count` state variable, and then we tell React we need to use an effect. We pass a function to the `useEffect` Hook. This function we pass *is* our effect. Inside our effect, we set the document title using the `document.title` browser API. We can read the latest `count` inside the effect because it's in the scope of our function. When React renders our component, it will remember the effect we used, and then run our effect after updating the DOM. This happens for every render, including the first one.
+`count` state değişkenini alırız ve sonra React'a bir effect kullanmamız gerektiğini söyleriz. `useEffect` hookuna bir fonksiyon iletiyoruz (`setCount`); bu fonksiyon bizim effectimizdir. Effectimizin içine sayfa title'ını `document.title` tarayıcı API'sini kullanarak değiştirdik. Effectin içinde en son `count`u okuyabiliriz çünkü bu bizim fonksiyon scope'undadır. React, componentimizi oluşturduğunda, kullandığımız effecti hatırlar ve DOM'u güncelledikten sonra effectimizi çalıştırır. Bu ilk render dahil olmak üzere her render için geçerlidir.
 
-Experienced JavaScript developers might notice that the function passed to `useEffect` is going to be different on every render. This is intentional. In fact, this is what lets us read the `count` value from inside the effect without worrying about it getting stale. Every time we re-render, we schedule a _different_ effect, replacing the previous one. In a way, this makes the effects behave more like a part of the render result -- each effect "belongs" to a particular render. We will see more clearly why this is useful [later on this page](#explanation-why-effects-run-on-each-update).
+Deneyimli JavaScript geliştiricileri, `useEffect` fonksiyonuna iletilen fonksiyonun her renderdan sonra farklı olacağını fark edebilir, bu kasıtlıdır. Aslında bu, `count` değerini effectin içinden okumamızı sağlar. Her yeniden render edildiğinde bir öncekinin yerine farklı bir effecti programlıyoruz. Bir bakıma bu, effectlerin render sonucunun bir parçası gibi davrandığını gösterir. Bunun neden yararlı olduğunu daha sonra göreceğiz.
 
->Tip
+>İpucu
 >
->Unlike `componentDidMount` or `componentDidUpdate`, effects scheduled with `useEffect` don't block the browser from updating the screen. This makes your app feel more responsive. The majority of effects don't need to happen synchronously. In the uncommon cases where they do (such as measuring the layout), there is a separate [`useLayoutEffect`](/docs/hooks-reference.html#uselayouteffect) Hook with an API identical to `useEffect`.
+>`componentDidMount` veya `componentDidUpdate` fonksiyonlarının aksine `useEffect` ile planlanan effectler, tarayıcıyı ekranın güncellemesini engellemez. Bu uygulamanızı daha duyarlı hissettirir. Effectlerin çoğunun senkronie olmasına gerek yoktur. Yaptıkları nadir durumlarda (layout'un ölçülmesi gibi) `useEffect` ile aynı API'ye sahip ayrı bir `useLayoutEffect` vardır.
 
 ## Effects with Cleanup
 
