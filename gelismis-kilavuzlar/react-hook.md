@@ -133,15 +133,15 @@ Deneyimli JavaScript geliştiricileri, `useEffect` fonksiyonuna iletilen fonksiy
 >
 >`componentDidMount` veya `componentDidUpdate` fonksiyonlarının aksine `useEffect` ile planlanan effectler, tarayıcıyı ekranın güncellemesini engellemez. Bu uygulamanızı daha duyarlı hissettirir. Effectlerin çoğunun senkronie olmasına gerek yoktur. Yaptıkları nadir durumlarda (layout'un ölçülmesi gibi) `useEffect` ile aynı API'ye sahip ayrı bir `useLayoutEffect` vardır.
 
-## Effects with Cleanup
+## Temizleme ile Efektler
 
-Earlier, we looked at how to express side effects that don't require any cleanup. However, some effects do. For example, **we might want to set up a subscription** to some external data source. In that case, it is important to clean up so that we don't introduce a memory leak! Let's compare how we can do it with classes and with Hooks.
+Daha önce, temizleme gerektirmeyen yan etkilerin nasıl oluşturulduğunu inceledik. **bazı hari veri kaynaklarına bir abonelik ayarlamak isteyebiliriz.** Bu durumda, bellek sızıntısına neden olmamak için temizlik yapılması önemlidir. Bunu sınıflarla ve hook ile yapabileceğimi inceleyelim.
 
-### Example Using Classes
+### Sınıfları Kullanarak Örnek
 
-In a React class, you would typically set up a subscription in `componentDidMount`, and clean it up in `componentWillUnmount`. For example, let's say we have a `ChatAPI` module that lets us subscribe to a friend's online status. Here's how we might subscribe and display that status using a class:
+React sınıflarında, `ComponentDidMount` içinde bir abonelik kurarsanız, bunu `ComponentWillUnmount` içinde temizlersiniz. Örneğin, bir arkadaşının çevrimiçi durumuna abone olmamızı sağlayan bir `ChatAPI` modülümüz olduğunu varsayalım. Bir sınıf kullanarak nasıl yazabileceğini aşağıda bulabilirsiniz.
 
-```js{8-26}
+```js
 class FriendStatus extends React.Component {
   constructor(props) {
     super(props);
@@ -178,19 +178,19 @@ class FriendStatus extends React.Component {
 }
 ```
 
-Notice how `componentDidMount` and `componentWillUnmount` need to mirror each other. Lifecycle methods force us to split this logic even though conceptually code in both of them is related to the same effect.
+`componentDidMount` ve `componentWillunmount` birbirlerini yansıtmaları gerektiğine dikkat edin. Lifecyle fonskiyonları, ikisininde kavramsal olarak aynı etkiyle ilişki olmasına rağmen, bunu iki kere yazmamızı sağlar.
 
->Note
+>Not
 >
->Eagle-eyed readers may notice that this example also needs a `componentDidUpdate` method to be fully correct. We'll ignore this for now but will come back to it in a [later section](#explanation-why-effects-run-on-each-update) of this page.
+>Eagle-eyed okuyucular, bu örneğin tamamen doğru olması için bir `componentDidUpdate` fonksiyonuna ihtiyaç duyduklarını fark edebilirler. Şimdilik bunu görmezden geleceğiz (sonradan bahsedilecek).
 
-### Example Using Hooks
+### Hooks Kullanarak Örnek
 
-Let's see how we could write this component with Hooks.
+Aynı bileşeni Hooks ile nasıl yazabileceğimize bir bakalım.
 
-You might be thinking that we'd need a separate effect to perform the cleanup. But code for adding and removing a subscription is so tightly related that `useEffect` is designed to keep it together. If your effect returns a function, React will run it when it is time to clean up:
+Temizliği gerçekleştirmek için ayrı bir efekte ihtiyacımız olacağını düşünüyor olabilirsiniz. Ancak bir abonelik ekleme ve kaldırma kodu, o kadar sıkı bir şekilde ilişkilidir ki `useEffect` onu bir arada tutmak için tasarlanmıştır. Efektiniz bir fonksiyon return ederse, temizleme zamanı geldiğinde React onu çalıştıracaktır.
 
-```js{10-16}
+```js
 import { useState, useEffect } from 'react';
 
 function FriendStatus(props) {
@@ -202,7 +202,7 @@ function FriendStatus(props) {
 
   useEffect(() => {
     ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
-    // Specify how to clean up after this effect:
+    // Bu kısımda nasıl temizleneceğini belirtin:
     return function cleanup() {
       ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
     };
@@ -215,13 +215,13 @@ function FriendStatus(props) {
 }
 ```
 
-**Why did we return a function from our effect?** This is the optional cleanup mechanism for effects. Every effect may return a function that cleans up after it. This lets us keep the logic for adding and removing subscriptions close to each other. They're part of the same effect!
+**Neden efektimizden bir fonskiyon return ettik?** Bu, efektler için isteğe bağlı temizleme mekanizmasıdır. Her efekt, ondan sonra temizleyen bir fonksiyon return edebilir. Bu, abonelik ekleme ve kaldırma mantığını korumamızı sağlar. Onlar aynı efektin bir parçası!
 
-**When exactly does React clean up an effect?** React performs the cleanup when the component unmounts. However, as we learned earlier, effects run for every render and not just once. This is why React *also* cleans up effects from the previous render before running the effects next time. We'll discuss [why this helps avoid bugs](#explanation-why-effects-run-on-each-update) and [how to opt out of this behavior in case it creates performance issues](#tip-optimizing-performance-by-skipping-effects) later below.
+**React tam olarak ne zaman bir efekte neden oluyor?** React, component unmounts olduğunda React temizleme işlemini gerçekleştiriyor. Ancak, daha önce öğrendiğimiz gibi efektler sadece bir kez değil, her render için çalışır. Bu yüzden React *ayrıca* efektleri bir dahaki sefere çalıştırmadan önce önceki renderdeki efektleri temizler. Bunun neden hatalardan kaçınmaya yardımcı olduğunu ve daha sonra performans sorunları yaratması durumunda bu davranıştan nasıl vazgeçileceğini ilerleyen kısımlarda göreceğiz.
 
->Note
+>Not
 >
->We don't have to return a named function from the effect. We called it `cleanup` here to clarify its purpose, but you could return an arrow function or call it something different.
+>İsimlendirilmiş bir fonksiyonu efekkten döndürmek zorunda değiliz. Amacını netleştirmek için buraya `cleanup` diyoruz, ancak bir arrow fonksiyonu return edebilir veya farklı bir şey diyebilirsiniz.
 
 ## Recap
 
