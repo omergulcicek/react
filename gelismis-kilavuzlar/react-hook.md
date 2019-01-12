@@ -225,7 +225,7 @@ function FriendStatus(props) {
 
 ## Recap
 
-We've learned that `useEffect` lets us express different kinds of side effects after a component renders. Some effects might require cleanup so they return a function:
+`useEffect` öğresinin bir component render edildikten sonra yan efektleri ifade etmemize izin verdiğini öğrendik. Bazı efektler temizleme gerektirebilir, bu nedenli bir fonksiyon return ederler:
 
 ```js
   useEffect(() => {
@@ -236,7 +236,7 @@ We've learned that `useEffect` lets us express different kinds of side effects a
   });
 ```
 
-Other effects might not have a cleanup phase, and don't return anything.
+Diğer efektler temizleme aşamasına sahip olmayabilir ve hiçbir şey return etmezler.
 
 ```js
   useEffect(() => {
@@ -244,21 +244,19 @@ Other effects might not have a cleanup phase, and don't return anything.
   });
 ```
 
-The Effect Hook unifies both use cases with a single API.
+Efekt Hook, her iki kullanım durumunu da tek bir API ile birleştirir.
 
 -------------
 
-**If you feel like you have a decent grasp on how the Effect Hook works, or if you feel overwhelmed, you can jump to the [next page about Rules of Hooks](/docs/hooks-rules.html) now.**
+## Efektleri Kullanma İpuçları
 
--------------
+Bu kısımda, deneyimli React kullanıcılarının muhtemelen merak edeceği `useEffect`in bazı yönlerine derinlemesine bakacağız.
 
-## Tips for Using Effects
+### İpucu: Endişeleri Ayırmak İçin Birden Çok Efekt Kullanma
 
-We'll continue this page with an in-depth look at some aspects of `useEffect` that experienced React users will likely be curious about. Don't feel obligated to dig into them now. You can always come back to this page to learn more details about the Effect Hook.
+One of the problems we outlined in the Motivation for Hooks is that class lifecycle methods often contain unrelated logic, but related logic gets broken up into several methods. Here is a component that combines the counter and the friend status indicator logic from the previous examples:
 
-### Tip: Use Multiple Effects to Separate Concerns
-
-One of the problems we outlined in the [Motivation](/docs/hooks-intro.html#complex-components-become-hard-to-understand) for Hooks is that class lifecycle methods often contain unrelated logic, but related logic gets broken up into several methods. Here is a component that combines the counter and the friend status indicator logic from the previous examples:
+Hooks motivasyonunda ana hatlarıyla anlattığımız sorunlardan biri, class lifecycle fonksiyonlarının çoğu zaman ilgisiz bir mantık içermesi, ancak ilgili mantığın çeşitli yöntemlere bölünmesidir. Sayaç ile arkadaş durumu gösterge mantığını önceki örneklerden birleştiren bir component:
 
 ```js
 class FriendStatusWithCounter extends React.Component {
@@ -269,7 +267,7 @@ class FriendStatusWithCounter extends React.Component {
   }
 
   componentDidMount() {
-    document.title = `You clicked ${this.state.count} times`;
+    document.title = `${this.state.count} kez tıkladın`;
     ChatAPI.subscribeToFriendStatus(
       this.props.friend.id,
       this.handleStatusChange
@@ -277,7 +275,7 @@ class FriendStatusWithCounter extends React.Component {
   }
 
   componentDidUpdate() {
-    document.title = `You clicked ${this.state.count} times`;
+    document.title = `${this.state.count} kez tıkladın`;
   }
 
   componentWillUnmount() {
@@ -295,15 +293,15 @@ class FriendStatusWithCounter extends React.Component {
   // ...
 ```
 
-Note how the logic that sets `document.title` is split between `componentDidMount` and `componentDidUpdate`. The subscription logic is also spread between `componentDidMount` and `componentWillUnmount`. And `componentDidMount` contains code for both tasks.
+Yukarıda görüldüğü gibi, aynı kodlar gereksiz yere tekrar etmiştir.
 
-So, how can Hooks solve this problem? Just like [you can use the *State* Hook more than once](/docs/hooks-state.html#tip-using-multiple-state-variables), you can also use several effects. This lets us separate unrelated logic into different effects:
+Peki, Hook bu sorunu nasıl çözebilir? *State* hook'u bir kereden fazla kullanabildiğiniz gibi, çeşitli efektler de kullanabilirsiniz. Bu, ilgisiz mantığı farklı efektlere ayırmamızı sağlar:
 
-```js{3,8}
+```js
 function FriendStatusWithCounter(props) {
   const [count, setCount] = useState(0);
   useEffect(() => {
-    document.title = `You clicked ${count} times`;
+    document.title = `${this.state.count} kez tıkladın`;
   });
 
   const [isOnline, setIsOnline] = useState(null);
@@ -321,13 +319,13 @@ function FriendStatusWithCounter(props) {
 }
 ```
 
-**Hooks lets us split the code based on what it is doing** rather than a lifecycle method name. React will apply *every* effect used by the component, in the order they were specified.
+**Hook, lifecycke fonksiyon isimlerinden ziyade**, yaptıklarına göre kodu bölmemize olanak sağlar. React, component tarafından kullanılan *her* efekti, belirtilen sırada uygular.
 
-### Explanation: Why Effects Run on Each Update
+### Açıklama: Neden Her Güncellemede Efektler Çalışıyor?
 
-If you're used to classes, you might be wondering why the effect cleanup phase happens after every re-render, and not just once during unmounting. Let's look at a practical example to see why this design helps us create components with fewer bugs.
+Classlara alışkınsanız, efekt temizleme aşamasının neden her bir render işleminden sonra gerçekleştiğini değil, unmounting işlemi sırasında yalnızca bir kez olduğunu merak ediyor olabilirsiniz. Bu tasarımın neden daha az hata içeren component oluşturmamıza yardımcı olduğunu görmek için pratik bir örneğe bakalım.
 
-[Earlier on this page](#example-using-classes-1), we introduced an example `FriendStatus` component that displays whether a friend is online or not. Our class reads `friend.id` from `this.props`, subscribes to the friend status after the component mounts, and unsubscribes during unmounting:
+Bu sayfada daha önce bir arkadaşın çevrimiçi olup olmadığını gösteren bir `FriendStatus` componenti yazıldı. Sınıfımız, `this.props` `friend.id` okur, component mounts edildikten sonra arkadaş durumuna abone olur ve unmounting işlemi sırasında aboneliği kaldırır:
 
 ```js
   componentDidMount() {
@@ -345,11 +343,11 @@ If you're used to classes, you might be wondering why the effect cleanup phase h
   }
 ```
 
-**But what happens if the `friend` prop changes** while the component is on the screen? Our component would continue displaying the online status of a different friend. This is a bug. We would also cause a memory leak or crash when unmounting since the unsubscribe call would use the wrong friend ID.
+Ancak, component ekranda iken **`friend` propsu değişirse ne olur?** Componentimiz, farklı bir arkadaşın çevrimiçi durumunu göstermeye devam edecek. Bu bir hatadır. Abonelikten çıkma çağrısının yanlış arkadaş kimliğini kullanması nedeniyle bağlantıyı keserken de bellek sızıntısına veya çökmesine neden oluruz.
 
-In a class component, we would need to add `componentDidUpdate` to handle this case:
+Bir class componentinde, bu durumu ele almak için `componentDidUpdate` eklememiz gerekir:
 
-```js{8-19}
+```js
   componentDidMount() {
     ChatAPI.subscribeToFriendStatus(
       this.props.friend.id,
@@ -358,12 +356,12 @@ In a class component, we would need to add `componentDidUpdate` to handle this c
   }
 
   componentDidUpdate(prevProps) {
-    // Unsubscribe from the previous friend.id
+    // Önceki friend.id aboneliğinden çık
     ChatAPI.unsubscribeFromFriendStatus(
       prevProps.friend.id,
       this.handleStatusChange
     );
-    // Subscribe to the next friend.id
+    // Sonraki friend.id aboneliğini başlat
     ChatAPI.subscribeToFriendStatus(
       this.props.friend.id,
       this.handleStatusChange
@@ -378,9 +376,9 @@ In a class component, we would need to add `componentDidUpdate` to handle this c
   }
 ```
 
-Forgetting to handle `componentDidUpdate` properly is a common source of bugs in React applications.
+`ComponentDidUpdate` kodunu doğru bir şekilde işlemeyi unutmak, React uygulamalarındaki yaygın bir hata kaynağıdır.
 
-Now consider the version of this component that uses Hooks:
+Şimdi bu componenti Hooks kullanan sürümünü düşünün:
 
 ```js
 function FriendStatus(props) {
@@ -393,27 +391,27 @@ function FriendStatus(props) {
   });
 ```
 
-It doesn't suffer from this bug. (But we also didn't make any changes to it.)
+Bu bug muzdarip değil. (Ama aynı zamanda hiçbir değişiklik yapmadık.)
 
-There is no special code for handling updates because `useEffect` handles them *by default*. It cleans up the previous effects before applying the next effects. To illustrate this, here is a sequence of subscribe and unsubscribe calls that this component could produce over time:
+Güncelleştirmeler için özel bir kod yoktur çünkü `useEffect` bunları *varsayılan olarak* kullanır. Bir sonraki efektleri uygulamadan önce önceki efektleri temizler. Bunu göstermek için, işte bu componenti zaman içinde üretebileceği abone olma ve abonelikten çıkma çağrıları dizisini inceleyelim:
 
 ```js
-// Mount with { friend: { id: 100 } } props
-ChatAPI.subscribeToFriendStatus(100, handleStatusChange);     // Run first effect
+// { friend: { id: 100 } } propsu ile mount
+ChatAPI.subscribeToFriendStatus(100, handleStatusChange);     // İlk efekt çalışır
 
-// Update with { friend: { id: 200 } } props
-ChatAPI.unsubscribeFromFriendStatus(100, handleStatusChange); // Clean up previous effect
-ChatAPI.subscribeToFriendStatus(200, handleStatusChange);     // Run next effect
+// { friend: { id: 200 } } propsu ile güncelleme
+ChatAPI.unsubscribeFromFriendStatus(100, handleStatusChange); // Önceki efekt temizlenir
+ChatAPI.subscribeToFriendStatus(200, handleStatusChange);     // Sonraki efekti çalıştır
 
-// Update with { friend: { id: 300 } } props
-ChatAPI.unsubscribeFromFriendStatus(200, handleStatusChange); // Clean up previous effect
-ChatAPI.subscribeToFriendStatus(300, handleStatusChange);     // Run next effect
+// { friend: { id: 300 } } propsu ile güncelleme
+ChatAPI.unsubscribeFromFriendStatus(200, handleStatusChange); // Önceki efekt temizlenir
+ChatAPI.subscribeToFriendStatus(300, handleStatusChange);     // Sonraki efekti çalıştır
 
 // Unmount
-ChatAPI.unsubscribeFromFriendStatus(300, handleStatusChange); // Clean up last effect
+ChatAPI.unsubscribeFromFriendStatus(300, handleStatusChange); // Son efekti temizle
 ```
 
-This behavior ensures consistency by default and prevents bugs that are common in class components due to missing update logic.
+Bu davranış varsayılan olarak tutarlılığı sağlar ve eksik güncelleme mantığı nedeniyle class componentlerinde yaygın olan hataları önler.
 
 ### Tip: Optimizing Performance by Skipping Effects
 
