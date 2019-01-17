@@ -413,31 +413,31 @@ ChatAPI.unsubscribeFromFriendStatus(300, handleStatusChange); // Son efekti temi
 
 Bu davranış varsayılan olarak tutarlılığı sağlar ve eksik güncelleme mantığı nedeniyle class componentlerinde yaygın olan hataları önler.
 
-### Tip: Optimizing Performance by Skipping Effects
+### İpucu: Efektleri Atlayarak Performansı İyileştirme
 
-In some cases, cleaning up or applying the effect after every render might create a performance problem. In class components, we can solve this by writing an extra comparison with `prevProps` or `prevState` inside `componentDidUpdate`:
+Bazı durumlarda her render işleminden sonra efekti temizlemek veya uygulamak performans sorunu oluşturabilir. Class componentlerinde bunu `componenetDidUpdate` içinde `prevProps` veya `prevState` ile fazladan bir karşılaştırma yaparak çözebiliriz:
 
 ```js
 componentDidUpdate(prevProps, prevState) {
   if (prevState.count !== this.state.count) {
-    document.title = `You clicked ${this.state.count} times`;
+    document.title = `${this.state.count} kez tıkladın`;
   }
 }
 ```
 
-This requirement is common enough that it is built into the `useEffect` Hook API. You can tell React to *skip* applying an effect if certain values haven't changed between re-renders. To do so, pass an array as an optional second argument to `useEffect`:
+Bu gereksinim, `useEffect` Hook API'sine yerleşik olması için yeterince yaygındır. Yeni renderlar arasında belirli değerler değişmemişse React'a *atla (skip)* komutunu verebilirsiniz. Bunu yapmak için bir arrayi `useEffect` seçeneğine isteğe bağlı ikinci bir argüman olarak iletin:
 
 ```js{3}
 useEffect(() => {
-  document.title = `You clicked ${count} times`;
-}, [count]); // Only re-run the effect if count changes
+  document.title = `${count} kez tıkladın`;
+}, [count]); // Yalnızca sayı değiştiğinde efekti yeniden çalıştır
 ```
 
-In the example above, we pass `[count]` as the second argument. What does this mean? If the `count` is `5`, and then our component re-renders with `count` still equal to `5`, React will compare `[5]` from the previous render and `[5]` from the next render. Because all items in the array are the same (`5 === 5`), React would skip the effect. That's our optimization.
+Yukarıdaki örnekte, ikinci argüman olarak `[count]` yazıyoruz. Bu ne anlama geliyor? Eğer `count` hala 5'e eşit olan `count` ile yeniden renderlanırsa, React önceki renderdan `[5]` ve bir sonraki `[5]`'i karşılaştırır. Arraydeki tüm elemanlar aynı olduğundan (`5 === 5`) React efekti atlar. Böylece performansa olumlu etki etmiş oluruz.
 
-When we render with `count` updated to `6`, React will compare the items in the `[5]` array from the previous render to items in the `[6]` array from the next render. This time, React will re-apply the effect because `5 !== 6`. If there are multiple items in the array, React will re-run the effect even if just one of them is different.
+`count` 6 ile güncellendiğinde, React değişimi farkedecek (`5 !== 6`). Arrayde birden fazla öğe varsa, React biri farklı olsa bile efekti yeniden render eder.
 
-This also works for effects that have a cleanup phase:
+Bu ayrıca temizleme aşaması olan efektler içinde çalışır:
 
 ```js{6}
 useEffect(() => {
@@ -445,25 +445,10 @@ useEffect(() => {
   return () => {
     ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
   };
-}, [props.friend.id]); // Only re-subscribe if props.friend.id changes
+}, [props.friend.id]); // Yalnızca props.friend.id değişirse yeniden abone ol
 ```
 
-In the future, the second argument might get added automatically by a build-time transformation.
-
->Note
->
->If you use this optimization, make sure the array includes **any values from the outer scope that change over time and that are used by the effect**. Otherwise, your code will reference stale values from previous renders. We'll also discuss other optimization options in the [Hooks API reference](/docs/hooks-reference.html).
->
->If you want to run an effect and clean it up only once (on mount and unmount), you can pass an empty array (`[]`) as a second argument. This tells React that your effect doesn't depend on *any* values from props or state, so it never needs to re-run. This isn't handled as a special case -- it follows directly from how the inputs array always works. While passing `[]` is closer to the familiar `componentDidMount` and `componentWillUnmount` mental model, we suggest not making it a habit because it often leads to bugs, [as discussed above](#explanation-why-effects-run-on-each-update). Don't forget that React defers running `useEffect` until after the browser has painted, so doing extra work is less of a problem.
-
-## Next Steps
-
-Congratulations! This was a long page, but hopefully by the end most of your questions about effects were answered. You've learned both the State Hook and the Effect Hook, and there is a *lot* you can do with both of them combined. They cover most of the use cases for classes -- and where they don't, you might find the [additional Hooks](/docs/hooks-reference.html) helpful.
-
-We're also starting to see how Hooks solve problems outlined in [Motivation](/docs/hooks-intro.html#motivation). We've seen how effect cleanup avoids duplication in `componentDidUpdate` and `componentWillUnmount`, brings related code closer together, and helps us avoid bugs. We've also seen how we can separate effects by their purpose, which is something we couldn't do in classes at all.
-
-At this point you might be questioning how Hooks work. How can React know which `useState` call corresponds to which state variable between re-renders? How does React "match up" previous and next effects on every update? **On the next page we will learn about the [Rules of Hooks](/docs/hooks-rules.html) -- they're essential to making Hooks work.**
-
+Gelecekte, ikinci argüman otomatik olarak eklenebilir.
 
 <i>Gelişmiş kılavuzlar sonlanmıştır. Bu aşamadan sonra <b>Uygulamalı Eğitime</b> geçiş yapılacaktır.</i>
 
