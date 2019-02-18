@@ -104,7 +104,7 @@ ReactDOM.render(
 
 <a href="http://codepen.io/gaearon/pen/xEmzGg?editors=0010">CodePen'de Deneyin</a>
 
-<i>Bind etmek ile ilgili detaylı bilgi için kendi yazığım <a href="https://omergulcicek.com/blog/bind-fonksiyonu">bind fonksiyonu</a> adlı makaleyi okuyabilirsiniz.</i>
+<i>Bind etmek ile ilgili detaylı bilgi için Turhan Coşkun'un yazdığı <a href="https://turhancoskun.com/blog/javascript-ile-call-apply-ve-bind-kullanimi/">JavaScript ile Call, Apply ve Bind Kullanımı</a> adlı makaleyi okuyabilirsiniz.</i>
 
 JSX geriçağırımlarında bu konuda dikkatli olmalısınız. JavaScript'te, class fonskyionları varsayılan olarak bağlı değildir.
 `this.handleClick`'i `bind` etmeyi (bağlamayı) unutursanız ve `onClick`e iletirseniz, fonksiyon çağrıldığında bu `undefined` olur.
