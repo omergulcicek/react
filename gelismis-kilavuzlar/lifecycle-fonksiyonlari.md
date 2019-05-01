@@ -87,7 +87,7 @@ render()
 - <b>null</b>. Hiçbir şey yapmaz.
 - <b>Boolean</b>. Hiçbir şey yapmaz. (Çoğunlukla `test`in boolean olduğu durumda `return test && <Child />` desenini desteklemek için vardır.)
 
-`null` yada `false` return ederkem, `ReactDOM.findDOMNode(this)` `null` return eder.
+`null` ya da `false` return ederkem, `ReactDOM.findDOMNode(this)` `null` return eder.
 
 `render()` fonksiyonu, componentin state'ini değiştirmez, çağrıldığında her seferinde aynı sonucu return eder. Tarayıcıyla etkileşime girmeniz gerekiyorsa, bunun yerine ` componentDidMount()` ya da diğer lifecycle fonksiyonları ile çalışmalarınızı gerçekleştirin.
 
@@ -303,7 +303,7 @@ Detaylı bilgi için <a href="https://omergulcicek.github.io/react/state-ve-life
 component.forceUpdate(callback)
 ```
 
-Varsayılan olarak, componentinde state yada props değiştiği zaman, component yeniden render edilir. `render()` fonksiyonu diğer bazı verilere bağlı ise, `forceUpdate()` fonksiyonunu çağırarak componentin yeniden oluşturulması gerektiğini React'e bildirebilirsiniz.
+Varsayılan olarak, componentinde state ya da props değiştiği zaman, component yeniden render edilir. `render()` fonksiyonu diğer bazı verilere bağlı ise, `forceUpdate()` fonksiyonunu çağırarak componentin yeniden oluşturulması gerektiğini React'e bildirebilirsiniz.
 
 `forceUpdate()` çağrısı, `shouldComponentUpdate()` atlanarak componentte `render()` çağırılmasına neden olur. Bu, her bir çocuğun `shouldComponentUpdate()` fonksiyonu da dahil olmak üzere, alt componentlerin  lifecycle fonksiyonlarını tetikleyecektir.
 

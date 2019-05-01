@@ -12,7 +12,7 @@ console.log(doubled);
 
 Konsola `[2, 4, 6, 8, 10]` yazacaktır.
 
-<i>Google Chrome'da (diğer tarayıcılarda da benzer yada aynıdır) <b>F12</b>'ye basıp,
+<i>Google Chrome'da (diğer tarayıcılarda da benzer ya da aynıdır) <b>F12</b>'ye basıp,
 "Console (yada Konsol)" sekmesine gelip bu kodları yapıştırarak test edebilirsiniz.
 
 Ok fonksiyonları ile ilgili dokümantasyon hazırlandığında bu kısım güncellenecektir.

@@ -6,7 +6,7 @@ Böyle bir değişken tanımladığımızı düşünün:
 const element = <h1>Merhaba Dünya!</h1>;
 ```
 
-Bu string yada HTML değildir.
+Bu string ya da HTML değildir.
 
 Buna JSX denir, JavaScript için bir syntax uzantısıdır.
 

@@ -1,10 +1,10 @@
 <h1>React JS Kurulumu</h1>
 
-Online olarak katılmayı deneyin yada local geliştirme ortamınızı oluşturun.
+Online olarak katılmayı deneyin ya da local geliştirme ortamınızı oluşturun.
 
 <h2>Online Kod Ortamı</h2>
 
-React'i online kod ortamında denemek istiyorsanız, <a href="https://codepen.io/omergulcicek/pen/ypMLXP">CodePen</a> yada <a href="https://codesandbox.io/s/new">CodeSandbox</a> sitelerini kullanabilirsiniz.
+React'i online kod ortamında denemek istiyorsanız, <a href="https://codepen.io/omergulcicek/pen/ypMLXP">CodePen</a> ya da <a href="https://codesandbox.io/s/new">CodeSandbox</a> sitelerini kullanabilirsiniz.
 
 <h2>React HTML Şablonu</h2>
 
@@ -18,7 +18,7 @@ Bir örnek üzerinden eğitim için <a href="https://omergulcicek.github.io/reac
 
 <h2>Geliştirme Ortamı</h2>
 
-Yukarıdaki hafif çözümler, React'a yeni başladıysanız yada denemek için en uygun yöntemlerdir.
+Yukarıdaki hafif çözümler, React'a yeni başladıysanız ya da denemek için en uygun yöntemlerdir.
 
 <i>React JS'i bilgisayarınıza kurup, localinizde proje geliştirmeye başlamak istiyorsanız aşağıdaki adımları inceleyin.</i>
 
@@ -100,7 +100,7 @@ my-app
     └── registerServiceWorker.js
 ```
 
-<i>Kurulum tamamlandıktan sonra aşağıdaki komutlar ile proje klasörünüze girebilirsiniz. Ardından `npm start` yada `yarn start` komutu ile projenizi localde açabilirsiniz.</i>
+<i>Kurulum tamamlandıktan sonra aşağıdaki komutlar ile proje klasörünüze girebilirsiniz. Ardından `npm start` ya da `yarn start` komutu ile projenizi localde açabilirsiniz.</i>
 
 ```sh
 cd my-app
