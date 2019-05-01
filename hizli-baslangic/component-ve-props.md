@@ -255,7 +255,7 @@ function Comment(props) {
 
 <a href="https://reactjs.org/redirect-to-codepen/components-and-props/extracting-components-continued">CodePen'de Deneyin</a>
 
-Componentleri küçük parçalara bölmek başlangıçta gereksiz bir iş yada zaman kaybı gibi gözükebilir, ancak daha büyük uygulamalarda tekrar kullanılabilir component paletine sahip olmak önemlidir.
+Componentleri küçük parçalara bölmek başlangıçta gereksiz bir iş ya da zaman kaybı gibi gözükebilir, ancak daha büyük uygulamalarda tekrar kullanılabilir component paletine sahip olmak önemlidir.
 
 <h2>Propslar Yalnızca Okunabilir</h2>
 

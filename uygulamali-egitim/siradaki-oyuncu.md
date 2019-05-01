@@ -15,7 +15,7 @@ class Board extends React.Component {
   }
 ```
 
-Her hamle yapıldığında `xIsNext` değerini değiştirerek sıranın `X` yada `O`ya geçmesini sağlayalım. Board'un `handleClick` fonksiyonunu` xIsNext` değerini değiştirmek için güncelleyin:
+Her hamle yapıldığında `xIsNext` değerini değiştirerek sıranın `X` ya da `O`ya geçmesini sağlayalım. Board'un `handleClick` fonksiyonunu` xIsNext` değerini değiştirmek için güncelleyin:
 
 ```js
   handleClick(i) {

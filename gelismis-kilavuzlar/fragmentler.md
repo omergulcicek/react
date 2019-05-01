@@ -84,7 +84,7 @@ class Columns extends React.Component {
 }
 ```
 
-`<></>` kullanabilirsiniz fakat keys yada attribute kullanımını desteklemez (<i>Sadece kapsayıcı olarak kullanılır</i>).
+`<></>` kullanabilirsiniz fakat keys ya da attribute kullanımını desteklemez (<i>Sadece kapsayıcı olarak kullanılır</i>).
 
 Birçok toolsun henüz kısa syntax kullanımını desteklemediğini unutmayın, bu nedenle destek gelene kadar açıkça `<React.Fragment>` yazın.
 

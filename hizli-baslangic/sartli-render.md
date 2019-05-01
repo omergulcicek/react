@@ -46,7 +46,7 @@ ReactDOM.render(
 
 2. Farkettiğiniz gibi componentin içerisinden props olacak bir `isLoggedIn={false}` değerini gönderiyor.
 
-3. `Greeting` componentinde, parametre olarak gönderilen `boolean` (true yada false) değeri bir değişkene atıyor.
+3. `Greeting` componentinde, parametre olarak gönderilen `boolean` (true ya da false) değeri bir değişkene atıyor.
 
 4. Ardından bu değer true ise `UserGreeting` componentini, false ise `GuestGreeting` componentini return ediyor.</i>
 

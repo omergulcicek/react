@@ -12,11 +12,11 @@ Bu pdf 21 Eylül 2018 tarihinde hazırlanmıştır.
 
 <h1>React JS Kurulumu</h1>
 
-Online olarak katılmayı deneyin yada local geliştirme ortamınızı oluşturun.
+Online olarak katılmayı deneyin ya da local geliştirme ortamınızı oluşturun.
 
 <h2>Online Kod Ortamı</h2>
 
-React'i online kod ortamında denemek istiyorsanız, <a href="https://codepen.io/omergulcicek/pen/ypMLXP">CodePen</a> yada <a href="https://codesandbox.io/s/new">CodeSandbox</a> sitelerini kullanabilirsiniz.
+React'i online kod ortamında denemek istiyorsanız, <a href="https://codepen.io/omergulcicek/pen/ypMLXP">CodePen</a> ya da <a href="https://codesandbox.io/s/new">CodeSandbox</a> sitelerini kullanabilirsiniz.
 
 <h2>React HTML Şablonu</h2>
 
@@ -30,7 +30,7 @@ Bir örnek üzerinden eğitim için <a href="https://omergulcicek.github.io/reac
 
 <h2>Geliştirme Ortamı</h2>
 
-Yukarıdaki hafif çözümler, React'a yeni başladıysanız yada denemek için en uygun yöntemlerdir.
+Yukarıdaki hafif çözümler, React'a yeni başladıysanız ya da denemek için en uygun yöntemlerdir.
 
 <i>React JS'i bilgisayarınıza kurup, localinizde proje geliştirmeye başlamak istiyorsanız aşağıdaki adımları inceleyin.</i>
 
@@ -112,7 +112,7 @@ my-app
     └── registerServiceWorker.js
 ```
 
-<i>Kurulum tamamlandıktan sonra aşağıdaki komutlar ile proje klasörünüze girebilirsiniz. Ardından `npm start` yada `yarn start` komutu ile projenizi localde açabilirsiniz.</i>
+<i>Kurulum tamamlandıktan sonra aşağıdaki komutlar ile proje klasörünüze girebilirsiniz. Ardından `npm start` ya da `yarn start` komutu ile projenizi localde açabilirsiniz.</i>
 
 ```sh
 cd my-app
@@ -181,7 +181,7 @@ Böyle bir değişken tanımladığımızı düşünün:
 const element = <h1>Merhaba Dünya!</h1>;
 ```
 
-Bu string yada HTML değildir.
+Bu string ya da HTML değildir.
 
 Buna JSX denir, JavaScript için bir syntax uzantısıdır.
 
@@ -701,7 +701,7 @@ function Comment(props) {
 
 <a href="https://reactjs.org/redirect-to-codepen/components-and-props/extracting-components-continued">CodePen'de Deneyin</a>
 
-Componentleri küçük parçalara bölmek başlangıçta gereksiz bir iş yada zaman kaybı gibi gözükebilir, ancak daha büyük uygulamalarda tekrar kullanılabilir component paletine sahip olmak önemlidir.
+Componentleri küçük parçalara bölmek başlangıçta gereksiz bir iş ya da zaman kaybı gibi gözükebilir, ancak daha büyük uygulamalarda tekrar kullanılabilir component paletine sahip olmak önemlidir.
 
 <h2>Propslar Yalnızca Okunabilir</h2>
 
@@ -1404,7 +1404,7 @@ ReactDOM.render(
 
 2. Farkettiğiniz gibi componentin içerisinden props olacak bir `isLoggedIn={false}` değerini gönderiyor.
 
-3. `Greeting` componentinde, parametre olarak gönderilen `boolean` (true yada false) değeri bir değişkene atıyor.
+3. `Greeting` componentinde, parametre olarak gönderilen `boolean` (true ya da false) değeri bir değişkene atıyor.
 
 4. Ardından bu değer true ise `UserGreeting` componentini, false ise `GuestGreeting` componentini return ediyor.</i>
 
@@ -1641,7 +1641,7 @@ console.log(doubled);
 
 Konsola `[2, 4, 6, 8, 10]` yazacaktır.
 
-<i>Google Chrome'da (diğer tarayıcılarda da benzer yada aynıdır) <b>F12</b>'ye basıp,
+<i>Google Chrome'da (diğer tarayıcılarda da benzer ya da aynıdır) <b>F12</b>'ye basıp,
 "Console (yada Konsol)" sekmesine gelip bu kodları yapıştırarak test edebilirsiniz.
 
 Ok fonksiyonları ile ilgili dokümantasyon hazırlandığında bu kısım güncellenecektir.
@@ -3469,7 +3469,7 @@ class Columns extends React.Component {
 }
 ```
 
- `<></>` kullanabilirsiniz fakat keys yada attribute kullanımını desteklemez (<i>Sadece kapsayıcı olarak kullanılır</i>).
+ `<></>` kullanabilirsiniz fakat keys ya da attribute kullanımını desteklemez (<i>Sadece kapsayıcı olarak kullanılır</i>).
 
 Birçok toolsun henüz kısa syntax kullanımını desteklemediğini unutmayın, bu nedenle destek gelene kadar açıkça `<React.Fragment>` yazın.
 
@@ -3588,7 +3588,7 @@ render()
 - <b>null</b>. Hiçbir şey yapmaz.
 - <b>Boolean</b>. Hiçbir şey yapmaz. (Çoğunlukla `test`in boolean olduğu durumda `return test && <Child />` desenini desteklemek için vardır.)
 
-`null` yada `false` return ederkem, `ReactDOM.findDOMNode(this)` `null` return eder.
+`null` ya da `false` return ederkem, `ReactDOM.findDOMNode(this)` `null` return eder.
 
 `render()` fonksiyonu, componentin state'ini değiştirmez, çağrıldığında her seferinde aynı sonucu return eder. Tarayıcıyla etkileşime girmeniz gerekiyorsa, bunun yerine ` componentDidMount()` ya da diğer lifecycle fonksiyonları ile çalışmalarınızı gerçekleştirin.
 
@@ -3804,7 +3804,7 @@ Detaylı bilgi için <a href="https://omergulcicek.github.io/react/state-ve-life
 component.forceUpdate(callback)
 ```
 
-Varsayılan olarak, componentinde state yada props değiştiği zaman, component yeniden render edilir. `render()` fonksiyonu diğer bazı verilere bağlı ise, `forceUpdate()` fonksiyonunu çağırarak componentin yeniden oluşturulması gerektiğini React'e bildirebilirsiniz.
+Varsayılan olarak, componentinde state ya da props değiştiği zaman, component yeniden render edilir. `render()` fonksiyonu diğer bazı verilere bağlı ise, `forceUpdate()` fonksiyonunu çağırarak componentin yeniden oluşturulması gerektiğini React'e bildirebilirsiniz.
 
 `forceUpdate()` çağrısı, `shouldComponentUpdate()` atlanarak componentte `render()` çağırılmasına neden olur. Bu, her bir çocuğun `shouldComponentUpdate()` fonksiyonu da dahil olmak üzere, alt componentlerin  lifecycle fonksiyonlarını tetikleyecektir.
 
@@ -4306,7 +4306,7 @@ class Board extends React.Component {
   }
 ```
 
-Her hamle yapıldığında `xIsNext` değerini değiştirerek sıranın `X` yada `O`ya geçmesini sağlayalım. Board'un `handleClick` fonksiyonunu` xIsNext` değerini değiştirmek için güncelleyin:
+Her hamle yapıldığında `xIsNext` değerini değiştirerek sıranın `X` ya da `O`ya geçmesini sağlayalım. Board'un `handleClick` fonksiyonunu` xIsNext` değerini değiştirmek için güncelleyin:
 
 ```js
   handleClick(i) {
