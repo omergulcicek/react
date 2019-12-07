@@ -67,5 +67,6 @@ Hatalı yerlerin düzeltilmesi için pull request gönderebilirsiniz.
 - <a href="https://github.com/ahfarmer/emoji-search?editors=0010">Emoji Search</a>: Emoji Arama
 - <a href="https://codepen.io/yigitcukuren/pen/GyxxVm?editors=0010">Memory Game</a>: Hafıza Oyunu
 - <a href="https://github.com/aykutkardas/react-leblebi">Leblebi</a>: Otomatik Tamamlama
+- <a href="https://github.com/aykutkardas/React-IcoMoon">React-IcoMoon</a>: React ile Icon Kullanımı
 
 <i>Geliştirdiğiniz React uygulamalarını listeye ekleyebilirsiniz.</i>
