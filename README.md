@@ -1,11 +1,11 @@
-**React, resmi olarak Türkçe'ye uyarlanıyor: https://tr.reactjs.org/**
+**React, resmi olarak Türkçe'ye uyarlandı: https://tr.reactjs.org/**
 
 *Bu doküman, resmi çalışma başlamadan önce hazırlanmıştır.*
 
 <br/>
 
 <p align="center">
-<img src="https://omergulcicek.com/img/react.png" alt="React JS - Türkçe Dokümantasyon" height="100">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React JS - Türkçe Dokümantasyon" height="100">
 </p>
 
 <h1 align="center">React JS - Türkçe Doküman</h1>
