@@ -6,7 +6,7 @@
 
 Tüm Türkçe dokümanlar için: <a href="https://turkcedokuman.com/">turkcedokuman.com</a>
 
-Bu pdf 21 Eylül 2018 tarihinde hazırlanmıştır.
+Bu pdf 21 Eylül 2018 tarihinde hazırlanmıştır. Fork ediyorum.
 
 ---
 
