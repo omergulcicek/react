@@ -1,6 +1,8 @@
-**React, resmi olarak Türkçe'ye uyarlandı: https://tr.reactjs.org/**
+*Bu dokümantasyon, React'ın resmi Türkçe çevirisi yapılmadan önce hazırlanmıştır.*
 
-*Bu doküman, resmi çalışma başlamadan önce hazırlanmıştır.*
+*Artık güncellenmemektedir ve React'ın yeni özelliklerini içermemektedir.*
+
+*En güncel ve doğru bilgi için lütfen [React'ın resmi Türkçe dokümantasyonunu](https://tr.react.dev/) takip edin.*
 
 <br/>
 
